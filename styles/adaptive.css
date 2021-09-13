@@ -1,0 +1,85 @@
+/*Large Devices, Wide Screens*/
+@media only screen and (max-width: 8192px) {
+    .topnav {
+        display: none;
+    }
+    .m_br {
+        display: none;
+    }
+}
+
+/*Large Devices, Wide Screens*/
+@media only screen and (max-width: 1200px) {
+    .topnav {
+        display: none;
+    }
+    .m_br {
+        display: none;
+    }
+}
+/*Medium Devices, Desktops*/
+@media only screen and (max-width: 922px) {
+    .topnav {
+        display: none;
+    }
+    footer ul {
+        list-style-type: none;
+        column-count: 2;
+    }
+    .m_br {
+        display: none;
+    }
+}
+
+/*Small Devices, Tablets*/
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 0 15px;
+    }
+    header .container {
+        display: none;
+    }
+    .topnav {
+        display: block;
+    }
+    footer ul {
+        list-style-type: none;
+        column-count: 2;
+        margin-left: 150px;
+    }
+    .m_br {
+        display: block;
+    }
+}
+/*Extra Small Devices, Phones*/
+@media only screen and (max-width: 480px) {
+    footer ul {
+        list-style-type: none;
+        column-count: 2;
+        font-size: 13px;
+        margin-right: 10px;
+    }
+    #okno {
+        width: 290px;
+    }
+    #okno a {
+        right: -10px;
+    }
+    #okno .inp {
+        width: 250px;
+    }
+    #okno .tareea {
+        width: 250px;
+        height: 125px;
+    }
+    label {
+        font-size: 15px;
+    }
+    .inpfbtn {
+        width: 250px;
+    }
+    }
+/*Costum, iPhone Retina*/
+@media only screen and (max-width: 320px) {
+
+}
