@@ -31,9 +31,11 @@
     <div class="container">
     <a href="#" class="logo"> <img src="include/goto.png" alt=""> </a>
     <ul class="menu_top">
-        <li><a href="#">Item 1</a> </li>
-        <li><a href="#">Item 2</a> </li>
-        <li><a href="#">Item 3</a> </li>
+        <li><a href="#">Calculatoare si accesorii</a> </li>
+        <li><a href="#">Electrocasnice</a> </li>
+        <li><a href="#">Mobila</a> </li>
+        <li><a href="#">Gradina</a> </li>
+        <li><a href="#">Constructii</a> </li>
     </ul>
     </div>
     <div class="topnav">
