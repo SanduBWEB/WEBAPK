@@ -16,6 +16,10 @@
     <!-- Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#36A26B">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/adaptive.css">
 
@@ -31,6 +35,7 @@
     <div class="container">
     <a href="#" class="logo"> <img src="include/goto.png" alt=""> </a>
     <ul class="menu_top">
+        <li><a href="#">Imbracaminte</a> </li>
         <li><a href="#">Calculatoare si accesorii</a> </li>
         <li><a href="#">Electrocasnice</a> </li>
         <li><a href="#">Mobila</a> </li>
@@ -41,9 +46,12 @@
     <div class="topnav">
         <a href="#" class="active"><img src="https://d.radikal.ru/d43/2108/08/8c9b77d73bf4.png" alt="logomobile"></a>
         <div id="myLinks">
-            <a href="#">Item unu</a>
-            <a href="#">Item doi</a>
-            <a href="#">Item trei</a>
+            <a href="#">Imbracaminte</a>
+            <a href="#">Calculatoare si accesorii</a>
+            <a href="#">Electrocasnice</a>
+            <a href="#">Mobila</a>
+            <a href="#">Gradina</a>
+            <a href="#">Constructii</a>
         </div>
         <a href="javascript:void(0);" class="icon" onclick="phoneNav()">
             <img src="https://static.thenounproject.com/png/592441-200.png" alt="mobilemenu">
@@ -51,6 +59,45 @@
     </div>
 </header>
 
+<section class="main-option">
+    <div class="container">
+        <div class="m-option">
+
+        </div>
+    </div>
+</section>
+
+
+<section class="b-iamge">
+    <div class="container">
+        <div class="fb-main">
+            <div class="c-image">
+                <img src="include/images/576-523x523.jpg" alt=""><br>
+                <button><span>Imbracaminte >></span></button>
+            </div>
+            <div class="c-image">
+                <img src="include/images/576-523x523.jpg" alt=""><br>
+                <button><span>Imbracaminte</span></button>
+            </div>
+            <div class="c-image">
+                <img src="include/images/576-523x523.jpg" alt=""><br>
+                <button><span>Salut</span></button>
+            </div>
+            <div class="c-image">
+                <img src="include/images/576-523x523.jpg" alt=""><br>
+                <button><span>Salut</span></button>
+            </div>
+            <div class="c-image">
+                <img src="include/images/576-523x523.jpg" alt=""><br>
+                <button><span>Salut</span></button>
+            </div>
+            <div class="c-image">
+                <img src="include/images/576-523x523.jpg" alt=""><br>
+                <button><span>Salut</span></button>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <section id="content">

@@ -73,13 +73,16 @@ img {
 }
 .container {
     padding: 10px 0;
-    margin: 0 15em 0 15em;
+    margin: 0 10em 0 10em;
 }
 header {
     background-color: #fff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
 }
 
+.logo h4{
+    margin-left: 0.5em;
+}
 header .container{
     display: -webkit-flex;
     display: -ms-flex;
@@ -91,7 +94,7 @@ header .container{
 }
 
 header .logo{
-    max-width: 100px;
+    max-width: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -378,4 +381,93 @@ footer .author a {
     align-items: center;
     text-decoration: none;
 }
+.fb-main {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.fb-main img {
+    margin-left: 1em;
+    margin-top: 1em;
+
+}
+.c-image button{
+    margin-left: 1em;
+    width: 527px;
+    height: 40px;
+    background: #f8b527;
+    color: #fff;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+}
+.c-image button span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.c-image button:after {
+    position: absolute;
+    content: "";
+    height: 0%;
+    width: 2px;
+    background: #000;
+}
+
+
+.c-image button:before {
+    right: 0;
+    top: 0;
+    transition: all 500ms ease;
+}
+.c-image button:after {
+    left: 0;
+    bottom: 0;
+    transition: all 500ms ease;
+}
+.c-image button:hover{
+    color: #000;
+    background: transparent;
+}
+.c-image button:hover:before {
+    transition: all 500ms ease;
+    height: 100%;
+}
+.c-image button:hover:after {
+    transition: all 500ms ease;
+    height: 100%;
+}
+.c-image button span:before,
+.c-image button span:after {
+    position: absolute;
+    content: "";
+    background: #000;
+}
+.c-image button span:before {
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 2px;
+    transition: all 500ms ease;
+}
+.c-image button span:after {
+    right: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    transition: all 500ms ease;
+}
+.c-image button span:hover:before {
+    width: 100%;
+}
+.c-image button span:hover:after {
+    width: 100%;
+}
+
+
+
 
