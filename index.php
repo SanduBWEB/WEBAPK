@@ -31,6 +31,7 @@
     <div class="container">
     <a href="#" class="logo"> <img src="include/goto.png" alt=""> </a>
     <ul class="menu_top">
+        <li><a href="#">Imbracaminte</a> </li>
         <li><a href="#">Calculatoare si accesorii</a> </li>
         <li><a href="#">Electrocasnice</a> </li>
         <li><a href="#">Mobila</a> </li>
@@ -41,9 +42,12 @@
     <div class="topnav">
         <a href="#" class="active"><img src="https://d.radikal.ru/d43/2108/08/8c9b77d73bf4.png" alt="logomobile"></a>
         <div id="myLinks">
-            <a href="#">Item unu</a>
-            <a href="#">Item doi</a>
-            <a href="#">Item trei</a>
+            <a href="#">Imbracaminte</a>
+            <a href="#">Calculatoare si accesorii</a>
+            <a href="#">Electrocasnice</a>
+            <a href="#">Mobila</a>
+            <a href="#">Gradina</a>
+            <a href="#">Constructii</a>
         </div>
         <a href="javascript:void(0);" class="icon" onclick="phoneNav()">
             <img src="https://static.thenounproject.com/png/592441-200.png" alt="mobilemenu">
@@ -51,6 +55,27 @@
     </div>
 </header>
 
+<section class="main-option">
+    <div class="container">
+        <div class="m-option">
+
+        </div>
+    </div>
+</section>
+
+
+<section class="b-iamge">
+    <div class="container">
+        <div class="fb-main">
+            <img src="include/images/576-523x523.jpg" alt="">
+            <img src="include/images/576-523x523.jpg" alt="">
+            <img src="include/images/576-523x523.jpg" alt="">
+            <img src="include/images/576-523x523.jpg" alt="">
+            <img src="include/images/576-523x523.jpg" alt="">
+            <img src="include/images/576-523x523.jpg" alt="">
+        </div>
+    </div>
+</section>
 
 
 <section id="content">
