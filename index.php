@@ -21,7 +21,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/adaptive.css">
        -->
@@ -196,6 +203,15 @@
     </div>
 </section>
 
+<div class="items">
+    <div><img data-lazy="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/preview/02_o_car.jpg"></div>
+    <div><img data-lazy="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/preview/03_r_car.jpg"></div>
+    <div><img data-lazy="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190714/gallery/preview/04_g_car.jpg"></div>
+    <div><img data-lazy="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190714/gallery/preview/04_g_car.jpg"></div>
+    <div><img data-lazy="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190714/gallery/preview/04_g_car.jpg"></div>
+    <div><img data-lazy="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190714/gallery/preview/04_g_car.jpg"></div>
+    <div><img data-lazy="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190714/gallery/preview/04_g_car.jpg"></div>
+</div>
 
 
 <section id="content">
@@ -208,27 +224,18 @@
     </div>
 </section>
 
-
-
-<footer>
-    <div class="container">
-        <nav class="m_mooter">
-            <ul>
-                <li><a href="#">Parametru</a></li>
-                <li><a href="#">Parametru</a></li>
-                <li><a href="#">Parametru</a></li>
-                <li><a href="#">Parametru</a></li>
-                <li><a href="#">Parametru</a></li>
-                <li><a href="#">Parametru</a></li>
-                <li><a href="#">Parametru</a></li>
-                <li><a href="#">Parametru</a></li>
-            </ul>
-        </nav>
-        <div class="author">
-            <a href="#">Powered BY. Nicu & Sandu © <?php echo date("Y"); ?></a>
-        </div>
-    </div>
-</footer>
+<div class="container">
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Item 1</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Item 2</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Item 3</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Item 4</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Item 5</a></li>
+        </ul>
+        <p class="text-center text-muted">Powered BY. Nicu & Sandu © <?php echo date("Y"); ?></p>
+    </footer>
+</div>
 <script>
     function phoneNav() {
         const x = document.getElementById("myLinks");
@@ -238,6 +245,24 @@
             x.style.display = "block";
         }
     }
+
+    $(document).ready(function(){
+
+
+
+        $('.items').slick({
+            infinite: true,
+            lazyLoad: 'ondemand',
+            slidesToShow: 3,
+            slidesToScroll: 3
+        });
+
+
+
+
+
+
+    });
 </script>
 </body>
 </html>
