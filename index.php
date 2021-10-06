@@ -31,7 +31,6 @@
 
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/adaptive.css">
-       -->
     <title>Shop GO - Marketplace</title>
     <style>
        body { overflow-x: hidden; }
@@ -43,30 +42,30 @@
 </head>
 <body>
 
-<header>
-   <div class="container">
-       <nav class="navbar navbar-expand-sm bg-light navbar-light">
-           <div class="container-fluid">
-               <a class="navbar-brand" href="#">
-                   <img src="include/goto.png" alt="Avatar Logo" style="width:80px;" class="rounded-pill">
-               </a>
-           </div>
-           <div class="container-fluid justify-content-end">
-               <!-- Links -->
-               <ul class="navbar-nav">
-                   <li class="nav-item">
-                       <a class="nav-link" href="#">Link 1</a>
-                   </li>
-                   <li class="nav-item">
-                       <a class="nav-link" href="#">Link 2</a>
-                   </li>
-                   <li class="nav-item">
-                       <a class="nav-link" href="#">Link 3</a>
-                   </li>
-               </ul>
-           </div>
-       </nav>
-   </div>
+<div class="container">
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="include/goto.png" alt="Avatar Logo" style="width:80px;" class="rounded-pill">
+            </a>
+        </div>
+        <div class="container-fluid justify-content-end">
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link 3</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
 <!--    <div class="container">
     <a href="#" class="logo"> <img src="include/goto.png" alt=""> </a>
     <ul class="menu_top">
@@ -93,7 +92,7 @@
         </a>
     </div>
     -->
-</header>
+
 
 <section class="main-option">
     <div class="container">
@@ -102,7 +101,7 @@
         </div>
     </div>
 </section>
-
+<!--
 <section class="c-image">
     <div class="container justify-content-center">
         <div class="row">
@@ -151,66 +150,16 @@
     </div>
 </section>
 
-
-<section class="small-carousel">
-    <div class="multi-carousel">
-        <div class="multi-carousel-inner">
-            <div class="multi-carousel-item">
-                <img
-                        src="https://mdbootstrap.com/img/Photos/Thumbnails/Slides/1.jpg"
-                        alt="Gallery image 1"
-                        class="w-100"
-                />
-            </div>
-            <div class="multi-carousel-item">
-                <img
-                        src="https://mdbootstrap.com/img/Photos/Thumbnails/Slides/2.jpg"
-                        alt="Gallery image 2"
-                        class="w-100"
-                />
-            </div>
-            <div class="multi-carousel-item">
-                <img
-                        src="https://mdbootstrap.com/img/Photos/Thumbnails/Slides/3.jpg"
-                        alt="Gallery image 3"
-                        class="w-100"
-                />
-            </div>
-            <div class="multi-carousel-item">
-                <img
-                        src="https://mdbootstrap.com/img/Photos/Thumbnails/Slides/4.jpg"
-                        alt="Gallery image 4"
-                        class="w-100"
-                />
-            </div>
-        </div>
-        <button
-                class="carousel-control-prev"
-                type="button"
-                tabindex="0"
-                data-mdb-slide="prev"
-        >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button
-                class="carousel-control-next"
-                type="button"
-                tabindex="0"
-                data-mdb-slide="next"
-        >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
-    </div>
-</section>
+-->
 
 <div class="items">
-    <div><img data-lazy="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190720/gallery/preview/02_o_car.jpg"></div>
-    <div><img data-lazy="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190715/gallery/preview/03_r_car.jpg"></div>
-    <div><img data-lazy="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190714/gallery/preview/04_g_car.jpg"></div>
-    <div><img data-lazy="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190714/gallery/preview/04_g_car.jpg"></div>
-    <div><img data-lazy="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190714/gallery/preview/04_g_car.jpg"></div>
-    <div><img data-lazy="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190714/gallery/preview/04_g_car.jpg"></div>
-    <div><img data-lazy="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565190714/gallery/preview/04_g_car.jpg"></div>
+    <div><img data-lazy="include/images/1-600x600.jpg"></div>
+    <div><img data-lazy="include/images/1-600x600.jpg"></div>
+    <div><img data-lazy="include/images/1-600x600.jpg"></div>
+    <div><img data-lazy="include/images/1-600x600.jpg"></div>
+    <div><img data-lazy="include/images/1-600x600.jpg"></div>
+    <div><img data-lazy="include/images/1-600x600.jpg"></div>
+    <div><img data-lazy="include/images/1-600x600.jpg"></div>
 </div>
 
 
@@ -225,7 +174,6 @@
 </section>
 
 <div class="container">
-    <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Item 1</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Item 2</a></li>
@@ -234,7 +182,6 @@
             <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Item 5</a></li>
         </ul>
         <p class="text-center text-muted">Powered BY. Nicu & Sandu © <?php echo date("Y"); ?></p>
-    </footer>
 </div>
 <script>
     function phoneNav() {
