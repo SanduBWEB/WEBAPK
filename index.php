@@ -1,7 +1,18 @@
 <?php
-    "require_once 'include/db.php'"
-?>
 
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    echo ' <script>console.log("User is logged in");</script>';
+    echo '<script>console.log("Username - '.$_SESSION['username'].'");</script>';
+    echo '<script>console.log("Username - '.$_SESSION['user_id'].'");</script>';
+}
+else {
+	$_SESSION['username'] = 0; //not logged in
+    echo ' <script>console.log("User is not logged in");</script>';
+}
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
