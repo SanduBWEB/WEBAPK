@@ -17,150 +17,112 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#36A26B">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
-    <link rel="stylesheet" type="text/css" href="styles/adaptive.css">
+    <script src="JS/general.js"></script>
+    
+    
     <title>Shop GO - Marketplace</title>
     <style>
        body { overflow-x: hidden; }
        html { background-color: #fff; }
-       section { margin-top: 0.5em }
-       .img-fluid { margin-top: 1em}
-       .d-grid { margin-top: 0.5em }
+       section { margin-top: 1em }
+       .items {
+           width: 90%;
+           margin: 100px auto 0;
+       }
+
+       .slick-slide {
+           margin: 10px
+       }
+
+       .slick-slide img {
+           width: 100%;
+           border: 0 solid #0a0a0a
+       }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <nav class="navbar navbar-expand-sm navbar-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="include/goto.png" alt="Avatar Logo" style="width:80px;" class="rounded-pill">
-            </a>
-        </div>
-        <div class="container-fluid justify-content-end">
-            <!-- Links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link 2</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link 3</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
 
-<!--    <div class="container">
-    <a href="#" class="logo"> <img src="include/goto.png" alt=""> </a>
-    <ul class="menu_top">
-        <li><a href="#">Imbracaminte</a> </li>
-        <li><a href="#">Calculatoare si accesorii</a> </li>
-        <li><a href="#">Electrocasnice</a> </li>
-        <li><a href="#">Mobila</a> </li>
-        <li><a href="#">Gradina</a> </li>
-        <li><a href="#">Constructii</a> </li>
-    </ul>
-    </div>
-    <div class="topnav">
-        <a href="#" class="active"><img src="https://d.radikal.ru/d43/2108/08/8c9b77d73bf4.png" alt="logomobile"></a>
-        <div id="myLinks">
-            <a href="#">Imbracaminte</a>
-            <a href="#">Calculatoare si accesorii</a>
-            <a href="#">Electrocasnice</a>
-            <a href="#">Mobila</a>
-            <a href="#">Gradina</a>
-            <a href="#">Constructii</a>
-        </div>
-        <a href="javascript:void(0);" class="icon" onclick="phoneNav()">
-            <img src="https://static.thenounproject.com/png/592441-200.png" alt="mobilemenu">
-        </a>
-    </div>
-    -->
-
-
-<section class="main-option">
+<header class="p-3 text-white" style="background-color: rgba(218,218,218,0.18)">
     <div class="container">
-        <div class="m-option">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img class="bi me-2" width="80em" src="include/goto.png" aria-label="Bootstrap" alt="logo marketplace">
+            </a>
 
-        </div>
-    </div>
-</section>
-<!--
-<section class="c-image">
-    <div class="container justify-content-center">
-        <div class="row">
-            <div class="col-lg">
-                <img class="img-fluid" src="include/images/1-600x600.jpg" alt="New York" style="max-width: 100%;">
-                <div class="d-grid">
-                    <button type="button" class="btn btn-primary btn-block">Categorie 1</button>
-                </div>
-            </div>
-            <div class="col-lg">
-                <img class="img-fluid" src="include/images/1-600x600.jpg" alt="New York" style="max-width: 100%;">
-                <div class="d-grid">
-                    <button type="button" class="btn btn-primary btn-block">Categorie 2</button>
-                </div>
-            </div>
-        </div>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2 text-black">Imbracaminte</a></li>
+                <li><a href="#" class="nav-link px-2 text-black">Calculatoare si accesorii</a></li>
+                <li><a href="#" class="nav-link px-2 text-black">Electorcasnice</a></li>
+                <li><a href="#" class="nav-link px-2 text-black">Mobila</a></li>
+                <li><a href="#" class="nav-link px-2 text-black">Gradina</a></li>
+                <li><a href="#" class="nav-link px-2 text-black">Constructii</a></li>
+            </ul>
 
-        <div class="row">
-            <div class="col-lg">
-                <img class="img-fluid" src="include/images/1-600x600.jpg" alt="New York" style="max-width: 100%;">
-                <div class="d-grid">
-                    <button type="button" class="btn btn-primary btn-block">Categorie 3</button>
-                </div>
-            </div>
-            <div class="col-lg">
-                <img class="img-fluid" src="include/images/1-600x600.jpg" alt="New York" style="max-width: 100%;">
-                <div class="d-grid">
-                    <button type="button" class="btn btn-primary btn-block">Categorie 4</button>
-                </div>
-        </div>
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                <input type="search" class="form-control form-control-dark" placeholder="Cauta" aria-label="Search">
+            </form>
 
-        <div class="row">
-            <div class="col-lg">
-                <img class="img-fluid" src="include/images/1-600x600.jpg" alt="New York" style="max-width: 100%;">
-                <div class="d-grid">
-                    <button type="button" class="btn btn-primary btn-block">Categorie 5</button>
-                </div>
-            </div>
-            <div class="col-lg">
-                <img class="img-fluid" src="include/images/1-600x600.jpg" alt="New York" style="max-width: 100%;">
-                <div class="d-grid">
-                    <button type="button" class="btn btn-primary btn-block">Categorie 6</button>
-                </div>
+            <div class="text-end">
+                <button type="button" class="btn btn-outline-dark me-2">Intra in cont</button>
+                <button type="button" class="btn btn-warning">Inregistreaza-te</button>
             </div>
         </div>
     </div>
+</header>
+
+
+<section class="info-marketplace">
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="include/images/b-category-1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
 </section>
 
--->
-
-<div class="items">
-    <div><img data-lazy="include/images/1-600x600.jpg"></div>
-    <div><img data-lazy="include/images/1-600x600.jpg"></div>
-    <div><img data-lazy="include/images/1-600x600.jpg"></div>
-    <div><img data-lazy="include/images/1-600x600.jpg"></div>
-    <div><img data-lazy="include/images/1-600x600.jpg"></div>
-    <div><img data-lazy="include/images/1-600x600.jpg"></div>
-    <div><img data-lazy="include/images/1-600x600.jpg"></div>
-</div>
+<section class="c-banner-info">
+    <div class="d-block justify-content-center">
+        <h1>Categorii:</h1>
+    </div>
+    <div class="items">
+        <div><img src="include/images/1-600x600.jpg" alt="Imbracaminte"></div>
+        <div><img src="include/images/1-600x600.jpg" alt="Calculatoare si accesorii"></div>
+        <div><img src="include/images/1-600x600.jpg" alt="Electrocasnice"></div>
+        <div><img src="include/images/1-600x600.jpg" alt="Mobila"></div>
+        <div><img src="include/images/1-600x600.jpg" alt="Gradina"></div>
+        <div><img src="include/images/1-600x600.jpg" alt="Constructii"></div>
+    </div>
+</section>
 
 
 <section id="content">
@@ -184,15 +146,6 @@
         <p class="text-center text-muted">Powered BY. Nicu & Sandu © <?php echo date("Y"); ?></p>
 </div>
 <script>
-    function phoneNav() {
-        const x = document.getElementById("myLinks");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
-        }
-    }
-
     $(document).ready(function(){
 
 
