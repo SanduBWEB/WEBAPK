@@ -40,8 +40,8 @@ else {
     
     <title>Shop GO - Marketplace</title>
     <style>
-       body { overflow-x: hidden; }
-       html { background-color: #fff; }
+       body { overflow-x: hidden;
+       background-color: #8aa1db63;}
        section { margin-top: 1em }
        .items {
            width: 90%;
@@ -55,6 +55,90 @@ else {
        .slick-slide img {
            width: 100%;
            border: 0 solid #0a0a0a
+       }
+
+
+       .hovereffect {
+           width: 100%;
+           height: 100%;
+           float: left;
+           overflow: hidden;
+           position: relative;
+           text-align: center;
+           cursor: default;
+       }
+
+       .hovereffect .overlay {
+           position: absolute;
+           overflow: hidden;
+           width: 80%;
+           height: 50%;
+           left: 10%;
+           top: 10%;
+           border-bottom: 1px solid #FFF;
+           border-top: 1px solid #FFF;
+           -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+           transition: opacity 0.35s, transform 0.35s;
+           -webkit-transform: scale(0,1);
+           -ms-transform: scale(0,1);
+           transform: scale(0,1);
+       }
+
+       .hovereffect:hover .overlay {
+           opacity: 1;
+           filter: alpha(opacity=100);
+           -webkit-transform: scale(1);
+           -ms-transform: scale(1);
+           transform: scale(1);
+       }
+
+       .hovereffect img {
+           display: block;
+           position: relative;
+           -webkit-transition: all 0.35s;
+           transition: all 0.35s;
+       }
+
+       .hovereffect:hover img {
+           filter: brightness(0.6);
+           -webkit-filter: brightness(0.6);
+       }
+
+       .hovereffect h2 {
+           text-transform: uppercase;
+           text-align: center;
+           position: relative;
+           font-size: 17px;
+           background-color: transparent;
+           color: #FFF;
+           padding: 1em 0;
+           opacity: 0;
+           filter: alpha(opacity=0);
+           -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+           transition: opacity 0.35s, transform 0.35s;
+           -webkit-transform: translate3d(0,-100%,0);
+           transform: translate3d(0,-100%,0);
+       }
+
+       .hovereffect a {
+           color: #FFF;
+           padding: 1em 0;
+           opacity: 0;
+           filter: alpha(opacity=0);
+           -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+           transition: opacity 0.35s, transform 0.35s;
+           -webkit-transform: translate3d(0,100%,0);
+           transform: translate3d(0,100%,0);
+       }
+
+       .hovereffect:hover a, .hovereffect:hover h2 {
+           opacity: 1;
+           filter: alpha(opacity=100);
+           -webkit-transform: translate3d(0,0,0);
+           transform: translate3d(0,0,0);
+       }
+       footer {
+           margin-top: 5em;
        }
     </style>
 </head>
@@ -100,13 +184,13 @@ else {
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="include/images/b-category-1.png" class="d-block w-100" alt="...">
+                    <img src="include/images/b-category-1.png" class="d-block w-100" alt="Market Gata">
                 </div>
                 <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+                    <img src="include/images/b-category-2.png" class="d-block w-100" alt="Solutii individuale">
                 </div>
                 <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+                    <img src="include/images/b-category-3.png" class="d-block w-100" alt="Rapid si Sigur">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -121,14 +205,36 @@ else {
     </div>
 </section>
 
+
 <section class="c-banner-info">
-    <div class="d-block justify-content-center">
-        <h1>Categorii:</h1>
-    </div>
+    <p class="text-center fs-2">
+        Categorii:
+    </p>
     <div class="items">
-        <div><img src="include/images/1-600x600.jpg" alt="Imbracaminte"></div>
-        <div><img src="include/images/1-600x600.jpg" alt="Calculatoare si accesorii"></div>
-        <div><img src="include/images/1-600x600.jpg" alt="Electrocasnice"></div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="hovereffect">
+                <img class="img-responsive" src="include/images/bc-category-1.png" alt="Imbracaminte">
+                <div class="overlay">
+                    <h2>Imbracaminte</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="hovereffect">
+                <img class="img-responsive" src="include/images/bc-category-2.png" alt="Calculatoare si accesorii">
+                <div class="overlay">
+                    <h2>Calculatoare si accesorii</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="hovereffect">
+                <img class="img-responsive" src="include/images/bc-category-3.png" alt="Calculatoare si accesorii">
+                <div class="overlay">
+                    <h2>Electrocasnice</h2>
+                </div>
+            </div>
+        </div>
         <div><img src="include/images/1-600x600.jpg" alt="Mobila"></div>
         <div><img src="include/images/1-600x600.jpg" alt="Gradina"></div>
         <div><img src="include/images/1-600x600.jpg" alt="Constructii"></div>
@@ -139,41 +245,24 @@ else {
 <section id="content">
     <div class="container">
         <div class="inner_content">
-            <h2>Descrierea obtiunilor</h2>
+            <h2>Descrierea proeictului</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         </div>
     </div>
 </section>
 
-<div class="container">
+<footer>
+    <div class="container">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Item 1</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Item 2</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Item 3</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Item 4</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Item 5</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Politica de confidentialitate</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Termeni si conditii</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Politica cookie</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Intrebari frecvente</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contacte</a></li>
         </ul>
         <p class="text-center text-muted">Powered BY. Nicu & Sandu © <?php echo date("Y"); ?></p>
-</div>
-<script>
-    $(document).ready(function(){
-
-
-
-        $('.items').slick({
-            infinite: true,
-            lazyLoad: 'ondemand',
-            slidesToShow: 3,
-            slidesToScroll: 3
-        });
-
-
-
-
-
-
-    });
-</script>
+    </div>
+</footer>
 </body>
 </html>
