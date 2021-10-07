@@ -1,5 +1,15 @@
 <?php
 
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    echo ' <script>console.log("User is logged in");</script>';
+}
+else {
+	$_SESSION['username'] = 0; //not logged in
+    echo ' <script>console.log("User is not logged in");</script>';
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -23,7 +33,9 @@
         <div id="login-row" class="row justify-content-center align-items-center">
             <div id="login-column" class="col-md-6">
                 <div id="login-box" class="col-md-12">
+
                     <form id="login-form" class="form" action="" method="post">
+
                         <h3 class="text-center text-info">Login</h3>
                         <div class="form-group">
                             <label for="username" class="text-info">Log-In:</label><br>
@@ -39,7 +51,9 @@
                             <br><input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
                         </div>
                         <br>
+
                     </form>
+
                 </div>
             </div>
         </div>
@@ -47,6 +61,43 @@
 </div>
 </body>
 <!--PRIVET KOLEA-->
+
+
+<!-- Js scripts -->
+<script>
+
+$("#login-form").submit(function(e) {
+
+    e.preventDefault();
+    var form = $(this).serialize();
+
+    $.ajax({
+        url: 'login_register.php',   //answ='+str+"q_a.php?an2="+str,
+        dataType: 'text',
+        type:'POST',
+        data: {
+            formData: form, 
+            type: "login"
+        },
+        success: function (returndata) {  // if the request was done with success
+        //
+        console.log(returndata);
+
+        }
+    }).done(function(returndata){ // after the request is done
+        if ($.trim(returndata) == 'Login cu success') {
+            window.location.href = "index.php" ;         
+        }
+        else console.log("Eroare la login");
+        //$("#error-message-login").html(returndata);
+
+    });  
+
+})
+
+</script>
+<!-- Js scripts -->
+
 </html>
  <!-- Test
  -->
