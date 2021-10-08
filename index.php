@@ -140,6 +140,13 @@ else {
        footer {
            margin-top: 5em;
        }
+       .m-pmenu {
+           font-family: SansSerif, sans-serif;
+       }
+       .slick-arrow {
+           margin-top: -10%;
+       }
+
     </style>
 </head>
 <body>
@@ -147,13 +154,14 @@ else {
 
 <header class="p-3 text-white" style="background-color: rgba(218,218,218,0.18)">
     <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <div class="d-flex m-pmenu flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
                 <img class="bi me-2" width="80em" src="include/goto.png" aria-label="Bootstrap" alt="logo marketplace">
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 text-black">Imbracaminte</a></li>
+                <!--Ciclu-->
+                <li><a href="MainAdmin/dashboard.php" class="nav-link px-2 text-black">Imbracaminte</a></li>
                 <li><a href="#" class="nav-link px-2 text-black">Calculatoare si accesorii</a></li>
                 <li><a href="#" class="nav-link px-2 text-black">Electorcasnice</a></li>
                 <li><a href="#" class="nav-link px-2 text-black">Mobila</a></li>
@@ -211,6 +219,7 @@ else {
         Categorii:
     </p>
     <div class="items">
+        <!--Ciclu-->
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="hovereffect">
                 <img class="img-responsive" src="include/images/bc-category-1.png" alt="Imbracaminte">
@@ -235,9 +244,30 @@ else {
                 </div>
             </div>
         </div>
-        <div><img src="include/images/1-600x600.jpg" alt="Mobila"></div>
-        <div><img src="include/images/1-600x600.jpg" alt="Gradina"></div>
-        <div><img src="include/images/1-600x600.jpg" alt="Constructii"></div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="hovereffect">
+                <img class="img-responsive" src="include/images/bc-category-4.png" alt="Mobila">
+                <div class="overlay">
+                    <h2>Mobila</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="hovereffect">
+                <img class="img-responsive" src="include/images/bc-category-5.png" alt="Gradina">
+                <div class="overlay">
+                    <h2>Gradina</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="hovereffect">
+                <img class="img-responsive" src="include/images/bc-category-5.png" alt="Constructii">
+                <div class="overlay">
+                    <h2>Constructii</h2>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
