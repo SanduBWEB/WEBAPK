@@ -161,7 +161,7 @@ else {
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <!--Ciclu-->
-                <li><a href="MainAdmin/dashboard.php" class="nav-link px-2 text-black">Imbracaminte</a></li>
+                <li><a href="MainAdmin/dash.php" class="nav-link px-2 text-black">Imbracaminte</a></li>
                 <li><a href="#" class="nav-link px-2 text-black">Calculatoare si accesorii</a></li>
                 <li><a href="#" class="nav-link px-2 text-black">Electorcasnice</a></li>
                 <li><a href="#" class="nav-link px-2 text-black">Mobila</a></li>
