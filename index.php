@@ -40,8 +40,6 @@ else {
     
     <title>Shop GO - Marketplace</title>
     <style>
-       body { overflow-x: hidden;
-       background-color: #8aa1db63;}
        section { margin-top: 1em }
        .items {
            width: 90%;
@@ -60,7 +58,7 @@ else {
 
        .hovereffect {
            width: 100%;
-           height: 100%;
+           height: 94%;
            float: left;
            overflow: hidden;
            position: relative;
@@ -146,10 +144,15 @@ else {
        .slick-arrow {
            margin-top: -10%;
        }
+       .slick-prev:before, .slick-next:before {
+           color: #3d0b0b;
+       }
 
     </style>
 </head>
 <body>
+
+
 
 
 <header class="p-3 text-white" style="background-color: rgba(218,218,218,0.18)">
