@@ -65,6 +65,12 @@
             max-width: 10em;
             margin: 1em 1em 1em 0;
         }
+        input {
+            padding:5px;
+            border:2px solid #ccc;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
     </style>
 
 
@@ -81,9 +87,9 @@
         <div class="list-group list-group-flush">
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="dash.php">Dashboard</a>
             <a class="list-group-item list-group-item-action list-group-item-success p-3" href="general.php">General</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Magazine</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Acces</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Setari</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">Magazine</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">Acces</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">Setari</a>
         </div>
     </div>
     <!-- Page content wrapper-->
@@ -97,7 +103,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User-Name</a>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#!">Log-Out</a>
+                                <a class="dropdown-item" href="#">Log-Out</a>
                             </div>
                         </li>
                     </ul>
@@ -105,27 +111,18 @@
             </div>
         </nav>
         <!-- Page content-->
-
         <div class="container-fluid c-gen-info">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-            <div class="divider div-transparent"></div>
             <p class="text-center">Logotip: </p>
             <form class="form-logo">
                 <div class="form-group">
                     <label>Logotipul actual:</label>
                 </div>
-                <div class="form-group l-ex-ad">
-                    <img src="../include/goto.png" alt="logo">
+                <div class="grid">
+                    <div class="g-col-6 g-col-md-4">
+                        <img style="width: 150px;" src="../include/goto.png" alt="logo">
+                        <input type="file" class="form-control-file" id="changelogo">
+                    </div>
                 </div>
-                <br>
-                <div class="form-group">
-                    <label>Alege fisierul nou:</label>
-                </div>
-                <div class="form-group">
-                    <input type="file" class="form-control-file" id="changelogo">
-                </div>
-                <br>
-                <button type="submit" class="btn btn-primary">Actualizeaza</button>
             </form>
 
             <div class="divider div-transparent"></div>
@@ -135,17 +132,21 @@
                     <label>Bannerele actuale:</label>
                 </div>
                 <div class="form-group l-ex-ad">
-                    <img src="../include/images/b-category-1.png" alt="logo"><img src="../include/images/b-category-2.png" alt="logo"><img src="../include/images/b-category-3.png" alt="logo">
+                    <div class="grid">
+                        <div class="g-col-6 g-col-md-4">
+                            <img src="../include/images/b-category-1.png" alt="b1">
+                            <input type="file" class="form-control-file" id="changebanner1">
+                        </div>
+                        <div class="g-col-6 g-col-md-4">
+                            <img src="../include/images/b-category-2.png" alt="b2">
+                            <input type="file" class="form-control-file" id="changebanner2">
+                        </div>
+                        <div class="g-col-6 g-col-md-4">
+                            <img src="../include/images/b-category-3.png" alt="b3">
+                            <input type="file" class="form-control-file" id="changebanner3">
+                        </div>
+                    </div>
                 </div>
-                <br>
-                <div class="form-group">
-                    <label>Alege fisierele nou:</label>
-                </div>
-                <div class="form-group">
-                    <input type="file" class="form-control-file" id="changebanner1"><input type="file" class="form-control-file" id="changebanner2"><input type="file" class="form-control-file" id="changebanner3">
-                </div>
-                <br>
-                <button type="submit" class="btn btn-primary">Actualizeaza</button>
             </form>
 
             <div class="divider div-transparent"></div>
@@ -155,20 +156,40 @@
                     <label>Bannerele actuale:</label>
                 </div>
                 <div class="form-group l-ex-ad">
-                    <img src="../include/images/bc-category-1.png" alt="logo"><img src="../include/images/bc-category-2.png" alt="logo"><img src="../include/images/bc-category-3.png" alt="logo"><img src="../include/images/bc-category-4.png" alt="logo"><img src="../include/images/bc-category-5.png" alt="logo"><img src="../include/images/bc-category-6.png" alt="logo">
+                    <div class="grid">
+                        <div class="g-col-6 g-col-md-4">
+                            <img src="../include/images/bc-category-1.png" alt="logo">
+                            <input type="file" class="form-control-file" id="changecbanner1">
+                        </div>
+                        <div class="g-col-6 g-col-md-4">
+                            <img src="../include/images/bc-category-2.png" alt="logo">
+                            <input type="file" class="form-control-file" id="changecbanner2">
+                        </div>
+                        <div class="g-col-6 g-col-md-4">
+                            <img src="../include/images/bc-category-3.png" alt="logo">
+                            <input type="file" class="form-control-file" id="changecbanner3">
+                        </div>
+                        <div class="g-col-6 g-col-md-4">
+                            <img src="../include/images/bc-category-4.png" alt="logo">
+                            <input type="file" class="form-control-file" id="changecbanner4">
+                        </div>
+                        <div class="g-col-6 g-col-md-4">
+                            <img src="../include/images/bc-category-5.png" alt="logo">
+                            <input type="file" class="form-control-file" id="changecbanner5">
+                        </div>
+                        <div class="g-col-6 g-col-md-4">
+                            <img src="../include/images/bc-category-6.png" alt="logo">
+                            <input type="file" class="form-control-file" id="changecbanner6">
+                        </div>
+                    </div>
                 </div>
-                <br>
-                <div class="form-group">
-                    <label>Alege fisierele nou:</label>
-                </div>
-                <div class="form-group">
-                    <input type="file" class="form-control-file" id="changecbanner1"><input type="file" class="form-control-file" id="changecbanner2"><input type="file" class="form-control-file" id="changecbanner3"><input type="file" class="form-control-file" id="changecbanner4"><input type="file" class="form-control-file" id="changecbanner5"><input type="file" class="form-control-file" id="changecbanner6">
-                </div>
-                <br>
-                <button type="submit" class="btn btn-primary">Actualizeaza</button>
             </form>
-
         </div>
+        <footer style=" width: 92vw;">
+            <div class="container">
+                <p class="text-center text-muted">Powered BY. Nicu & Sandu © <?php echo date("Y"); ?></p>
+            </div>
+        </footer>
     </div>
 </div>
 
