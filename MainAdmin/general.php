@@ -87,8 +87,8 @@
         <div class="list-group list-group-flush">
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="dash.php">Dashboard</a>
             <a class="list-group-item list-group-item-action list-group-item-success p-3" href="general.php">General</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">Magazine</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">Acces</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="magazine.php">Magazine</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="integrari.php">Integrari</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">Setari</a>
         </div>
     </div>
@@ -185,11 +185,7 @@
                 </div>
             </form>
         </div>
-        <footer style=" width: 92vw;">
-            <div class="container">
-                <p class="text-center text-muted">Powered BY. Nicu & Sandu © <?php echo date("Y"); ?></p>
-            </div>
-        </footer>
+        <?php  require_once '../include/fadmin.php' ?>
     </div>
 </div>
 

@@ -28,16 +28,14 @@
 </head>
 <body>
 
-
-
 <div class="d-flex" id="wrapper">
     <!-- Sidebar-->
     <div class="border-end bg-white" id="sidebar-wrapper">
         <div class="sidebar-heading border-bottom bg-light"><img src="/include/goto.png" style="max-width: 100px;" alt="site-logo"> </div>
         <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action list-group-item-success p-3" href="dash.php">Dashboard</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="dash.php">Dashboard</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="general.php">General</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="magazine.php">Magazine</a>
+            <a class="list-group-item list-group-item-action list-group-item-success p-3" href="magazine.php">Magazine</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="integrari.php">Integrari</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Setari</a>
         </div>
@@ -62,14 +60,38 @@
         </nav>
         <!-- Page content-->
         <div class="container-fluid">
-            <img src="https://joeloughton.com/blog/wp-content/uploads/2011/04/benchmark-graph-eps-converted-to.png" width="70%" alt="template">
+                <button class="btn btn-info" style="margin: 1em 1em 1em 0em">Adauga magazin</button>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nume</th>
+                    <th scope="col">Produse</th>
+                    <th scope="col">Adaugat (Persoana)</th>
+                    <th scope="col">Setari Acces</th>
+                    <th scope="col">#</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Trash IT</td>
+                    <td>200</td>
+                    <td>Sandu</td>
+                    <td><button class="btn btn-warning">Redacteaza</button></td>
+                    <td><button class="btn btn-danger">Sterge</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Smart Price</td>
+                    <td>15</td>
+                    <td>Sandu</td>
+                    <td><button class="btn btn-warning">Redacteaza</button></td>
+                    <td><button class="btn btn-danger">Sterge</button></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <?php  require_once '../include/fadmin.php' ?>
     </div>
 </div>
