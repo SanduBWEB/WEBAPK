@@ -64,7 +64,35 @@
         </nav>
         <!-- Page content-->
         <div class="container-fluid">
-            ?
+            <p>Meniu principal</p>
+            <button class="btn btn-info" style="margin: 1em 1em 1em 0em">Adauga categorie</button>
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nume</th>
+                    <th scope="col">Adaugat (Persoana)</th>
+                    <th scope="col">Setari</th>
+                    <th scope="col">#</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Imbracaminte</td>
+                    <td>Sandu</td>
+                    <td><button class="btn btn-warning">Redacteaza</button></td>
+                    <td><button class="btn btn-danger">Sterge</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Calculatoare si accesorii</td>
+                    <td>Sandu</td>
+                    <td><button class="btn btn-warning">Redacteaza</button></td>
+                    <td><button class="btn btn-danger">Sterge</button></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
         <?php  require_once '../include/fadmin.php' ?>
     </div>
