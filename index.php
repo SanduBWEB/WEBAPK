@@ -12,6 +12,9 @@ else {
     echo ' <script>console.log("User is not logged in");</script>';
 }
 
+
+
+$setaccauth = 1;
 ?>
 <!doctype html>
 <html lang="en">
@@ -175,11 +178,17 @@ else {
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                 <input type="search" class="form-control form-control-dark" placeholder="Cauta" aria-label="Search">
             </form>
-
+            <?php if ($setaccauth = 1): ?>
             <div class="text-end">
-                <button type="button" class="btn btn-outline-dark me-2">Intra in cont</button>
-                <button type="button" class="btn btn-warning">Inregistreaza-te</button>
+                <button type="button" class="btn btn-outline-dark">User</button>
             </div>
+            <?php else: ?>
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-dark me-2">Intra in cont</button>
+                    <button type="button" class="btn btn-warning">Inregistreaza-te</button>
+                </div>
+            <?php endif ?>
+
         </div>
     </div>
 </header>

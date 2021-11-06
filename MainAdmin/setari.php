@@ -1,5 +1,9 @@
 <?php
 ?>
+<?php
+?>
+<?php
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -28,18 +32,16 @@
 </head>
 <body>
 
-
-
 <div class="d-flex" id="wrapper">
     <!-- Sidebar-->
     <div class="border-end bg-white" id="sidebar-wrapper">
         <div class="sidebar-heading border-bottom bg-light"><img src="/include/goto.png" style="max-width: 100px;" alt="site-logo"> </div>
         <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action list-group-item-success p-3" href="dash.php">Dashboard</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="dash.php">Dashboard</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="general.php">General</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="magazine.php">Magazine</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="integrari.php">Integrari</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="setari.php">Setari</a>
+            <a class="list-group-item list-group-item-action list-group-item-success p-3" href="setari.php">Setari</a>
         </div>
     </div>
     <!-- Page content wrapper-->
@@ -62,17 +64,13 @@
         </nav>
         <!-- Page content-->
         <div class="container-fluid">
-            <img src="https://joeloughton.com/blog/wp-content/uploads/2011/04/benchmark-graph-eps-converted-to.png" width="70%" alt="template">
+            ?
         </div>
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <?php  require_once '../include/fadmin.php' ?>
     </div>
 </div>
 
 </body>
 </html>
+
+

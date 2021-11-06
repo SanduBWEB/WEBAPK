@@ -37,7 +37,7 @@
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="general.php">General</a>
             <a class="list-group-item list-group-item-action list-group-item-success p-3" href="magazine.php">Magazine</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="integrari.php">Integrari</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Setari</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="setari.php">Setari</a>
         </div>
     </div>
     <!-- Page content wrapper-->
@@ -51,7 +51,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User-Name</a>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#!">Log-Out</a>
+                                <a class="dropdown-item" href="#">Log-Out</a>
                             </div>
                         </li>
                     </ul>

@@ -89,7 +89,7 @@
             <a class="list-group-item list-group-item-action list-group-item-success p-3" href="general.php">General</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="magazine.php">Magazine</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="integrari.php">Integrari</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">Setari</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="setari.php">Setari</a>
         </div>
     </div>
     <!-- Page content wrapper-->
