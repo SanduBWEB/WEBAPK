@@ -156,11 +156,11 @@ $setaccauth = 1;
 <body>
 
 
-
+<!-- Login/ Reg forms -->
 <section id="login-reg-platform">
-
-    <body>
+    
     <div id="login">
+        <span id="close-form">X</span>
         <h3 class="text-center text-white pt-5" style="color: black!important;">Forma de autorizare</h3>
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
@@ -192,10 +192,9 @@ $setaccauth = 1;
             </div>
         </div>
     </div>
-    </body>
 
 </section>
-
+<!-- Login/ Reg forms -->
 
 <?php  require_once 'include/generaltopnav.php' ?>
 
@@ -306,6 +305,14 @@ $setaccauth = 1;
 <!-- Js scripts -->
 <script>
 
+
+$("#close-form").click(function(e) {
+
+console.log("clicked close form");
+console.log($(this).closest("section"));
+$(this).closest("section").css("display", "none");
+//$("#login-reg-platform").css("opacity", 1);
+});
 
 
 $("#login-button").click(function(e) {
