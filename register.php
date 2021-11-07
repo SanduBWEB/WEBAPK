@@ -1,15 +1,4 @@
 <?php
-
-session_start();
-
-if (isset($_SESSION['user_id'])) {
-    echo ' <script>console.log("User is logged in");</script>';
-}
-else {
-	$_SESSION['username'] = 0; //not logged in
-    echo ' <script>console.log("User is not logged in");</script>';
-}
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,8 +7,7 @@ else {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <?php  require_once 'include/adds.php' ?>
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -28,18 +16,26 @@ else {
 </head>
 <body>
 <div id="login">
-    <h3 class="text-center text-white pt-5">Forma de autorizare</h3>
+    <h3 class="text-center text-white pt-5">Forma de inregistrare</h3>
     <div class="container">
         <div id="login-row" class="row justify-content-center align-items-center">
             <div id="login-column" class="col-md-6">
                 <div id="login-box" class="col-md-12">
 
-                    <form id="login-form" class="form" action="" method="post">
+                    <form id="register-form" class="form" action="" method="post">
 
-                        <h3 class="text-center text-info">Login</h3>
+                        <h3 class="text-center text-info">Register</h3>
+                        <div class="form-group">
+                            <label for="username" class="text-info">Nume:</label><br>
+                            <input type="text" name="username" id="username" class="form-control">
+                        </div>
                         <div class="form-group">
                             <label for="email" class="text-info">Mail:</label><br>
                             <input type="email" name="email" id="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="number" class="text-info">Numar de telefon:</label><br>
+                            <input type="number" name="number" id="number" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="password" class="text-info">Parola:</label><br>
@@ -63,41 +59,8 @@ else {
 <!--PRIVET KOLEA-->
 
 
-<!-- Js scripts -->
-<script>
 
-$("#login-form").submit(function(e) {
-
-    e.preventDefault();
-    var form = $(this).serialize();
-
-    $.ajax({
-        url: 'login_register.php',   //answ='+str+"q_a.php?an2="+str,
-        dataType: 'text',
-        type:'POST',
-        data: {
-            formData: form, 
-            type: "login"
-        },
-        success: function (returndata) {  // if the request was done with success
-        //
-        console.log(returndata);
-
-        }
-    }).done(function(returndata){ // after the request is done
-        if ($.trim(returndata) == 'Login cu success') {
-            window.location.href = "index.php" ;         
-        }
-        else console.log("Eroare la login");
-        //$("#error-message-login").html(returndata);
-
-    });  
-
-})
-
-</script>
-<!-- Js scripts -->
 
 </html>
- <!-- Test
- -->
+<!-- Test
+
