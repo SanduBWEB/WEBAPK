@@ -1,0 +1,25 @@
+
+
+section#login-reg-platform {
+display: block;
+position: fixed;
+width: 100%;
+z-index: 10;
+height: 100%;
+margin-top: 0;
+background: #00000099;
+opacity: 0;
+transition: 0.5s;
+display: none;
+}
+
+section#login-reg-platform #login {
+    /* width: max-content; */
+    transform: translate(0%, 50%);
+    /* margin: auto; */
+    /* display: block; */
+    clip-path: inset(5% 30% 0% 30% round 0% 0% 0% 0%);
+    background: #ffffff;
+    /* border-radius: 106%; */
+    padding: 0 24% 0 24%;
+}

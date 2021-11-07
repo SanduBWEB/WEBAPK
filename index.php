@@ -13,7 +13,6 @@ else {
 }
 
 
-
 $setaccauth = 1;
 ?>
 <!doctype html>
@@ -29,7 +28,8 @@ $setaccauth = 1;
     <meta name="msapplication-navbutton-color" content="#36A26B">
     <!-- Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#36A26B">
-
+    
+    <link rel="stylesheet" href="css/general.css" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
@@ -157,9 +157,47 @@ $setaccauth = 1;
 
 
 
+<section id="login-reg-platform">
+
+    <body>
+    <div id="login">
+        <h3 class="text-center text-white pt-5" style="color: black!important;">Forma de autorizare</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+
+                        <form id="login-form" class="form" action="" method="post">
+
+                            <h3 class="text-center text-info">Login</h3>
+                            <div class="form-group">
+                                <label for="username" class="text-info">Log-In:</label><br>
+                                <input type="text" name="username" id="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-info">Parola:</label><br>
+                                <input type="text" name="password" id="password" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="remember-me" class="text-info"><span>Plaseaza-ma autentificat</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+
+                                <br><input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                            </div>
+                            <br>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+
+</section>
+
 
 <?php  require_once 'include/generaltopnav.php' ?>
-
 
 <section class="info-marketplace">
     <div class="container">
@@ -263,4 +301,59 @@ $setaccauth = 1;
 
 <?php  require_once 'include/generalfooter.php' ?>
 </body>
+
+
+<!-- Js scripts -->
+<script>
+
+
+
+$("#login-button").click(function(e) {
+
+    console.log("clicked login");
+    $("#login-reg-platform").css("display", "block");
+    //$("#login-reg-platform").css("opacity", 1);
+});
+
+$("#register-button").click(function(e) {
+
+
+    console.log("clicked register");
+    $("#login-reg-platform").css("display", "block");
+    //$("#login-reg-platform").css("opacity", 1);
+});
+
+$("#login-form").submit(function(e) {
+
+    e.preventDefault();
+    var form = $(this).serialize();
+
+    $.ajax({
+        url: 'login_register.php',   //answ='+str+"q_a.php?an2="+str,
+        dataType: 'text',
+        type:'POST',
+        data: {
+            formData: form, 
+            type: "login"
+        },
+        success: function (returndata) {  // if the request was done with success
+        //
+        console.log(returndata);
+
+        }
+    }).done(function(returndata){ // after the request is done
+        if ($.trim(returndata) == 'Login cu success') {
+            window.location.href = "index.php" ;         
+        }
+        else console.log("Eroare la login");
+        //$("#error-message-login").html(returndata);
+
+    });  
+
+})
+
+</script>
+<!-- Js scripts -->
+
+
 </html>
