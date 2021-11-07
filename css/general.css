@@ -1,16 +1,26 @@
 
 
 section#login-reg-platform {
-display: block;
-position: fixed;
-width: 100%;
-z-index: 10;
-height: 100%;
-margin-top: 0;
-background: #00000099;
-opacity: 0;
-transition: 0.5s;
-display: none;
+
+display: block;
+
+position: fixed;
+
+width: 100%;
+
+z-index: 10;
+
+height: 100%;
+
+margin-top: 0;
+
+background: #00000099;
+
+/* opacity: 0; */
+
+transition: 0.5s;
+
+display: none;
 }
 
 section#login-reg-platform #login {
