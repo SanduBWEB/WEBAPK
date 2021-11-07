@@ -303,6 +303,7 @@ $("#close-form").click(function(e) {
 
 console.log("clicked close form");
 console.log($(this).closest("section"));
+$(this).closest("section").css("display","none");
 //$("#login-reg-platform").css("opacity", 1);
 });
 
