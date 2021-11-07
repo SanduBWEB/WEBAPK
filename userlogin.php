@@ -26,6 +26,7 @@ else {
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <title>Log-in</title>
 </head>
+<!--Login Form-->
 <body>
 <div id="login">
     <h3 class="text-center text-white pt-5">Forma de autorizare</h3>
@@ -60,7 +61,7 @@ else {
     </div>
 </div>
 </body>
-<!--PRIVET KOLEA-->
+<!--Login Form END-->
 
 
 <!-- Js scripts -->
