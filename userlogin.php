@@ -35,7 +35,7 @@ else {
             <div id="login-column" class="col-md-6">
                 <div id="login-box" class="col-md-12">
 
-                    <form id="login-form" class="form" action="" method="post">
+                    <form id="login-form" class="form-check" action="" method="post">
 
                         <h3 class="text-center text-info">Login</h3>
                         <div class="form-group">
@@ -49,7 +49,8 @@ else {
                         <div class="form-group">
                             <label for="remember-me" class="text-info"><span>Plaseaza-ma autentificat</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
 
-                            <br><input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                            <br><input type="submit" name="submit" class="btn btn-info btn-md" value="Intra">
+                            <br>
                         </div>
                         <br>
 
