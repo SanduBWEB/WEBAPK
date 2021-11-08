@@ -1,4 +1,8 @@
 <?php
+
+
+
+
 ?>
 
 <!doctype html>
@@ -67,7 +71,7 @@
     </style>
 
 
-    <title>Document</title>
+    <title>Dashboard</title>
 </head>
 <body>
 
@@ -152,27 +156,27 @@
                     <div class="grid">
                         <div class="g-col-6 g-col-md-4">
                             <img src="../include/images/bc-category-1.png" alt="logo">
-                            <input type="file" class="form-control-file" id="changecbanner1">
+                            <input type="file" class="form-control-file" id="bc-category-1.png">
                         </div>
                         <div class="g-col-6 g-col-md-4">
                             <img src="../include/images/bc-category-2.png" alt="logo">
-                            <input type="file" class="form-control-file" id="changecbanner2">
+                            <input type="file" class="form-control-file" id="bc-category-2.png">
                         </div>
                         <div class="g-col-6 g-col-md-4">
                             <img src="../include/images/bc-category-3.png" alt="logo">
-                            <input type="file" class="form-control-file" id="changecbanner3">
+                            <input type="file" class="form-control-file" id="bc-category-3.png">
                         </div>
                         <div class="g-col-6 g-col-md-4">
                             <img src="../include/images/bc-category-4.png" alt="logo">
-                            <input type="file" class="form-control-file" id="changecbanner4">
+                            <input type="file" class="form-control-file" id="bc-category-4.png">
                         </div>
                         <div class="g-col-6 g-col-md-4">
                             <img src="../include/images/bc-category-5.png" alt="logo">
-                            <input type="file" class="form-control-file" id="changecbanner5">
+                            <input type="file" class="form-control-file" id="bc-category-5.png">
                         </div>
                         <div class="g-col-6 g-col-md-4">
                             <img src="../include/images/bc-category-6.png" alt="logo">
-                            <input type="file" class="form-control-file" id="changecbanner6">
+                            <input type="file" class="form-control-file" id="bc-category-6.png">
                         </div>
                     </div>
                 </div>
@@ -184,4 +188,105 @@
 
 
 </body>
+
+<script> 
+
+// when user uploads file, update the image source for an html element
+$('body').on('change','input[type=file]',function() 
+{
+
+    var element = $(this).attr('id');
+    console.log(`input changed for file ${element}`);
+    var inputImageSource = $(this).parent().find("img");
+    var extension = this.files[0].name.split('.').pop().toLowerCase();
+    console.log(extension);
+
+    if (this.files && this.files[0]) 
+    {
+        var reader = new FileReader();
+        
+        reader.onload = function(e) {
+        //$("#output-"+id).attr('src', e.target.result);
+        $(inputImageSource).attr('src', e.target.result);
+        console.log(`changed src for element ${$(inputImageSource)} from ${this} `);
+        }
+        reader.readAsDataURL(this.files[0]); // convert to base64 string
+
+        var formData = new FormData();
+        var newImage = this.files[0];
+        var blob = newImage;
+        newFile = new File([blob],element,{type: 'image/png'}); // edit so the name is the needen filename for the this.files[0].name
+        formData.append('file', newFile);
+        var fileName = (newFile['name']);
+        console.log("Final file name that gone to the database is : "+fileName);
+
+        $.ajax(
+        {
+            url: 'uploadFile.php',
+            type: 'POST',
+            data: formData,
+            cache: false,
+            processData: false,  // tell jQuery not to process the data
+            contentType: false,  // tell jQuery not to set contentType
+            success: function (data) {
+                console.log(`targetPath is ${data}`);
+                //popupEvent(data);
+            }
+
+        });
+    }
+
+
+
+
+});
+
+
+/*
+
+$("#pfp-form").submit(function(e) {
+
+        e.preventDefault();
+        var url_string = window.location.href;
+        var url = new URL(url_string);
+        var uid = url.searchParams.get("id");
+        var formData = new FormData();
+        var new_pfp = $("#upload-pfp")[0].files[0];
+        var blob = new_pfp;
+        newFile = new File([blob],uid+'.'+"jpg",{type: 'image/png'});
+        formData.append('file', newFile);
+        var pfp_name = (newFile['name']);
+        console.log("Final file name that gone to the database is : "+pfp_name);
+
+        $.ajax({
+            url: 'upload_pfp.php',
+            type: 'POST',
+            data: formData,
+            cache: false,
+            processData: false,  // tell jQuery not to process the data
+            contentType: false,  // tell jQuery not to set contentType
+            success: function (data) {
+                console.log(data);
+                popupEvent(data);
+            }
+            
+        });
+
+
+    });
+
+
+console.log(this);
+console.log(id);
+var image = $("#output-"+id);
+var icon_name = $(this).val().split('\\').pop();
+console.log(image,icon_name);
+document.getElementById(image).src = 
+image.src = icon_name;
+*/
+//$(image).src()
+
+
+</script>
+
 </html>
