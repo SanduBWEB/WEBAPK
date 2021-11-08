@@ -271,7 +271,7 @@ $setaccauth = 1;
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="hovereffect">
-                <img class="img-responsive" src="include/images/bc-category-5.png" alt="Constructii">
+                <img class="img-responsive" src="include/images/bc-category-6.png" alt="Constructii">
                 <div class="overlay">
                     <h2>Constructii</h2>
                 </div>
