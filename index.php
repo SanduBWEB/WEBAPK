@@ -29,7 +29,15 @@ $setaccauth = 1;
     <meta name="msapplication-navbutton-color" content="#36A26B">
     <!-- Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#36A26B">
-    <?php  require_once 'include/adds.php' ?>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="JS/general.js"></script>
     
     
     <title>Shop GO - Marketplace</title>
@@ -147,38 +155,41 @@ $setaccauth = 1;
 <body>
 
 
+
+
+
+<?php  require_once 'include/generaltopnav.php' ?>
+
 <!-- Login/ Reg forms -->
 <section id="login-reg-platform">
-    
-    <div id="login">
-        <span id="close-form">X</span>
-        <h3 class="text-center text-white pt-5" style="color: black!important;">Forma de autorizare</h3>
-        <div class="container">
-            <div id="login-row" class="row justify-content-center align-items-center">
-                <div id="login-column" class="col-md-6">
-                    <div id="login-box" class="col-md-12">
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Bine ai venit !</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="login-form" class="form" action="" method="post">
 
-                        <form id="login-form" class="form" action="" method="post">
+                        <h3 class="text-center text-info">Login</h3>
+                        <div class="form-group">
+                            <label for="username" class="text-info">Log-In:</label><br>
+                            <input type="text" name="username" id="username" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-info">Parola:</label><br>
+                            <input type="text" name="password" id="password" class="form-control">
+                        </div>
+                        <div class="modal-footer">
+                            <label for="remember-me" class="text-info"><span>Plaseaza-ma autentificat</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
 
-                            <h3 class="text-center text-info">Login</h3>
-                            <div class="form-group">
-                                <label for="username" class="text-info">Log-In:</label><br>
-                                <input type="text" name="username" id="username" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="password" class="text-info">Parola:</label><br>
-                                <input type="text" name="password" id="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="remember-me" class="text-info"><span>Plaseaza-ma autentificat</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                            <br><input type="submit" name="submit" class="btn btn-info btn-md" value="Intra in cont">
+                        </div>
+                        <br>
 
-                                <br><input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
-                            </div>
-                            <br>
-
-                        </form>
-
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -186,9 +197,6 @@ $setaccauth = 1;
 
 </section>
 <!-- Login/ Reg forms -->
-
-
-<?php  require_once 'include/generaltopnav.php' ?>
 
 
 <section class="info-marketplace">

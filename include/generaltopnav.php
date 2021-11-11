@@ -26,7 +26,7 @@
                 </div>
             <?php else: ?>
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-dark me-2" id="login-button">Intra in cont</button>
+                    <button type="button" class="btn btn-outline-dark me-2" id="login-button" data-bs-toggle="modal" data-bs-target="#loginModal">Intra in cont</button>
                     <button type="button" class="btn btn-warning" id="register-button">Inregistreaza-te</button>
                 </div>
             <?php endif ?>
