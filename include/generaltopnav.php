@@ -27,7 +27,7 @@
             </form>
             <?php if ($setaccauth = 1): ?>
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-dark">User</button>
+                    <button type="button" class="btn btn-outline-dark">Sandu</button>
                     <a href="#">
                     <img src="include/icons/cart-icon.png" id="cart-icon">
                     </a>
