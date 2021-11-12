@@ -1,5 +1,10 @@
 <?php
 ?>
+<style>
+    #cart-icon {
+        max-width: 45px;
+    }
+</style>
 <header class="p-3 text-white" style="background-color: rgba(218,218,218,0.18)">
     <div class="container">
         <div class="d-flex m-pmenu flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -20,9 +25,12 @@
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                 <input type="search" class="form-control form-control-dark" placeholder="Cauta" aria-label="Search">
             </form>
-            <?php if ($setaccauth = 0): ?>
+            <?php if ($setaccauth = 1): ?>
                 <div class="text-end">
                     <button type="button" class="btn btn-outline-dark">User</button>
+                    <a href="#">
+                    <img src="include/icons/cart-icon.png" id="cart-icon">
+                    </a>
                 </div>
             <?php else: ?>
                 <div class="text-end">
