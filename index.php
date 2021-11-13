@@ -38,119 +38,11 @@ $setaccauth = 1;
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="JS/general.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/general.css" />
+    <link href="css/general.css">
     
     
     <title>Shop GO - Marketplace</title>
-    <style>
-       section { margin-top: 1em }
-       .items {
-           width: 90%;
-           margin: 100px auto 0;
-       }
-
-       .slick-slide {
-           margin: 10px
-       }
-
-       .slick-slide img {
-           width: 100%;
-           border: 0 solid #0a0a0a
-       }
-
-
-       .hovereffect {
-           width: 100%;
-           height: 94%;
-           float: left;
-           overflow: hidden;
-           position: relative;
-           text-align: center;
-           cursor: default;
-       }
-
-       .hovereffect .overlay {
-           position: absolute;
-           overflow: hidden;
-           width: 80%;
-           height: 50%;
-           left: 10%;
-           top: 10%;
-           border-bottom: 1px solid #FFF;
-           border-top: 1px solid #FFF;
-           -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-           transition: opacity 0.35s, transform 0.35s;
-           -webkit-transform: scale(0,1);
-           -ms-transform: scale(0,1);
-           transform: scale(0,1);
-       }
-
-       .hovereffect:hover .overlay {
-           opacity: 1;
-           filter: alpha(opacity=100);
-           -webkit-transform: scale(1);
-           -ms-transform: scale(1);
-           transform: scale(1);
-       }
-
-       .hovereffect img {
-           display: block;
-           position: relative;
-           -webkit-transition: all 0.35s;
-           transition: all 0.35s;
-       }
-
-       .hovereffect:hover img {
-           filter: brightness(0.6);
-           -webkit-filter: brightness(0.6);
-       }
-
-       .hovereffect h2 {
-           text-transform: uppercase;
-           text-align: center;
-           position: relative;
-           font-size: 17px;
-           background-color: transparent;
-           color: #FFF;
-           padding: 1em 0;
-           opacity: 0;
-           filter: alpha(opacity=0);
-           -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-           transition: opacity 0.35s, transform 0.35s;
-           -webkit-transform: translate3d(0,-100%,0);
-           transform: translate3d(0,-100%,0);
-       }
-
-       .hovereffect a {
-           color: #FFF;
-           padding: 1em 0;
-           opacity: 0;
-           filter: alpha(opacity=0);
-           -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-           transition: opacity 0.35s, transform 0.35s;
-           -webkit-transform: translate3d(0,100%,0);
-           transform: translate3d(0,100%,0);
-       }
-
-       .hovereffect:hover a, .hovereffect:hover h2 {
-           opacity: 1;
-           filter: alpha(opacity=100);
-           -webkit-transform: translate3d(0,0,0);
-           transform: translate3d(0,0,0);
-       }
-       footer {
-           margin-top: 5em;
-       }
-       .m-pmenu {
-           font-family: SansSerif, sans-serif;
-       }
-       .slick-arrow {
-           margin-top: -10%;
-       }
-       .slick-prev:before, .slick-next:before {
-           color: #3d0b0b;
-       }
-
-    </style>
 </head>
 <body>
 
@@ -226,6 +118,7 @@ $setaccauth = 1;
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+
         </div>
     </div>
 </section>
@@ -235,61 +128,73 @@ $setaccauth = 1;
     <p class="text-center fs-2">
         Categorii:
     </p>
-    <div class="items">
-        <!--Ciclu-->
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="hovereffect">
-                <img class="img-responsive" src="include/images/bc-category-1.png" alt="Imbracaminte">
-                <div class="overlay">
-                    <h2>Imbracaminte</h2>
+
+    <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                    <div class="col">
+                        <div class="card mb-4 rounded-3">
+                            <div class="card-body">
+                                <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-1.png" alt="Imbracaminte">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mb-4 rounded-3">
+                            <div class="card-body">
+                                <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-2.png" alt="Calculatoare si accesorii">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mb-4 rounded-3">
+                            <div class="card-body">
+                                <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-3.png" alt="Calculatoare si accesorii">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                    <div class="col">
+                    <div class="card mb-4 rounded-3">
+                        <div class="card-body">
+                            <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-4.png" alt="Mobila">
+                        </div>
+                    </div>
+                </div>
+                    <div class="col">
+                    <div class="card mb-4 rounded-3">
+                        <div class="card-body">
+                            <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-5.png" alt="Gradina">
+                        </div>
+                    </div>
+                </div>
+                    <div class="col">
+                    <div class="card mb-4 rounded-3">
+                        <div class="card-body">
+                            <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-6.png" alt="Constructii">
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="hovereffect">
-                <img class="img-responsive" src="include/images/bc-category-2.png" alt="Calculatoare si accesorii">
-                <div class="overlay">
-                    <h2>Calculatoare si accesorii</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="hovereffect">
-                <img class="img-responsive" src="include/images/bc-category-3.png" alt="Calculatoare si accesorii">
-                <div class="overlay">
-                    <h2>Electrocasnice</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="hovereffect">
-                <img class="img-responsive" src="include/images/bc-category-4.png" alt="Mobila">
-                <div class="overlay">
-                    <h2>Mobila</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="hovereffect">
-                <img class="img-responsive" src="include/images/bc-category-5.png" alt="Gradina">
-                <div class="overlay">
-                    <h2>Gradina</h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="hovereffect">
-                <img class="img-responsive" src="include/images/bc-category-6.png" alt="Constructii">
-                <div class="overlay">
-                    <h2>Constructii</h2>
-                </div>
-            </div>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#categoryCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#categoryCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 </section>
 
 
-<section id="content">
+<section class="project-description">
     <div class="container">
         <div class="inner_content">
             <h2>Descrierea proeictului</h2>

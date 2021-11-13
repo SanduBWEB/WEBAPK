@@ -41,7 +41,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="costumerPhone" class="form-label">Telefon de contact</label>
-                            <input type="number" class="form-control" id="phone">
+                            <input type="tel" class="form-control" id="phone">
                             <div id="surnameHelp" class="form-text">Spatiul este obligatoriu pentru completare</div>
                         </div>
                         <div class="mb-3 form-check">
