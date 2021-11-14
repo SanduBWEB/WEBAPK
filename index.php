@@ -53,7 +53,7 @@ $setaccauth = 1;
 <?php  require_once 'include/generaltopnav.php' ?>
 
 <!-- Login/ Reg forms -->
-<section id="login-reg-platform">
+<section id="login-reg-platform" style="padding-top: 0; padding-bottom: 0;">
     <!-- Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
         <div class="modal-dialog">
