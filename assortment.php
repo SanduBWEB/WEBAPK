@@ -17,11 +17,6 @@
     <?php  require_once 'include/adds.php' ?>
 
     <title>Shop GO - Marketplace</title>
-    <style>
-        .assortment-p {
-            margin-top: 2em;
-        }
-    </style>
 </head>
 <body>
 <?php  require_once 'include/generaltopnav.php' ?>
@@ -139,7 +134,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container" style="margin-top: 2em">
             <nav aria-label="Paginare">
                 <ul class="pagination">
                     <li class="page-item">
@@ -147,9 +142,9 @@
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link text-black " href="#">1</a></li>
+                    <li class="page-item"><a class="page-link text-black" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link text-black" href="#">3</a></li>
                     <li class="page-item">
                         <a class="page-link" href="#" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>

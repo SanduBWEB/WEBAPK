@@ -25,7 +25,7 @@
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                 <input type="search" class="form-control form-control-dark" placeholder="Cauta" aria-label="Search">
             </form>
-            <?php if ($setaccauth = 1): ?>
+            <?php if ($setaccauth = 0): ?>
                 <div class="text-end">
                     <button type="button" class="btn btn-outline-dark">Sandu</button>
                     <a href="#">
