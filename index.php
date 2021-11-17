@@ -1,20 +1,21 @@
 <?php
 
-session_start();
+// session_start();
 
-if (isset($_SESSION['user_id'])) {
-    echo ' <script>console.log("User is logged in");</script>';
-    echo '<script>console.log("Username - '.$_SESSION['username'].'");</script>';
-    echo '<script>console.log("Username - '.$_SESSION['user_id'].'");</script>';
-}
-else {
-	$_SESSION['username'] = 0; //not logged in
-    echo ' <script>console.log("User is not logged in");</script>';
-}
+// if (isset($_SESSION['user_id'])) {
+//     echo ' <script>console.log("User is logged in");</script>';
+//     echo '<script>console.log("Username - '.$_SESSION['username'].'");</script>';
+//     echo '<script>console.log("Username - '.$_SESSION['user_id'].'");</script>';
+// }
+// else {
+// 	$_SESSION['username'] = 0; //not logged in
+//     $_SESSION['logged'] = 0;
+//     echo ' <script>console.log("User is not logged in");</script>';
+// }
 
 
 
-$setaccauth = 1;
+// $setaccauth = 1;
 ?>
 <!doctype html>
 <html lang="en">
@@ -200,6 +201,36 @@ $("#register-button").click(function(e) {
     //$("#login-reg-platform").css("opacity", 1);
 });
 
+
+$("#logout-button").click(function(e) {
+
+
+    $.ajax({
+        url: 'login_register.php',   //answ='+str+"q_a.php?an2="+str,
+        dataType: 'text',
+        type:'POST',
+        data: {
+            formData: false, 
+            type: "logout"
+        },
+        success: function (returndata) {  // if the request was done with success
+        //
+        console.log(returndata);
+
+        }
+    }).done(function(returndata){ // after the request is done
+        if ($.trim(returndata) == 'destroyed') {
+            window.location.href = "index.php" ;         
+        }
+        else console.log("Eroare la login");
+        
+        $("#login-message-test").html(returndata);
+
+    });  
+
+
+});
+
 $("#login-form").submit(function(e) {
 
     e.preventDefault();
@@ -223,7 +254,8 @@ $("#login-form").submit(function(e) {
             window.location.href = "index.php" ;         
         }
         else console.log("Eroare la login");
-        //$("#error-message-login").html(returndata);
+        
+        $("#login-message-test").html(returndata);
 
     });  
 

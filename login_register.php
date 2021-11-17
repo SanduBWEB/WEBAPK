@@ -2,11 +2,24 @@
 session_start();
 require_once "generalConfig.php";
 
+if( $_POST['type'] && $_POST['type'] == 'logout'  ) {
+    
+    session_start();
+
+    if (isset($_SESSION['username'])) {
+        session_unset();
+        setcookie(session_name(), session_id(), 1); // to expire the session
+        $_SESSION = [];
+        session_destroy();
+        echo "destroyed";
+    }
+    $_SESSION['logged'] = 0 ;
+    return;
+}
 $data = $_POST['formData'];
 $type = $_POST['type'];
 $params = array();
 parse_str($data, $params);
-
 
 
 if ($type == "register" ) {
@@ -43,13 +56,13 @@ elseif ($type == "login") {
 
     //print_r($params);
 
-    $username = $params['username'];
+    $username = $params['email'];
     $pass = $params['password'];
 
-    $sql = "SELECT * FROM `users` WHERE username = '$username' AND password = '$pass' \n"
-                                  . "OR email = '$username' AND password = '$pass'";
+    $sql = "SELECT * FROM `users` WHERE username = '$username' AND pass = '$pass' \n"
+                                  . "OR email = '$username' AND pass = '$pass'";
     $query = mysqli_query($link,$sql);
-    
+    //print_r($data);
     
     if (!$query)
     {
@@ -61,13 +74,13 @@ elseif ($type == "login") {
     }else {
         echo "Login cu success";
         $account = mysqli_fetch_assoc($query);
-
+        $_SESSION['logged'] = 1;
         $_SESSION['user_id'] = $account['id'];  //id
         $_SESSION['username'] = $account['username'];
-        //$_SESSION['e_mail'] = $account[2];
+        $_SESSION['e_mail'] = $account['email'];
         //$_SESSION['password'] = $pass;
         $_SESSION['data_reg'] = $account['registrare'];
-        if ($account['role'] == 'admin') {
+        if ($account['role'] == 'superadmin') {
             $_SESSION['admin'] = true;
         } else{
             $_SESSION['admin'] = false;

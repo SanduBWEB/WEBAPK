@@ -1,4 +1,22 @@
 <?php
+
+
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    echo ' <script>console.log("User is logged in");</script>';
+    echo '<script>console.log("Username - '.$_SESSION['username'].'");</script>';
+    echo '<script>console.log("Username - '.$_SESSION['user_id'].'");</script>';
+}
+else {
+	$_SESSION['username'] = 0; //not logged in
+    $_SESSION['logged'] = 0;
+    echo ' <script>console.log("User is not logged in");</script>';
+}
+
+
+?>
+
 ?>
 <style>
     #cart-icon {
@@ -25,12 +43,13 @@
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                 <input type="search" class="form-control form-control-dark" placeholder="Cauta" aria-label="Search">
             </form>
-            <?php if ($setaccauth = 0): ?>
+            <?php if ($_SESSION['logged'] == 1): ?>
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-dark">Sandu</button>
+                    <button type="button" class="btn btn-outline-dark"><?php echo $_SESSION['username']; ?></button>
                     <a href="#">
                     <img src="include/icons/cart-icon.png" id="cart-icon">
                     </a>
+                    <button type="button" class="btn btn-outline-dark" id="logout-button">Ieșire</button>
                 </div>
             <?php else: ?>
                 <div class="text-end">
@@ -70,6 +89,7 @@
                             <br><input type="submit" name="submit" class="btn btn-info btn-md" value="Intra in cont">
                         </div>
                         <br>
+                        <span id="login-message-test"> </span>
 
                     </form>
                 </div>
