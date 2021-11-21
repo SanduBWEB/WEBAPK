@@ -59,17 +59,17 @@
     </div>
 </div>
 
-<div class="modal fade" id="addMagModal" tabindex="-1" aria-labelledby="addMagLabel" aria-hidden="true">
+<div class="modal fade" id="redactMagModal" tabindex="-1" aria-labelledby="addMagLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <form>
             <div class="modal-header">
-                <h5 class="modal-title" id="addMagLabel">Redacteaza acces, magazin: <?php echo "Name Magazin"?></h5>
+                <h5 class="modal-title" id="redactMagLabel">Redacteaza acces, magazin: <?php echo "Name Magazin"?></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="accesEmail" class="form-label">Email acces</label>
+                        <label for="redactEmail" class="form-label">Email acces</label>
                         <input type="email" class="form-control" id="accesEmail" aria-describedby="emailHelp">
                         <div id="emailHelp" class="form-text">Email Persoanei care are acces la magazin.</div>
                     </div>
@@ -142,7 +142,7 @@
                     <td>Smart Price</td>
                     <td>15</td>
                     <td>Sandu</td>
-                    <td><button class="btn btn-warning">Redacteaza</button></td>
+                    <td><button data-bs-toggle="modal" data-bs-target="#redactMagModal" class="btn btn-warning">Redacteaza</button></td>
                     <td><button class="btn btn-danger">Sterge</button></td>
                 </tr>
                 </tbody>
