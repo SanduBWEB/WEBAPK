@@ -1,4 +1,25 @@
 <?php
+
+require_once "generalConfig.php";
+//echo "".$_GET['cat']."";
+
+$mid = $_GET['mid']; // market_id
+$sid = $_GET['sid']; // subcategory_id
+$cn = $_GET['cn']; // categoy name ( the subcategory)
+
+$sql = "SELECT * FROM `product_data` WHERE market_id = $mid AND subcategory_id = $sid";
+$products = mysqli_query($link,$sql);
+$rows = mysqli_num_rows($products); //nr de inscrieri;
+
+if (!$products)
+{
+    die('Error in cautare' . mysqli_error($link));
+} 
+// else if ( $rows === 0) {
+//     echo "Nu a fost găsit nici un rezultat";
+//     die();
+// } 
+//$rows = 0;
 ?>
 <html lang="en">
 <head>
@@ -23,136 +44,76 @@
 
 <section class="assortment-list">
     <div class="container">
-        <h2 class="text-center">Denumire categorie</h2>
-        <div class="row">
-            <div class="assortment-p col">
-                <div class="card" style="width: 20em;">
-                    <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">iPhone</h5>
-                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
+
+        <?php if ($rows===0): ?>
+            <h2 class="text-center">Nu a fost găsit nici un produs</h2>
+        <?php else: ?>
+            <h2 class="text-center"><?php echo $cn?></h2>
+        
+            <div class="row">
+
+                <?php for ($i=0; $i < $rows ; $i++):
+                    # code...$row = mysqli_fetch_assoc($query);
+                    $product = mysqli_fetch_assoc($products);
+                ?>
+
+                    <div class="assortment-p col">
+                        <div class="card" style="width: 20em;">
+                            <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $product['product_name']; ?></h5>
+                                <a href="product?pid=<?php echo $product['id']; ?>" class="btn btn-primary">Vezi produs ></a>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php endfor ?>
+
+
+                <!-- <div class="assortment-p col">
+                    <div class="card" style="width: 20em;">
+                        <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">iPhone</h5>
+                            <a href="product.php" class="btn btn-primary">Vezi produs ></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="assortment-p col">
-                <div class="card" style="width: 20em;">
-                    <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">iPhone</h5>
-                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
+                <div class="assortment-p col">
+                    <div class="card" style="width: 20em;">
+                        <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">iPhone</h5>
+                            <a href="product.php" class="btn btn-primary">Vezi produs ></a>
+                        </div>
                     </div>
-                </div>
+                </div> -->
+
+
             </div>
-            <div class="assortment-p col">
-                <div class="card" style="width: 20em;">
-                    <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">iPhone</h5>
-                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
-                    </div>
-                </div>
-            </div>
-            <div class="assortment-p col">
-                <div class="card" style="width: 20em;">
-                    <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">iPhone</h5>
-                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
-                    </div>
-                </div>
-            </div>
-            <div class="assortment-p col">
-                <div class="card" style="width: 20em;">
-                    <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">iPhone</h5>
-                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
-                    </div>
-                </div>
-            </div>
-            <div class="assortment-p col">
-                <div class="card" style="width: 20em;">
-                    <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">iPhone</h5>
-                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
-                    </div>
-                </div>
-            </div>
-            <div class="assortment-p col">
-                <div class="card" style="width: 20em;">
-                    <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">iPhone</h5>
-                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
-                    </div>
-                </div>
-            </div>
-            <div class="assortment-p col">
-                <div class="card" style="width: 20em;">
-                    <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">iPhone</h5>
-                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
-                    </div>
-                </div>
-            </div>
-            <div class="assortment-p col">
-                <div class="card" style="width: 20em;">
-                    <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">iPhone</h5>
-                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
-                    </div>
-                </div>
-            </div>
-            <div class="assortment-p col">
-                <div class="card" style="width: 20em;">
-                    <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">iPhone</h5>
-                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
-                    </div>
-                </div>
-            </div>
-            <div class="assortment-p col">
-                <div class="card" style="width: 20em;">
-                    <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">iPhone</h5>
-                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
-                    </div>
-                </div>
-            </div>
-            <div class="assortment-p col">
-                <div class="card" style="width: 20em;">
-                    <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">iPhone</h5>
-                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container" style="margin-top: 2em">
-            <nav aria-label="Paginare">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link text-black " href="#">1</a></li>
-                    <li class="page-item"><a class="page-link text-black" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link text-black" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+
+            <!-- <div class="container" style="margin-top: 2em">
+                <nav aria-label="Paginare">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link text-black " href="#">1</a></li>
+                        <li class="page-item"><a class="page-link text-black" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link text-black" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div> -->
+
+        <?php endif ?>
+
     </div>
 </section>
 

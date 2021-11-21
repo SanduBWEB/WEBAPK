@@ -1,4 +1,26 @@
 <?php
+
+require_once "generalConfig.php";
+//echo "".$_GET['cat']."";
+$pid = $_GET['pid']; // product id
+
+$sql = "SELECT a.*, b.subcategory_name, c.market_name FROM `product_data` a
+            JOIN subcategories b ON a.subcategory_id = b.id
+            JOIN market_data c ON a.market_id = c.id
+            WHERE a.id = $pid";
+$product = mysqli_query($link,$sql);
+$rows = mysqli_num_rows($product); //nr de inscrieri;
+
+if (!$product)
+{
+    die('Error in cautare' . mysqli_error($link));
+} 
+else if ( $rows === 0 || $rows > 1) {
+    echo "Error";
+    die();
+}
+else $productData = mysqli_fetch_assoc($product);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -52,16 +74,16 @@
              </div>
             <div class="col">
                 <div class="col p-4 d-flex flex-column position-static">
-                    <strong class="d-inline-block mb-2"> Magazin: <?php echo "Trash IT" ?></strong>
-                    <h3 class="mb-0" id="name-product">Samsung Galaxy A10</h3>
-                    <div class="mb-1 text-muted" id="add-date">Adaugat la data: <?php echo date("m.d.y") ?></div>
+                    <strong class="d-inline-block mb-2"> Magazin: <?php echo $productData['market_name'] ?></strong>
+                    <h3 class="mb-0" id="name-product"> <?php echo $productData['product_name'] ?></h3>
+                    <div class="mb-1 text-muted" id="add-date">Adaugat la data: <?php echo date("m.d.y H:i", strtotime( $productData['add_date'] ) ); //date("m.d.y")?></div>
                     <strong class="card-text mb-auto text-primary">Descriere scruta:</strong>
-                    <p class="card-text mb-auto" id="shor-describe"><?php echo "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more re"?></p>
+                    <p class="card-text mb-auto" id="shor-describe"><?php echo $productData['product_desc'] ?></p>
                 </div>
                 <div class="col p-4 d-flex flex-column position-static">
                     <div class="row">
                         <div class="col">
-                            <strong>Pret: <?php echo "500"?> lei</strong>
+                            <strong>Pret: <?php echo $productData['product_price']?> lei</strong>
                         </div>
                         <div class="col">
                             <button type="button" class="btn btn-warning">Adauga in cos</button>
