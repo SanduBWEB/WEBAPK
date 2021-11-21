@@ -17,7 +17,6 @@ else {
 
 ?>
 
-?>
 <style>
     #cart-icon {
         max-width: 45px;
