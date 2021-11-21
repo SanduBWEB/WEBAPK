@@ -1,4 +1,25 @@
 <?php
+
+
+require_once "generalConfig.php";
+//echo "".$_GET['cat']."";
+echo "".$_GET['id']."";
+$mid = $_GET['mid']; // market_id
+$cid = $_GET['cid']; // category_id
+
+$sql = "SELECT * FROM `subcategories` WHERE category_id = $cid AND id = $mid";
+$products = mysqli_query($link,$sql);
+$rows = mysqli_num_rows($products); //nr de inscrieri;
+
+if (!$products)
+{
+    die('Error in cautare' . mysqli_error($link));
+} 
+else if ( $rows === 0) {
+    echo "Nu a fost găsit nici un rezultat";
+    die();
+} 
+
 ?>
     <html lang="en">
     <head>
@@ -22,6 +43,7 @@
         <?php  require_once 'include/generaltopnav.php' ?>
         <section class="store-category-b">
             <div class="row">
+                
                    <div class="col">
                        <a href="assortment.php" style="text-decoration: none;">
                        <div class="card shadow-sm" style="max-width: 400px; margin-bottom: 2em; margin-left: 4em">
