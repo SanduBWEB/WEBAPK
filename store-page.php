@@ -21,6 +21,53 @@
     <body>
         <?php  require_once 'include/generaltopnav.php' ?>
         <section class="store-category-b">
+            <div class="row">
+                   <div class="col">
+                       <a href="assortment.php" style="text-decoration: none;">
+                       <div class="card shadow-sm" style="max-width: 400px; margin-bottom: 2em; margin-left: 4em">
+                           <img src="https://5.imimg.com/data5/RY/NH/QN/SELLER-7779436/men-cotton-pants-500x500.jpeg">
+                           <div class="card-body">
+                               <p class="text-center">Pantaloni</p>
+                           </div>
+                       </div>
+                       </a>
+                   </div>
+
+                <div class="col">
+                    <a href="assortment.php" style="text-decoration: none;">
+                    <div class="card shadow-sm" style="max-width: 400px; margin-bottom: 2em; margin-left: 4em">
+                        <img src="https://womensbeautyoffers.com/wp-content/uploads/2020/09/Midi-Dresses-Under-500Rs.jpg">
+                            <div class="card-body">
+                                <p class="text-center">Rochii</p>
+                            </div>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="assortment.php" style="text-decoration: none;">
+                    <div class="card shadow-sm" style="max-width: 400px; margin-bottom: 2em; margin-left: 4em">
+                        <img src="https://5.imimg.com/data5/RY/NH/QN/SELLER-7779436/men-cotton-pants-500x500.jpeg">
+                        <div class="card-body">
+                            <p class="text-center">Pantaloni</p>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <a href="assortment.php" style="text-decoration: none;">
+                    <div class="card shadow-sm" style="max-width: 400px; margin-bottom: 2em; margin-left: 4em">
+                        <img src="https://5.imimg.com/data5/RY/NH/QN/SELLER-7779436/men-cotton-pants-500x500.jpeg">
+                        <div class="card-body">
+                            <p class="text-center">Pantaloni</p>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+
 
         </section>
         <?php require_once 'include/generalfooter.php' ?>

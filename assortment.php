@@ -30,7 +30,7 @@
                     <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">iPhone</h5>
-                        <a href="#" class="btn btn-primary">Vezi produs ></a>
+                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                     <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">iPhone</h5>
-                        <a href="#" class="btn btn-primary">Vezi produs ></a>
+                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                     <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">iPhone</h5>
-                        <a href="#" class="btn btn-primary">Vezi produs ></a>
+                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
                     </div>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                     <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">iPhone</h5>
-                        <a href="#" class="btn btn-primary">Vezi produs ></a>
+                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                     <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">iPhone</h5>
-                        <a href="#" class="btn btn-primary">Vezi produs ></a>
+                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                     <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">iPhone</h5>
-                        <a href="#" class="btn btn-primary">Vezi produs ></a>
+                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
                     </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                     <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">iPhone</h5>
-                        <a href="#" class="btn btn-primary">Vezi produs ></a>
+                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
                     </div>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                     <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">iPhone</h5>
-                        <a href="#" class="btn btn-primary">Vezi produs ></a>
+                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
                     <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">iPhone</h5>
-                        <a href="#" class="btn btn-primary">Vezi produs ></a>
+                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,7 @@
                     <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">iPhone</h5>
-                        <a href="#" class="btn btn-primary">Vezi produs ></a>
+                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@
                     <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">iPhone</h5>
-                        <a href="#" class="btn btn-primary">Vezi produs ></a>
+                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
                     </div>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                     <img src="https://assets.swappie.com/iPhone-11-Pro-midnight-green-back.png" class="card-img-top img-thumbnail" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">iPhone</h5>
-                        <a href="#" class="btn btn-primary">Vezi produs ></a>
+                        <a href="product.php" class="btn btn-primary">Vezi produs ></a>
                     </div>
                 </div>
             </div>

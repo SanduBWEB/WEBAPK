@@ -15,6 +15,11 @@
 
     <link rel="stylesheet" type="text/css" href="css/general.css" />
     <?php  require_once 'include/adds.php' ?>
+    <style>
+        .sb-category {
+            display: none;
+        }
+    </style>
 
     <title>Shop GO - Marketplace</title>
 </head>
@@ -31,7 +36,7 @@
                                 <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Turum Clothes</h2>
                                 <ul class="d-flex list-unstyled mt-auto">
                                     <li class="me-auto">
-                                        <button class="btn btn-info">Mergi la magazin >>></button>
+                                        <a href="store-page.php"> <button class="btn btn-info">Mergi la magazin >>></button></a>
                                     </li>
                                 </ul>
                             </div>

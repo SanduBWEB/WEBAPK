@@ -106,7 +106,7 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3">
                             <div class="card-body">
-                                <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-1.png" alt="Imbracaminte">
+                                <a href="category.php"> <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-1.png" alt="Imbracaminte"></a>
                             </div>
                         </div>
                     </div>
