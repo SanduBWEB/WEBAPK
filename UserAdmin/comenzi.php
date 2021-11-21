@@ -25,42 +25,12 @@
 <header class="py-3 mb-4 border-bottom">
     <div class="container d-flex flex-wrap justify-content-center">
         <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
-            <span class="fs-4">Setari: </span>
+            <span class="fs-4">Comenzi: </span>
         </a>
     </div>
 </header>
-<section class="subcategory">
-    <div class="container">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nume categorie</th>
-                <th scope="col">Poza</th>
-                <th scope="col">Sterge</th>
-            </tr>
-            </thead>
-            <tbody>
-            <form>
-            <tr>
-                <th scope="row">1</th>
-                <td>Categorie 1</td>
-                <td><input type="file" id="image-category"></td>
-                <td><button class="btn btn-danger">Sterge</button></td>
-            </tr>
-            </form>
-            <form>
-                <tr>
-                    <th scope="row">#</th>
-                    <td> <input type="text" class="form-control" placeholder="Nume categorie" id="name-subcategory"></td>
-                    <td><input type="file" id="image-category"></td>
-                    <td><button class="btn btn-success">Adauga</button></td>
-                </tr>
-            </form>
+<section class="comenzi">
 
-            </tbody>
-        </table>
-    </div>
 </section>
 </body>
 </html>
