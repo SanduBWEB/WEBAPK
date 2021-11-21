@@ -31,12 +31,13 @@ else {
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <!--Ciclu-->
-                <li><a href="category.php" class="nav-link px-2 text-black">Imbracaminte</a></li>
-                <li><a href="#" class="nav-link px-2 text-black">Calculatoare si accesorii</a></li>
-                <li><a href="#" class="nav-link px-2 text-black">Electorcasnice</a></li>
-                <li><a href="#" class="nav-link px-2 text-black">Mobila</a></li>
-                <li><a href="#" class="nav-link px-2 text-black">Gradina</a></li>
-                <li><a href="#" class="nav-link px-2 text-black">Constructii</a></li>
+                <!--<li><a href="MainAdmin/dash" class="nav-link px-2 text-black">Imbracaminte</a></li>  viewFilm?id='.$row['id'].'"-->
+                <li><a href="category?cat=Îmbrăcăminte" class="nav-link px-2 text-black">Imbracaminte</a></li>
+                <li><a href="category?cat=Calculatoare și accesorii" class="nav-link px-2 text-black">Calculatoare si accesorii</a></li>
+                <li><a href="category?cat=Electrocasnice" class="nav-link px-2 text-black">Electorcasnice</a></li>
+                <li><a href="category?cat=Mobilă" class="nav-link px-2 text-black">Mobila</a></li>
+                <li><a href="category?cat=Grădină" class="nav-link px-2 text-black">Gradina</a></li>
+                <li><a href="category?cat=Construcții" class="nav-link px-2 text-black">Constructii</a></li>
             </ul>
 
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">

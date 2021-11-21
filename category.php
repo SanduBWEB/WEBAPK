@@ -1,4 +1,10 @@
 <?php
+
+
+
+echo "".$_GET['cat']."";
+
+
 ?>
 <html lang="en">
 <head>
