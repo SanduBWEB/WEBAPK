@@ -30,7 +30,58 @@
     </div>
 </header>
 <section class="comenzi">
+    <div class="container">
+        <table class="table table-info">
+            <thead>
+            <tr>
+                <th scope="col">ID Comanda</th>
+                <th scope="col">Produs comandat</th>
+                <th scope="col">Client</th>
+                <th scope="col">Statut</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>
+                    <div class="card" style="width: 18rem;">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">ID2122</li>
+                            <li class="list-group-item">COD003</li>
+                        </ul>
+                    </div>
+                </td>
+                <td><?php echo "Sandu" ?></td>
+                <td>
+                    <select class="form-select" aria-label="Stock status">
+                        <option selected>Alege o optiune</option>
+                        <option value="1">In stock</option>
+                        <option value="2">Fara stock</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>
+                    <div class="card" style="width: 18rem;">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">ID2122</li>
+                        </ul>
+                    </div>
+                </td>
+                <td><?php echo "Nicu" ?></td>
+                <td>
+                    <select class="form-select" aria-label="Stock status">
+                        <option selected>Alege o optiune</option>
+                        <option value="1">In stock</option>
+                        <option value="2">Fara stock</option>
+                    </select>
+                </td>
+            </tr>
 
+            </tbody>
+        </table>
+    </div>
 </section>
 </body>
 </html>
