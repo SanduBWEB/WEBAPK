@@ -1,3 +1,8 @@
+<?php
+
+
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,9 +28,9 @@
         </a>
 
         <ul class="nav me-auto">
-            <li class="nav-item"><a href="settings.php" class="nav-link link-dark px-2 active" aria-current="page">Setari</a></li>
-            <li class="nav-item"><a href="comenzi.php" class="nav-link link-dark px-2">Comenzi</a></li>
-            <li class="nav-item"><a href="product.php" class="nav-link link-dark px-2">Produse</a></li>
+            <li class="nav-item"><a href="settings" class="nav-link link-dark px-2 active" aria-current="page">Setari</a></li>
+            <li class="nav-item"><a href="comenzi" class="nav-link link-dark px-2">Comenzi</a></li>
+            <li class="nav-item"><a href="product" class="nav-link link-dark px-2">Produse</a></li>
         </ul>
         <ul class="nav">
             <li class="nav-item"><a href="#" class="nav-link link-dark px-2">User</a></li>

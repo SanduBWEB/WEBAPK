@@ -46,8 +46,10 @@ else {
             <?php if ($_SESSION['logged'] == 1): ?>
                 <div class="text-end">
 
-                    <?php if($_SESSION['role'] == "admin" || $_SESSION['role'] == "superadmin"): ?>
+                    <?php if($_SESSION['role'] == "admin"): ?>
                         <a href="../UserAdmin/comenzi" style="text-decoration:none;">
+                    <?php elseif($_SESSION['role'] == "superadmin"): ?>
+                        <a href="../MainAdmin/general" style="text-decoration:none;">
                     <?php else: ?>
                         <a href="../User/account" style="text-decoration:none;">
                     <?php endif ?>

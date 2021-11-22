@@ -1,3 +1,30 @@
+<?php
+session_start();
+require_once  $_SERVER['DOCUMENT_ROOT'] . "/generalConfig.php";
+//echo "".$_GET['cat']."";
+$sql = "SELECT a.*, b.market_name 
+                FROM `subcategories` a 
+                    JOIN `market_data` b ON a.market_id = b.id 
+                    JOIN `market_admins` c ON b.id = c.market_id 
+                WHERE c.user_id = ".$_SESSION['user_id']."";
+print_r($sql);
+//print_r($_SESSION['logged']);
+$categories =  mysqli_query($link,$sql);
+$market = mysqli_query($link, "SELECT a.* FROM `market_data` a  JOIN `market_admins` b ON a.id = b.market_id WHERE b.user_id = ".$_SESSION['user_id']."");
+//$rows = mysqli_num_rows($market); //nr de inscrieri;
+
+if (!$market || !$categories)
+{
+    die('Error in cautare' . mysqli_error($link));
+} 
+// else if ( $rows === 0) {
+//     echo "Nu a fost găsit nici un rezultat";
+//     die();
+// } 
+$marketData = mysqli_fetch_assoc($market);
+print_r($marketData);
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,9 +44,9 @@
         </a>
 
         <ul class="nav me-auto">
-            <li class="nav-item"><a href="settings.php" class="nav-link link-dark px-2 active" aria-current="page">Setari</a></li>
-            <li class="nav-item"><a href="comenzi.php" class="nav-link link-dark px-2">Comenzi</a></li>
-            <li class="nav-item"><a href="product.php" class="nav-link link-dark px-2">Produse</a></li>
+            <li class="nav-item"><a href="settings" class="nav-link link-dark px-2 active" aria-current="page">Setari</a></li>
+            <li class="nav-item"><a href="comenzi" class="nav-link link-dark px-2">Comenzi</a></li>
+            <li class="nav-item"><a href="product" class="nav-link link-dark px-2">Produse</a></li>
         </ul>
         <ul class="nav">
             <li class="nav-item"><a href="#" class="nav-link link-dark px-2">User</a></li>
@@ -30,7 +57,7 @@
 <header class="py-3 mb-4 border-bottom">
     <div class="container d-flex flex-wrap justify-content-center">
         <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
-            <span class="fs-4">Setari: </span>
+            <span class="fs-4">Setari: <?php echo($marketData['market_name']);  ?></span>
         </a>
     </div>
 </header>
@@ -46,14 +73,24 @@
             </tr>
             </thead>
             <tbody>
-            <form>
-            <tr>
-                <th scope="row">1</th>
-                <td>Categorie 1</td>
-                <td><input type="file" id="image-category"></td>
-                <td><button class="btn btn-danger">Sterge</button></td>
-            </tr>
-            </form>
+
+            <?php for ($i=0; $i < mysqli_num_rows($categories) ; $i++): 
+                # code...
+                $category = mysqli_fetch_assoc($categories);?>
+
+                <form>
+                <tr>
+                    <th scope="row"> <?php echo $category['id'] ?> </th>
+                    <td> <?php echo $category['subcategory_name'] ?> </td>
+                    <td style="display:grid;grid-gap:5px;">
+                        <img style="align-self:center;  max-width:100px; max-height:100px;" src="../markets/<?php echo $category['market_id'] ?>/categories/<?php echo $category['id'] ?>.jpg"> 
+                        <input type="file" id="image-category">
+                    </td>
+                    <td><button data-categoryId="<?php echo $category['id']?>" class="btn btn-danger delete-subcategory">Sterge</button></td>
+                </tr>
+                </form>
+
+            <?php endfor ?>
             <form>
                 <tr>
                     <th scope="row">#</th>
