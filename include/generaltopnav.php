@@ -45,7 +45,9 @@ else {
             </form>
             <?php if ($_SESSION['logged'] == 1): ?>
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-dark"><?php echo $_SESSION['username']; ?></button>
+                    <a href="../User/account" style="text-decoration:none;">
+                        <button type="button" class="btn btn-outline-dark"><?php echo $_SESSION['username']; ?></button>
+                    </a>
                     <a href="#">
                     <img src="include/icons/cart-icon.png" id="cart-icon">
                     </a>
