@@ -61,6 +61,28 @@ print_r($marketData);
         </a>
     </div>
 </header>
+
+<section class="type-activity">
+    <div class="container">
+        <form>
+            <div class="mb-3">
+                <label>Selectati tipul de activitate a magazinului dvs:</label>
+                <select class="form-select" aria-label="Selecteaza tipul activitatii">
+                    <option selected>Selecteaza tipul activitatii</option>
+                    <option value="1">Imbracaminte</option>
+                    <option value="2">Calculatoare si accesorii</option>
+                    <option value="3">Electrocasnice</option>
+                    <option value="4">Mobila</option>
+                    <option value="5">Gradina</option>
+                    <option value="6">Constructii</option>
+                </select>
+            </div>
+        </form>
+    </div>
+</section>
+
+<hr>
+
 <section class="subcategory">
     <div class="container">
         <table class="table">
