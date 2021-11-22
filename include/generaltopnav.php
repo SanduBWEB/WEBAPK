@@ -26,18 +26,18 @@ else {
     <div class="container">
         <div class="d-flex m-pmenu flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
-                <img class="bi me-2" width="80em" src="include/goto.png" aria-label="Bootstrap" alt="logo marketplace">
+                <img class="bi me-2" width="80em" src="../include/goto.png" aria-label="Bootstrap" alt="logo marketplace">
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <!--Ciclu-->
                 <!--<li><a href="MainAdmin/dash" class="nav-link px-2 text-black">Imbracaminte</a></li>  viewFilm?id='.$row['id'].'"-->
-                <li><a href="category?id=1&cat=Îmbrăcăminte" class="nav-link px-2 text-black">Imbracaminte</a></li>
-                <li><a href="category?id=4&cat=Calculatoare și accesorii" class="nav-link px-2 text-black">Calculatoare si accesorii</a></li>
-                <li><a href="category?id=6&cat=Electrocasnice" class="nav-link px-2 text-black">Electorcasnice</a></li>
-                <li><a href="category?id=5&cat=Mobilă" class="nav-link px-2 text-black">Mobila</a></li>
-                <li><a href="category?id=2&cat=Grădină" class="nav-link px-2 text-black">Gradina</a></li>
-                <li><a href="category?id=3&cat=Construcții" class="nav-link px-2 text-black">Constructii</a></li>
+                <li><a href="../category?id=1&cat=Îmbrăcăminte" class="nav-link px-2 text-black">Imbracaminte</a></li>
+                <li><a href="../category?id=4&cat=Calculatoare și accesorii" class="nav-link px-2 text-black">Calculatoare si accesorii</a></li>
+                <li><a href="../category?id=6&cat=Electrocasnice" class="nav-link px-2 text-black">Electorcasnice</a></li>
+                <li><a href="../category?id=5&cat=Mobilă" class="nav-link px-2 text-black">Mobila</a></li>
+                <li><a href="../category?id=2&cat=Grădină" class="nav-link px-2 text-black">Gradina</a></li>
+                <li><a href="../category?id=3&cat=Construcții" class="nav-link px-2 text-black">Constructii</a></li>
             </ul>
 
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -45,11 +45,16 @@ else {
             </form>
             <?php if ($_SESSION['logged'] == 1): ?>
                 <div class="text-end">
-                    <a href="../User/account" style="text-decoration:none;">
+
+                    <?php if($_SESSION['role'] == "admin" || $_SESSION['role'] == "superadmin"): ?>
+                        <a href="../UserAdmin/comenzi" style="text-decoration:none;">
+                    <?php else: ?>
+                        <a href="../User/account" style="text-decoration:none;">
+                    <?php endif ?>
                         <button type="button" class="btn btn-outline-dark"><?php echo $_SESSION['username']; ?></button>
                     </a>
-                    <a href="#">
-                    <img src="include/icons/cart-icon.png" id="cart-icon">
+                    <a href="#" style="text-decoration:none;">
+                    <img src="../include/icons/cart-icon.png" id="cart-icon" >
                     </a>
                     <button type="button" class="btn btn-outline-dark" id="logout-button">Ieșire</button>
                 </div>
@@ -74,12 +79,12 @@ else {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="login-form" class="form" action="" method="post">
+                    <form data-form="login-form" data-type="login" class="form" action="" method="post">
 
                         <h3 class="text-center text-info">Login</h3>
                         <div class="form-group">
-                            <label for="email" class="text-info">Log-In:</label><br>
-                            <input type="email" name="email" id="email" class="form-control">
+                            <label for="username" class="text-info">Log-In/E-mail:</label><br>
+                            <input type="text" name="username" id="username" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="password" class="text-info">Parola:</label><br>
@@ -106,25 +111,40 @@ else {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="login-form" class="form" action="" method="post">
+                    <form data-form="login-form" data-type="register" class="form" action="" method="post">
 
                         <h3 class="text-center text-info">Introduceti datele:</h3>
+
+                        <div class="form-group">
+                            <label for="username" class="text-info">Username-ul:</label><br>
+                            <input type="text" name="username" id="username" class="form-control" required>
+                        </div>
+
                         <div class="form-group">
                             <label for="email" class="text-info">Email:</label><br>
-                            <input type="email" name="email" id="email" class="form-control">
+                            <input type="email" name="email" id="email" class="form-control" required>
                         </div>
+
                         <div class="form-group">
                             <label for="name" class="text-info">Nume:</label><br>
                             <input type="text" name="name" id="name" class="form-control">
                         </div>
+
                         <div class="form-group">
                             <label for="surname" class="text-info">Prenume:</label><br>
                             <input type="text" name="surname" id="surname" class="form-control">
                         </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="text-info">Nr. Telefon:</label><br>
+                            <input type="phone" name="phone" id="phone" class="form-control" required>
+                        </div>
+
                         <div class="form-group">
                             <label for="password" class="text-info">Parola:</label><br>
-                            <input type="password" name="password" id="password" class="form-control">
+                            <input type="password" name="password" id="password" class="form-control" required>
                         </div>
+
                         <div class="modal-footer">
                             <br><input type="submit" name="submit" class="btn btn-info btn-md" value="Inregistreaza-ma !">
                         </div>
@@ -145,5 +165,93 @@ else {
         </nav>
     </div>
 </div>
+<script>
 
+
+
+$("#close-form").click(function(e) {
+
+console.log("clicked close form");
+console.log($(this).closest("section"));
+$(this).closest("section").css("display","none");
+//$("#login-reg-platform").css("opacity", 1);
+});
+
+
+$("#login-button").click(function(e) {
+
+    console.log("clicked login");
+    $("#login-reg-platform").css("display", "block");
+    //$("#login-reg-platform").css("opacity", 1);
+});
+
+$("#register-button").click(function(e) {
+
+
+    console.log("clicked register");
+    $("#login-reg-platform").css("display", "block");
+    //$("#login-reg-platform").css("opacity", 1);
+});
+
+
+$("#logout-button").click(function(e) {
+
+
+    $.ajax({
+        url: '../login_register.php',   //answ='+str+"q_a.php?an2="+str,
+        dataType: 'text',
+        type:'POST',
+        data: {
+            formData: false, 
+            type: "logout"
+        },
+        success: function (returndata) {  // if the request was done with success
+        //
+        console.log(returndata);
+
+        }
+    }).done(function(returndata){ // after the request is done
+        if ($.trim(returndata) == 'destroyed') {
+            window.location.href = "index.php" ;         
+        }
+        else console.log("Eroare la login");
+        
+        $("#login-message-test").html(returndata);
+
+    });  
+
+
+});
+//$("form[data-form='login-form']")
+$("form[data-form='login-form']").submit(function(e) {
+
+    e.preventDefault();
+    var form = $(this).serialize();
+
+    $.ajax({
+        url: '../login_register.php',   //answ='+str+"q_a.php?an2="+str,
+        dataType: 'text',
+        type:'POST',
+        data: {
+            formData: form, 
+            type: $(this).attr("data-type")
+        },
+        success: function (returndata) {  // if the request was done with success
+        //
+        console.log(returndata);
+
+        }
+    }).done(function(returndata){ // after the request is done
+        if ($.trim(returndata) == 'Operatie cu success') {
+            window.location.href = "../index.php" ;         
+        }
+        else console.log("Eroare la login/reg");
+        
+        $("#login-message-test").html(returndata);
+
+    });  
+
+})
+
+</script>
 <!-- Login/ Reg forms -->

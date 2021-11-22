@@ -182,89 +182,89 @@
 <script>
 
 
-$("#close-form").click(function(e) {
+// $("#close-form").click(function(e) {
 
-console.log("clicked close form");
-console.log($(this).closest("section"));
-$(this).closest("section").css("display","none");
-//$("#login-reg-platform").css("opacity", 1);
-});
-
-
-$("#login-button").click(function(e) {
-
-    console.log("clicked login");
-    $("#login-reg-platform").css("display", "block");
-    //$("#login-reg-platform").css("opacity", 1);
-});
-
-$("#register-button").click(function(e) {
+// console.log("clicked close form");
+// console.log($(this).closest("section"));
+// $(this).closest("section").css("display","none");
+// //$("#login-reg-platform").css("opacity", 1);
+// });
 
 
-    console.log("clicked register");
-    $("#login-reg-platform").css("display", "block");
-    //$("#login-reg-platform").css("opacity", 1);
-});
+// $("#login-button").click(function(e) {
+
+//     console.log("clicked login");
+//     $("#login-reg-platform").css("display", "block");
+//     //$("#login-reg-platform").css("opacity", 1);
+// });
+
+// $("#register-button").click(function(e) {
 
 
-$("#logout-button").click(function(e) {
+//     console.log("clicked register");
+//     $("#login-reg-platform").css("display", "block");
+//     //$("#login-reg-platform").css("opacity", 1);
+// });
 
 
-    $.ajax({
-        url: 'login_register.php',   //answ='+str+"q_a.php?an2="+str,
-        dataType: 'text',
-        type:'POST',
-        data: {
-            formData: false, 
-            type: "logout"
-        },
-        success: function (returndata) {  // if the request was done with success
-        //
-        console.log(returndata);
+// $("#logout-button").click(function(e) {
 
-        }
-    }).done(function(returndata){ // after the request is done
-        if ($.trim(returndata) == 'destroyed') {
-            window.location.href = "index.php" ;         
-        }
-        else console.log("Eroare la login");
+
+//     $.ajax({
+//         url: 'login_register.php',   //answ='+str+"q_a.php?an2="+str,
+//         dataType: 'text',
+//         type:'POST',
+//         data: {
+//             formData: false, 
+//             type: "logout"
+//         },
+//         success: function (returndata) {  // if the request was done with success
+//         //
+//         console.log(returndata);
+
+//         }
+//     }).done(function(returndata){ // after the request is done
+//         if ($.trim(returndata) == 'destroyed') {
+//             window.location.href = "index.php" ;         
+//         }
+//         else console.log("Eroare la login");
         
-        $("#login-message-test").html(returndata);
+//         $("#login-message-test").html(returndata);
 
-    });  
+//     });  
 
 
-});
+// });
 
-$("#login-form").submit(function(e) {
+// $("#login-form").submit(function(e) {
 
-    e.preventDefault();
-    var form = $(this).serialize();
+//     e.preventDefault();
+//     var form = $(this).serialize();
 
-    $.ajax({
-        url: 'login_register.php',   //answ='+str+"q_a.php?an2="+str,
-        dataType: 'text',
-        type:'POST',
-        data: {
-            formData: form, 
-            type: "login"
-        },
-        success: function (returndata) {  // if the request was done with success
-        //
-        console.log(returndata);
+//     $.ajax({
+//         url: 'login_register.php',   //answ='+str+"q_a.php?an2="+str,
+//         dataType: 'text',
+//         type:'POST',
+//         data: {
+//             formData: form, 
+//             type: "login"
+//         },
+//         success: function (returndata) {  // if the request was done with success
+//         //
+//         console.log(returndata);
 
-        }
-    }).done(function(returndata){ // after the request is done
-        if ($.trim(returndata) == 'Login cu success') {
-            window.location.href = "index.php" ;         
-        }
-        else console.log("Eroare la login");
+//         }
+//     }).done(function(returndata){ // after the request is done
+//         if ($.trim(returndata) == 'Login cu success') {
+//             window.location.href = "index.php" ;         
+//         }
+//         else console.log("Eroare la login");
         
-        $("#login-message-test").html(returndata);
+//         $("#login-message-test").html(returndata);
 
-    });  
+//     });  
 
-})
+// })
 
 </script>
 <!-- Js scripts -->

@@ -11,6 +11,11 @@
 <body>
 <nav class="py-2 bg-light border-bottom">
     <div class="container d-flex flex-wrap">
+
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
+            <img class="bi me-2" width="80em" src="../include/goto.png" aria-label="Bootstrap" alt="logo marketplace">
+        </a>
+
         <ul class="nav me-auto">
             <li class="nav-item"><a href="settings.php" class="nav-link link-dark px-2 active" aria-current="page">Setari</a></li>
             <li class="nav-item"><a href="comenzi.php" class="nav-link link-dark px-2">Comenzi</a></li>
