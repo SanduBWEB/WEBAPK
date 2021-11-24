@@ -12,12 +12,18 @@
         <!-- Safari -->
         <meta name="apple-mobile-web-app-status-bar-style" content="#36A26B">
 
-        <?php  require_once 'include/adds.php' ?>
+        <?php require_once '../include/adds.php' ?>
+
+        <style>
+            .sb-category {
+                display: none;
+            }
+        </style>
 
         <title>Shop GO - Marketplace</title>
 </head>
 <body>
-    <?php require_once 'include/generaltopnav.php' ?>
+    <?php require_once '../include/generaltopnav.php' ?>
 
     <section class="user-info">
         <div class="container">
@@ -50,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="vr" ></div>
+                <div class="vr"  style="padding: 1px;"></div>
                 <div class="col">
                     <div class="container">
                         <h2>Navigare rapida:</h2>
@@ -58,7 +64,7 @@
                         <a style="text-decoration: none;" href="/">
                             <h5>1. Pagina principala.</h5>
                         </a>
-                        <a style="text-decoration: none;" href="orders.php">
+                        <a style="text-decoration: none;" href="../orders.php">
                             <h5>2. Comenzile mele.</h5>
                         </a>
                         <a style="text-decoration: none;" href="/">
@@ -71,6 +77,6 @@
         </div>
     </section>
 
-    <?php  require_once 'include/generalfooter.php' ?>
+    <?php require_once '../include/generalfooter.php' ?>
 </body>
 </html>

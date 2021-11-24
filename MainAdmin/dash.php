@@ -14,14 +14,8 @@
     <!-- Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#36A26B">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <?php  require_once '../include/adds.php' ?>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 
     <title>Document</title>
@@ -30,7 +24,7 @@
 
 
 
-<div class="d-flex" id="wrapper">
+<div class="d-flex">
     <!-- Sidebar-->
     <?php require_once 'adminSidebar.php' ?>
     <!-- Page content wrapper-->
@@ -53,9 +47,8 @@
         </nav>
         <!-- Page content-->
         <div class="container-fluid">
-            <img src="https://joeloughton.com/blog/wp-content/uploads/2011/04/benchmark-graph-eps-converted-to.png" width="70%" alt="template">
+            <div id="chartContainer" style="height: 500px; width: 100%;">
         </div>
-
         <br>
         <br>
         <br>
@@ -65,5 +58,40 @@
     </div>
 </div>
 
+<script>
+    window.onload = function () {
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            exportEnabled: true,
+            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            title:{
+                text: "Magazine si numarul de produse"
+            },
+            axisY: {
+                includeZero: true
+            },
+            data: [{
+                type: "column", //change type to bar, line, area, pie, etc
+                //indexLabel: "{y}", //Shows y value on all Data Points
+                indexLabelFontColor: "#5A5757",
+                indexLabelFontSize: 10,
+                indexLabelPlacement: "outside",
+                dataPoints: [
+                    { x: 10, y: 71 },
+                    { x: 20, y: 55 },
+                    { x: 30, y: 50 },
+                    { x: 40, y: 65 },
+                    { x: 50, y: 92, indexLabel: "\u2605 Cele mai multe" },
+                    { x: 60, y: 68 },
+                    { x: 70, y: 38 },
+                    { x: 130, y: 21, indexLabel: "\u2691 Cele mai putine" }
+                ]
+            }]
+        });
+        chart.render();
+
+    }
+</script>
 </body>
 </html>

@@ -29,15 +29,8 @@
     <!-- Windows Phone -->
     <meta name="msapplication-navbutton-color" content="#36A26B">
     <!-- Safari -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="#36A26B">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <?php  require_once 'include/adds.php' ?>
+
     <script src="JS/general.js"></script>
     <link rel="stylesheet" type="text/css" href="css/general.css" />
     <link href="css/general.css">
@@ -106,21 +99,21 @@
                     <div class="col">
                         <div class="card mb-4 rounded-3">
                             <div class="card-body">
-                                <a href="category.php"> <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-1.png" alt="Imbracaminte"></a>
+                                <a href="/category?id=1&cat=Îmbrăcăminte"> <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-1.png" alt="Imbracaminte"></a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card mb-4 rounded-3">
                             <div class="card-body">
-                                <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-2.png" alt="Calculatoare si accesorii">
+                                <a href="/category?id=4&cat=Calculatoare și accesorii"><img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-2.png" alt="Calculatoare si accesorii"></a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card mb-4 rounded-3">
                             <div class="card-body">
-                                <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-3.png" alt="Calculatoare si accesorii">
+                                <a href="/category?id=6&cat=Electrocasnice"> <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-3.png" alt="Calculatoare si accesorii"> </a>
                             </div>
                         </div>
                     </div>
@@ -131,21 +124,21 @@
                     <div class="col">
                     <div class="card mb-4 rounded-3">
                         <div class="card-body">
-                            <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-4.png" alt="Mobila">
+                            <a href="/category?id=5&cat=Mobilă"><img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-4.png" alt="Mobila"></a>
                         </div>
                     </div>
                 </div>
                     <div class="col">
                     <div class="card mb-4 rounded-3">
                         <div class="card-body">
-                            <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-5.png" alt="Gradina">
+                            <a href="/category?id=2&cat=Grădină"><img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-5.png" alt="Gradina"></a>
                         </div>
                     </div>
                 </div>
                     <div class="col">
                     <div class="card mb-4 rounded-3">
                         <div class="card-body">
-                            <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-6.png" alt="Constructii">
+                            <a href="/category?id=3&cat=Construcții"><img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-6.png" alt="Constructii"></a>
                         </div>
                     </div>
                 </div>

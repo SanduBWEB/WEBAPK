@@ -45,20 +45,26 @@ else {
             </form>
             <?php if ($_SESSION['logged'] == 1): ?>
                 <div class="text-end">
+                    <div class="dropdown">
 
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false"><?php echo $_SESSION['username']; ?></button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="padding: 1em">
                     <?php if($_SESSION['role'] == "admin"): ?>
-                        <a href="../UserAdmin/comenzi" style="text-decoration:none;">
+                        <li><a href="../UserAdmin/comenzi" style="text-decoration:none; font-size: 0.9em;">Administrare magazin</a></li>
                     <?php elseif($_SESSION['role'] == "superadmin"): ?>
-                        <a href="../MainAdmin/general" style="text-decoration:none;">
+                        <li><a href="../MainAdmin/general" style="text-decoration:none;">Administrare site</a></li>
                     <?php else: ?>
-                        <a href="../User/account" style="text-decoration:none;">
+                        <li><a href="../User/useraccount.php" style="text-decoration:none;">Profil</a></li>
                     <?php endif ?>
-                        <button type="button" class="btn btn-outline-dark"><?php echo $_SESSION['username']; ?></button>
-                    </a>
-                    <a href="#" style="text-decoration:none;">
-                    <img src="../include/icons/cart-icon.png" id="cart-icon" >
-                    </a>
-                    <button type="button" class="btn btn-outline-dark" id="logout-button">Ieșire</button>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li><a href="#">Ieșire</a></li>
+                    </ul>
+                    </div>
+
+
+
                 </div>
             <?php else: ?>
                 <div class="text-end">

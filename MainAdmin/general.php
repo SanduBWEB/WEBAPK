@@ -20,6 +20,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#36A26B">
 
     <?php  require_once '../include/adds.php' ?>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
     <style>
         .c-gen-info {
