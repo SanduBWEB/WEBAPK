@@ -59,7 +59,7 @@ else {
                         <li>
                             <hr class="dropdown-divider" />
                         </li>
-                        <li><a href="#">Ieșire</a></li>
+                        <li><a href="#" id="logout-button">Ieșire</a></li>
                     </ul>
                     </div>
 
