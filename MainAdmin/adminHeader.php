@@ -7,7 +7,7 @@
 
 
     <div class="col-md-3 text-end">
-        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false" style="margin-right: 2em"><?php echo "Sandu" ?></button>
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown" aria-expanded="false" style="margin-right: 2em"><?php echo $_SESSION['username']; ?></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="padding: 1em">
             <li><a href="#" id="logout-button">Ieșire</a></li>
         </ul>

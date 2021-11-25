@@ -31,9 +31,6 @@
     <!-- Safari -->
     <?php  require_once 'include/adds.php' ?>
 
-    <script src="JS/general.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/general.css" />
-    <link href="css/general.css">
     <style>
         .sb-category {
             display: none;

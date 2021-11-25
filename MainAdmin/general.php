@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 
 
@@ -22,55 +22,6 @@
     <?php  require_once '../include/adds.php' ?>
     <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-    <style>
-        .c-gen-info {
-            background-color: rgba(12, 84, 96, 0.11);
-        }
-        form {
-            box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-            width: 50%;
-            height: 80%;
-            border: 20px solid transparent;
-            margin-left: 1em;
-            margin-bottom: 3em;
-
-        }
-        form input {
-            margin: 1em 1em 1em 0;
-        }
-
-        .divider
-        {
-            position: relative;
-            margin-top: 90px;
-            height: 1px;
-        }
-
-        .div-transparent:before
-        {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 5%;
-            right: 5%;
-            width: 90%;
-            height: 1px;
-            background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
-        }
-        .l-ex-ad img{
-            max-width: 10em;
-            margin: 1em 1em 1em 0;
-        }
-        input {
-            padding:5px;
-            border:2px solid #ccc;
-            -webkit-border-radius: 5px;
-            border-radius: 5px;
-        }
-    </style>
-
 
     <title>Dashboard</title>
 </head>
@@ -78,12 +29,15 @@
 
 <?php require_once 'adminHeader.php' ?>
 
-<div class="row g-0">
-    <div class="col-6 col-md-1">
+<div class="row">
+    <div class="col-md-1">
         <?php require_once 'adminSidebar.php' ?>
     </div>
-    <div class="col-sm-8 col-md-6">
-        <div class="container-fluid c-gen-info">
+    <div class="col-md-11">
+
+
+
+
             <p class="text-center">Logotip: </p>
             <form class="form-logo">
                 <div class="form-group">
@@ -156,9 +110,9 @@
                     </div>
                 </div>
             </form>
-        </div>
             <?php  require_once '../include/fadmin.php' ?>
         </div>
+
     </div>
 
 

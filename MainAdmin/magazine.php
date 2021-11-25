@@ -1,4 +1,5 @@
 <?php
+session_start();
 ?>
 <!doctype html>
 <html lang="en">
@@ -78,30 +79,17 @@
     </div>
 </div>
 
-<div class="d-flex" id="wrapper">
-    <!-- Sidebar-->
-    <?php require_once 'adminSidebar.php' ?>
-    <!-- Page content wrapper-->
-    <div id="page-content-wrapper">
-        <!-- Top navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0"><li class="nav-item active">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User-Name</a>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Log-Out</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Page content-->
+
+<?php require_once 'adminHeader.php' ?>
+
+
+<div class="row">
+    <div class="col-md-1">
+        <?php require_once 'adminSidebar.php' ?>
+    </div>
+    <div class="col-md-11">
         <div class="container-fluid">
-                <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addMagModal" style="margin: 1em 1em 1em 0em">Adauga magazin</button>
+            <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addMagModal" style="margin: 1em 1em 1em 0em">Adauga magazin</button>
             <table class="table table-hover">
                 <thead>
                 <tr>
@@ -136,6 +124,7 @@
         <?php  require_once '../include/fadmin.php' ?>
     </div>
 </div>
+
 
 </body>
 </html>

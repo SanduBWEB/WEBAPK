@@ -1,4 +1,5 @@
 <?php
+session_start();
 ?>
 <!doctype html>
 <html lang="en">
@@ -25,12 +26,11 @@
 <?php require_once 'adminHeader.php' ?>
 
 
-<div class="row g-0">
-    <div class="col-6 col-md-1">
+<div class="row">
+    <div class="col-md-1">
         <?php require_once 'adminSidebar.php' ?>
     </div>
-    <div class="col-sm-8 col-md-6">
-        <div class="container-fluid">
+    <div class="col-md-11">
             <div id="chartContainer" style="height: 500px; width: 100%;">
             </div>
             <br>
@@ -41,6 +41,7 @@
             <?php  require_once '../include/fadmin.php' ?>
     </div>
 </div>
+
 
 
 
