@@ -91,12 +91,12 @@ else {
 
                         <h3 class="text-center text-info">Login</h3>
                         <div class="form-group">
-                            <label for="username" class="text-info">Log-In/E-mail:</label><br>
-                            <input type="text" name="username" id="username" class="form-control">
+                            <label for="usernamelogin" class="text-info">Log-In/E-mail:</label><br>
+                            <input type="text" name="username" id="usernamelogin" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="password" class="text-info">Parola:</label><br>
-                            <input type="text" name="password" id="password" class="form-control">
+                            <label for="passwordlogin" class="text-info">Parola:</label><br>
+                            <input type="text" name="password" id="passwordlogin" class="form-control">
                         </div>
                         <div class="modal-footer">
                             <label for="remember-me" class="text-info"><span>Plaseaza-ma autentificat</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
@@ -124,8 +124,8 @@ else {
                         <h3 class="text-center text-info">Introduceti datele:</h3>
 
                         <div class="form-group">
-                            <label for="username" class="text-info">Username-ul:</label><br>
-                            <input type="text" name="username" id="username" class="form-control" required>
+                            <label for="usernamereg" class="text-info">Username-ul:</label><br>
+                            <input type="text" name="username" id="usernamereg" class="form-control" required>
                         </div>
 
                         <div class="form-group">
@@ -149,8 +149,8 @@ else {
                         </div>
 
                         <div class="form-group">
-                            <label for="password" class="text-info">Parola:</label><br>
-                            <input type="password" name="password" id="password" class="form-control" required>
+                            <label for="passwordreg" class="text-info">Parola:</label><br>
+                            <input type="password" name="password" id="passwordreg" class="form-control" required>
                         </div>
 
                         <div class="modal-footer">

@@ -34,7 +34,7 @@ if (!$products)
     <!-- Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#36A26B">
 
-    <link rel="stylesheet" type="text/css" href="css/general.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
     <?php  require_once 'include/adds.php' ?>
 
     <title>Shop GO - Marketplace</title>
