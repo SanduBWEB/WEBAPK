@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 
 
@@ -22,161 +22,193 @@
     <?php  require_once '../include/adds.php' ?>
     <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
-    <style>
-        .c-gen-info {
-            background-color: rgba(12, 84, 96, 0.11);
-        }
-        form {
-            box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-            width: 50%;
-            height: 80%;
-            border: 20px solid transparent;
-            margin-left: 1em;
-            margin-bottom: 3em;
-
-        }
-        form input {
-            margin: 1em 1em 1em 0;
-        }
-
-        .divider
-        {
-            position: relative;
-            margin-top: 90px;
-            height: 1px;
-        }
-
-        .div-transparent:before
-        {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 5%;
-            right: 5%;
-            width: 90%;
-            height: 1px;
-            background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
-        }
-        .l-ex-ad img{
-            max-width: 10em;
-            margin: 1em 1em 1em 0;
-        }
-        input {
-            padding:5px;
-            border:2px solid #ccc;
-            -webkit-border-radius: 5px;
-            border-radius: 5px;
-        }
-    </style>
-
 
     <title>Dashboard</title>
 </head>
 <body>
 
+<?php require_once 'adminHeader.php' ?>
 
+<div class="row">
+    <div class="col-md-1">
+        <?php require_once 'adminSidebar.php' ?>
+    </div>
+    <div class="col-md-11">
+        <div class="container">
 
-<div class="d-flex" id="wrapper">
-    <!-- Sidebar-->
-    <?php require_once 'adminSidebar.php' ?>
-    <!-- Page content wrapper-->
-    <div id="page-content-wrapper">
-        <!-- Top navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0"><li class="nav-item active">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User-Name</a>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Log-Out</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Page content-->
-        <div class="container-fluid c-gen-info">
-            <p class="text-center">Logotip: </p>
-            <form class="form-logo">
-                <div class="form-group">
-                    <label>Logotipul actual:</label>
-                </div>
-                <div class="grid">
-                    <div class="g-col-6 g-col-md-4">
-                        <img style="width: 150px;" src="../include/goto.png" alt="logo">
+            <!-- Project One -->
+            <div class="row">
+                <form class="form-logo">
+                    <div class="col-md-7">
+
+                        <img class="img-fluid rounded mb-3 mb-md-0" src="../include/goto.png" alt="logo">
+
+                    </div>
+                    <div class="col-md-5">
+                        <p>Alege logotip</p>
                         <input type="file" class="form-control-file" id="changelogo">
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
 
-            <div class="divider div-transparent"></div>
-            <p class="text-center">Bannere principale: </p>
-            <form class="form-logo">
-                <div class="form-group">
-                    <label>Bannerele actuale:</label>
-                </div>
-                <div class="form-group l-ex-ad">
-                    <div class="grid">
-                        <div class="g-col-6 g-col-md-4">
-                            <img src="../include/images/b-category-1.png" alt="b1">
-                            <input type="file" class="form-control-file" id="changebanner1">
-                        </div>
-                        <div class="g-col-6 g-col-md-4">
-                            <img src="../include/images/b-category-2.png" alt="b2">
-                            <input type="file" class="form-control-file" id="changebanner2">
-                        </div>
-                        <div class="g-col-6 g-col-md-4">
-                            <img src="../include/images/b-category-3.png" alt="b3">
-                            <input type="file" class="form-control-file" id="changebanner3">
-                        </div>
-                    </div>
-                </div>
-            </form>
+            <hr>
 
-            <div class="divider div-transparent"></div>
-            <p class="text-center">Bannere categorii: </p>
-            <form class="form-logo">
-                <div class="form-group">
-                    <label>Bannerele actuale:</label>
-                </div>
-                <div class="form-group l-ex-ad">
-                    <div class="grid">
-                        <div class="g-col-6 g-col-md-4">
-                            <img src="../include/images/bc-category-1.png" alt="logo">
-                            <input type="file" class="form-control-file" id="bc-category-1.png">
-                        </div>
-                        <div class="g-col-6 g-col-md-4">
-                            <img src="../include/images/bc-category-2.png" alt="logo">
-                            <input type="file" class="form-control-file" id="bc-category-2.png">
-                        </div>
-                        <div class="g-col-6 g-col-md-4">
-                            <img src="../include/images/bc-category-3.png" alt="logo">
-                            <input type="file" class="form-control-file" id="bc-category-3.png">
-                        </div>
-                        <div class="g-col-6 g-col-md-4">
-                            <img src="../include/images/bc-category-4.png" alt="logo">
-                            <input type="file" class="form-control-file" id="bc-category-4.png">
-                        </div>
-                        <div class="g-col-6 g-col-md-4">
-                            <img src="../include/images/bc-category-5.png" alt="logo">
-                            <input type="file" class="form-control-file" id="bc-category-5.png">
-                        </div>
-                        <div class="g-col-6 g-col-md-4">
-                            <img src="../include/images/bc-category-6.png" alt="logo">
-                            <input type="file" class="form-control-file" id="bc-category-6.png">
-                        </div>
+
+            <div class="row">
+                <form class="form-logo">
+                    <div class="col-md-7">
+
+                        <img class="img-fluid rounded mb-3 mb-md-0" src="../include/images/b-category-1.png" alt="b1">
+
                     </div>
-                </div>
-            </form>
+                    <div class="col-md-5">
+                        <p>Alege banner carousel #1</p>
+                        <input type="file" class="form-control-file" id="changebanner1">
+                    </div>
+                </form>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <form class="form-logo">
+                    <div class="col-md-7">
+
+                        <img class="img-fluid rounded mb-3 mb-md-0" src="../include/images/b-category-2.png" alt="b2">
+
+                    </div>
+                    <div class="col-md-5">
+                        <p>Alege banner carousel #2</p>
+                        <input type="file" class="form-control-file" id="changebanner2">
+                    </div>
+                </form>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <form class="form-logo">
+                    <div class="col-md-7">
+
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../include/images/b-category-3.png" alt="b3">
+
+
+                    </div>
+                    <div class="col-md-5">
+                        <p>Alege banner carousel #3</p>
+                        <input type="file" class="form-control-file" id="changebanner3">
+                    </div>
+                </form>
+            </div>
+
+
+            <hr>
+
+            <div class="row">
+                <form class="form-logo">
+                    <div class="col-md-7">
+
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../include/images/bc-category-1.png" alt="logo">
+
+
+                    </div>
+                    <div class="col-md-5">
+                        <p>Alege banner categorie #1</p>
+                        <input type="file" class="form-control-file" id="bc-category-1.png">
+                    </div>
+                </form>
+            </div>
+
+
+            <hr>
+
+            <div class="row">
+                <form class="form-logo">
+                    <div class="col-md-7">
+
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../include/images/bc-category-2.png" alt="logo">
+
+
+                    </div>
+                    <div class="col-md-5">
+                        <p>Alege banner categorie #2</p>
+                        <input type="file" class="form-control-file" id="bc-category-2.png">
+                    </div>
+                </form>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <form class="form-logo">
+                    <div class="col-md-7">
+
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../include/images/bc-category-3.png" alt="logo">
+
+
+                    </div>
+                    <div class="col-md-5">
+                        <p>Alege banner categorie #3</p>
+                        <input type="file" class="form-control-file" id="bc-category-3.png">
+                    </div>
+                </form>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <form class="form-logo">
+                    <div class="col-md-7">
+
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../include/images/bc-category-4.png" alt="logo">
+
+                    </div>
+                    <div class="col-md-5">
+                        <p>Alege banner categorie #4</p>
+                        <input type="file" class="form-control-file" id="bc-category-4.png">
+                    </div>
+                </form>
+            </div>
+
+
+            <hr>
+
+            <div class="row">
+                <form class="form-logo">
+                    <div class="col-md-7">
+
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../include/images/bc-category-5.png" alt="logo">
+
+
+                    </div>
+                    <div class="col-md-5">
+                        <p>Alege banner categorie #5</p>
+                        <input type="file" class="form-control-file" id="bc-category-5.png">
+                    </div>
+                </form>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <form class="form-logo">
+                    <div class="col-md-7">
+
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../include/images/bc-category-6.png" alt="logo">
+
+
+                    </div>
+                    <div class="col-md-5">
+                        <p>Alege banner categorie #6</p>
+                        <input type="file" class="form-control-file" id="bc-category-6.png">
+                    </div>
+                </form>
+            </div>
+
+            <?php  require_once '../include/fadmin.php' ?>
         </div>
-        <?php  require_once '../include/fadmin.php' ?>
+
     </div>
-</div>
 
 
 </body>
