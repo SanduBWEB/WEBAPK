@@ -77,6 +77,11 @@ header {
     padding-left: 2em;
     padding-right: 2em;
 }
+
+.carousel-item {
+    transition: transform .6s ease-in-out !important;
+}
+
 .info-marketplace {
     background-color: rgb(190,247,244);
 }

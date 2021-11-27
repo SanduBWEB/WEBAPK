@@ -221,7 +221,8 @@ session_start();
 
         var element = $(this).attr('id');
         console.log(`input changed for file ${element}`);
-        var inputImageSource = $(this).parent().find("img");
+        //var inputImageSource = $(this).parent().find("img");
+        var inputImageSource = $(this).closest("form").find("img"); // finds the img element in form
         var extension = this.files[0].name.split('.').pop().toLowerCase();
         console.log(extension);
 
@@ -241,9 +242,11 @@ session_start();
             var blob = newImage;
             newFile = new File([blob],element,{type: 'image/png'}); // edit so the name is the needen filename for the this.files[0].name
             formData.append('file', newFile);
+            formData.append('filePath', "/include/images/"); // the path in wich file will be uploaded (starting from the host root folder aka: marketplace/)
             var fileName = (newFile['name']);
             console.log("Final file name that gone to the database is : "+fileName);
-
+            
+            // upload the file on the host/
             $.ajax(
                 {
                     url: 'uploadFile.php',

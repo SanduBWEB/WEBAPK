@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -24,61 +25,6 @@ session_start();
 <body>
 
 
-<!-- Modal -->
-<div class="modal fade" id="addMagModal" tabindex="-1" aria-labelledby="addMagLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="addMagLabel">Adauga Magazin Nou</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="accesEmail" class="form-label">Email acces</label>
-                        <input type="email" class="form-control" id="accesEmail" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">Email Persoanei care are acces la magazin.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="nameStore" class="form-label">Nume Magazin</label>
-                        <input type="text" class="form-control" id="nameStore">
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Esi !</button>
-                    <button type="button" class="btn btn-primary">Salveaza</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="redactMagModal" tabindex="-1" aria-labelledby="addMagLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form>
-            <div class="modal-header">
-                <h5 class="modal-title" id="redactMagLabel">Redacteaza acces, magazin: <?php echo "Name Magazin"?></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="redactEmail" class="form-label">Email acces</label>
-                        <input type="email" class="form-control" id="accesEmail" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">Email Persoanei care are acces la magazin.</div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Esi !</button>
-                    <button type="button" class="btn btn-primary">Salveaza</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
 
 <?php require_once 'adminHeader.php' ?>
 
@@ -88,38 +34,22 @@ session_start();
         <?php require_once 'adminSidebar.php' ?>
     </div>
     <div class="col-md-11">
+
         <div class="container-fluid">
-            <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addMagModal" style="margin: 1em 1em 1em 0em">Adauga magazin</button>
-            <table class="table table-hover">
-                <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nume</th>
-                    <th scope="col">Produse</th>
-                    <th scope="col">Adaugat (Persoana)</th>
-                    <th scope="col">Setari Acces</th>
-                    <th scope="col">#</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Trash IT</td>
-                    <td>200</td>
-                    <td>Sandu</td>
-                    <td><button data-bs-toggle="modal" data-bs-target="#redactMagModal" class="btn btn-warning">Redacteaza</button></td>
-                    <td><button class="btn btn-danger">Sterge</button></td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Smart Price</td>
-                    <td>15</td>
-                    <td>Sandu</td>
-                    <td><button data-bs-toggle="modal" data-bs-target="#redactMagModal" class="btn btn-warning">Redacteaza</button></td>
-                    <td><button class="btn btn-danger">Sterge</button></td>
-                </tr>
-                </tbody>
-            </table>
+
+            <nav class="navbar navbar-light bg-light">
+                <form class="form-inline" style="min-height: 37px;">
+                    <button class="table-list btn btn-outline-success" type="button" data-tblId="0">Categorii</button>
+                    <button class="table-list btn btn-outline-secondary btn-sm" type="button" data-tblId="1">Subcategorii</button>
+                    <button class="table-list btn btn-outline-secondary btn-sm" type="button" data-tblId="2">Magazine</button>
+                </form>
+            </nav>
+
+            <div id="content-container">  <!-- data taken from database -->
+
+                
+            </div>
+
         </div>
         <?php  require_once '../include/fadmin.php' ?>
     </div>
@@ -127,4 +57,51 @@ session_start();
 
 
 </body>
+
+<script>
+
+const LISTA = document.getElementsByClassName("table-list");
+
+$(LISTA).click( function() {
+  /*  this.classList.toggle('table-list');*/
+ /* lista.forEach(item => item.className = "table-list");*/
+  for (var i=0 ; i < LISTA.length; i++) {
+    LISTA.item(i).className = "table-list btn btn-outline-secondary btn-sm";
+  }
+  this.className = "table-list btn btn-outline-success";
+  //var txt= $(this).text();
+  //$("#table-name").text(txt);
+  var table_id = $(this).attr("data-tblId"); //get table id name from the sidebar list (from up ->down) first- 0
+  console.log(table_id);
+
+  
+  
+  $.ajax({
+      url: "tableData.php",
+      dataType: "text",
+      type: "GET",
+      data: {
+          tbl_id: table_id
+      },
+      success: function(returndata) {
+        if (!$.trim(returndata)){  
+            console.log("empty");
+        } 
+        else {
+            $("#content-container").html(returndata); //display extracted db data into html as table, HERE .table-container
+            //display_data(returndata);
+            
+            //changeSearchFilter(table_id);
+        }
+      }
+  }); //.done(function(returndata) {
+
+    //});
+
+});
+
+
+</script>
+
+
 </html>

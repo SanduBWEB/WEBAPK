@@ -8,6 +8,7 @@ $sql = "SELECT a.*, b.subcategory_name, c.market_name FROM `product_data` a
             JOIN subcategories b ON a.subcategory_id = b.id
             JOIN market_data c ON a.market_id = c.id
             WHERE a.id = $pid";
+
 $product = mysqli_query($link,$sql);
 $rows = mysqli_num_rows($product); //nr de inscrieri;
 
