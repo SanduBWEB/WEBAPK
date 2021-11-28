@@ -60,13 +60,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="include/images/b-category-1.png" class="d-block w-100" alt="Market Gata">
+                    <img src="assets/categories/b-category-1.png" class="d-block w-100" alt="Market Gata">
                 </div>
                 <div class="carousel-item">
-                    <img src="include/images/b-category-2.png" class="d-block w-100" alt="Solutii individuale">
+                    <img src="assets/categories/b-category-2.png" class="d-block w-100" alt="Solutii individuale">
                 </div>
                 <div class="carousel-item">
-                    <img src="include/images/b-category-3.png" class="d-block w-100" alt="Rapid si Sigur">
+                    <img src="assets/categories/b-category-3.png" class="d-block w-100" alt="Rapid si Sigur">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -91,57 +91,73 @@
 
     <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
+
             <div class="carousel-item active">
                 <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
                     <div class="col">
                         <div class="card mb-4 rounded-3">
                             <div class="card-body">
-                                <a href="/category?id=1&cat=Îmbrăcăminte"> <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-1.png" alt="Imbracaminte"></a>
+                                <a href="/category?id=1&cat=Îmbrăcăminte"> 
+                                <img class="img-responsive" style="max-width: 300px" 
+                                src="assets/categories/cat-1.png" alt="Imbracaminte"></a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card mb-4 rounded-3">
                             <div class="card-body">
-                                <a href="/category?id=4&cat=Calculatoare și accesorii"><img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-2.png" alt="Calculatoare si accesorii"></a>
+                                <a href="/category?id=4&cat=Calculatoare și accesorii">
+                                <img class="img-responsive" style="max-width: 300px" 
+                                src="assets/categories/cat-4.png" alt="Calculatoare si accesorii"></a>
                             </div>
                         </div>
                     </div>
                     <div class="col">
                         <div class="card mb-4 rounded-3">
                             <div class="card-body">
-                                <a href="/category?id=6&cat=Electrocasnice"> <img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-3.png" alt="Calculatoare si accesorii"> </a>
+                                <a href="/category?id=6&cat=Electrocasnice"> 
+                                <img class="img-responsive" style="max-width: 300px" 
+                                src="assets/categories/cat-6.png" alt="Electrocasnice"> </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="carousel-item">
                 <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
                     <div class="col">
                     <div class="card mb-4 rounded-3">
                         <div class="card-body">
-                            <a href="/category?id=5&cat=Mobilă"><img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-4.png" alt="Mobila"></a>
+                            <a href="/category?id=5&cat=Mobilă">
+                            <img class="img-responsive" style="max-width: 300px" 
+                            src="assets/categories/cat-5.png" alt="Mobila"></a>
                         </div>
                     </div>
                 </div>
                     <div class="col">
                     <div class="card mb-4 rounded-3">
                         <div class="card-body">
-                            <a href="/category?id=2&cat=Grădină"><img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-5.png" alt="Gradina"></a>
+                            <a href="/category?id=2&cat=Grădină">
+                            <img class="img-responsive" style="max-width: 300px" 
+                            src="assets/categories/cat-2.png" alt="Gradina"></a>
                         </div>
                     </div>
                 </div>
                     <div class="col">
                     <div class="card mb-4 rounded-3">
                         <div class="card-body">
-                            <a href="/category?id=3&cat=Construcții"><img class="img-responsive" style="max-width: 300px" src="include/images/bc-category-6.png" alt="Constructii"></a>
+                            <a href="/category?id=3&cat=Construcții">
+                            <img class="img-responsive" style="max-width: 300px" 
+                            src="assets/categories/cat-3.png" alt="Constructii"></a>
                         </div>
                     </div>
                 </div>
                 </div>
             </div>
+
         </div>
+
         <button class="carousel-control-prev" type="button" data-bs-target="#categoryCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -150,6 +166,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
+
     </div>
 </section>
 

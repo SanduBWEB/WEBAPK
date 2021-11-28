@@ -14,6 +14,7 @@ function query($queryString) {
     return $query;
 }
 
+
 // get markets data + market admins srname+name;
 $sql = "SELECT b.*, c.surname, c.name FROM market_admins a JOIN market_data b ON a.market_id = b.id
 JOIN users c ON a.user_id = c.id";
@@ -159,6 +160,45 @@ switch ($table_id) {
         $subcatRows = mysqli_num_rows($subcategories);
         ?>               
 
+        <!-- CHANGE FORM ID AND UPDATE PHP VAR FOR ID OF THE CURRENT SUBCAT THAT IS CHANGED -->
+        <?php 
+            if (isset($_GET['newCat'])) {
+                $currentCatId = $_GET['newCat'];  // update the parent cat when selecting to update a subcategory
+                echo $currentCatId;
+            }
+        ?>
+        <script> 
+            // when update button is clicked, change modal id and send the id to php matching to the current category
+            function setModalId(element, curId, parentId){ // element - button pressed, curID - current subcat id, parentId - category id
+                $("#updateCat").attr("data-currentId", curId); // set the editing modal form id just in case
+                console.log(curId);
+                $("#updateSubcategory").attr("data-subcat-id", curId) // updating the save button's id matching the current subcategory thats edited
+                var curName = $(element).closest("tr").find("td[data-field=subcategory_name]").text();
+                $("#uSelectedCategory").val(parentId).change();
+                $("#uNameSubCategory").val(curName);
+                console.log(curName);
+                // $.ajax({
+                //     url: location.href,
+                //     dataType: "text",
+                //     type: "GET",
+                //     data: {
+                //         newCat: newId
+                //     },
+                //     success: function(returndata) {
+                //         if (!$.trim(returndata)){  
+                //             console.log("empty");
+                //         } 
+                //         else {
+                //             //console.log(returndata);
+                //         }
+                //     }
+                // });
+            }
+        
+        </script>
+        <!-- CHANGE FORM ID AND UPDATE PHP VAR FOR ID OF THE CURRENT SUBCAT THAT IS CHANGED -->
+
+
         <table class="table table-hover">
             <thead>
             <tr>
@@ -179,9 +219,10 @@ switch ($table_id) {
                     
                     <tr>
                         <th scope="row" data-id="<?php echo $subcat['id'] ?>" ><?php echo $subcat['id'] ?></th>
-                        <td> <?php echo $subcat['subcategory_name'] ?> </td>
-                        <td> <?php echo $subcat['category_name'] ?> </td>
-                        <td><button data-bs-toggle="modal" data-bs-target="#updateCat" class="btn btn-warning">Redacteaza</button></td>
+                        <td data-field="subcategory_name"> <?php echo $subcat['subcategory_name'] ?> </td>
+                        <td data-field="category_name"> <?php echo $subcat['category_name'] ?> </td>
+                        <td><button data-parentCat="<?php echo $subcat['category_id'] ?>" data-catId="<?php echo $subcat['id'] ?>" data-bs-toggle="modal" data-bs-target="#updateCat" 
+                        onclick="setModalId( this, $(this).attr('data-catId'), $(this).attr('data-parentCat') )" class="btn btn-warning">Redacteaza</button></td>
                         <td><button class="btn btn-danger">Sterge</button></td>
                         <td></td>
                     </tr>
@@ -243,25 +284,48 @@ switch ($table_id) {
                     <form>
 
                         <div class="modal-body">
+
+
                             <div class="mb-3">
                                 <label for="updateSubcategory" class="form-label">Denumirea Subcategoriei</label>
-                                <input type="text" class="form-control" id="accesEmail" aria-describedby="subcategoryHelp" placeholder="Denumire subcategorie">
+                                <input id="uNameSubCategory" type="text" name="catName" class="form-control" aria-describedby="subcategoryHelp" placeholder="Denumire subcategorie">
                                 <div id="subcategoryHelp" class="form-text"></div>
                             </div>
 
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Esi !</button>
-                            <button type="button" class="btn btn-primary">Salveaza</button>
+                            <label for="selectCategory" class="form-label">Categoria</label>
+                            <div class="mb-3">
+                                <select id="uSelectedCategory" class="custom-select custom-select-lg mb-3" style="width: 100%; min-height: 50px;"
+                                onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                                    
+                                    <!-- <option selected>Open this select menu</option> -->
+
+                                    <?php 
+                                        $categories = query("SELECT * FROM categories ORDER BY id");//id, category_name
+                                        $rows = mysqli_num_rows($categories);
+                                        for ($i=0; $i < $rows; $i++): 
+                                        $cat = mysqli_fetch_assoc($categories);
+                                    ?>
+                                    
+                                    <option value="<?php echo $cat['id'] ?>">  <?php echo $cat['category_name'] ?> </option>
+                                    
+                                    <?php endfor ?>
+                                </select>
+                            </div>
+
+
                         </div>
 
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Esi !</button>
+                            <button id="updateSubcategory" data-subcat-id="" type="button" class="btn btn-primary">Salveaza</button>
+                        </div>
+                        
                     </form>
 
                 </div>
             </div>
         </div>
         <!-- Modals -->
-        
         
         <?php
         break;

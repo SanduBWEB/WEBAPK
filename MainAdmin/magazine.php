@@ -23,7 +23,14 @@ session_start();
     <title>Document</title>
 </head>
 <body>
+<style> 
 
+option:hover {
+    background: #bababa4d;
+    cursor: pointer;
+}
+
+</style>
 
 
 <?php require_once 'adminHeader.php' ?>
@@ -37,11 +44,21 @@ session_start();
 
         <div class="container-fluid">
 
-            <nav class="navbar navbar-light bg-light">
-                <form class="form-inline" style="min-height: 37px;">
-                    <button class="table-list btn btn-outline-success" type="button" data-tblId="0">Categorii</button>
-                    <button class="table-list btn btn-outline-secondary btn-sm" type="button" data-tblId="1">Subcategorii</button>
-                    <button class="table-list btn btn-outline-secondary btn-sm" type="button" data-tblId="2">Magazine</button>
+            <nav class="navbar navbar-light bg-light justify-content-between">
+
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <form class="form-inline" style="min-height: 37px;">
+                            <button class="table-list btn btn-outline-success" type="button" data-tblId="0">Categorii</button>
+                            <button class="table-list btn btn-outline-secondary btn-sm" type="button" data-tblId="1">Subcategorii</button>
+                            <button class="table-list btn btn-outline-secondary btn-sm" type="button" data-tblId="2">Magazine</button>
+                        </form>
+                    </li>
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0" style="display: inline-flex;">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Caută" aria-label="Caută" style="margin: auto 5px;">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="button">Căutare</button>
                 </form>
             </nav>
 

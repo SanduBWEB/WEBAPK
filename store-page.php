@@ -6,7 +6,7 @@ require_once "generalConfig.php";
 $mid = $_GET['mid']; // market_id
 $cid = $_GET['cid']; // category_id
 
-$sql = "SELECT * FROM `subcategories` WHERE category_id = $cid AND market_id = $mid";
+$sql = "SELECT * FROM `subcategories` WHERE category_id = $cid";// print_r($sql);
 $subcategories = mysqli_query($link,$sql);
 $rows = mysqli_num_rows($subcategories); //nr de inscrieri;
 

@@ -41,7 +41,7 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0" src="../include/goto.png" alt="logo">
+                        <img class="img-fluid rounded mb-3 mb-md-0" src="../assets/goto.png" alt="logo">
 
                     </div>
                     <div class="col-md-5">
@@ -58,7 +58,7 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0" src="../include/images/b-category-1.png" alt="b1">
+                        <img class="img-fluid rounded mb-3 mb-md-0" src="../assets/categories/b-category-1.png" alt="b1">
 
                     </div>
                     <div class="col-md-5">
@@ -74,7 +74,7 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0" src="../include/images/b-category-2.png" alt="b2">
+                        <img class="img-fluid rounded mb-3 mb-md-0" src="../assets/categories/b-category-2.png" alt="b2">
 
                     </div>
                     <div class="col-md-5">
@@ -90,7 +90,7 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../include/images/b-category-3.png" alt="b3">
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/b-category-3.png" alt="b3">
 
 
                     </div>
@@ -108,7 +108,7 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../include/images/bc-category-1.png" alt="logo">
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/bc-category-1.png" alt="logo">
 
 
                     </div>
@@ -126,7 +126,7 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../include/images/bc-category-2.png" alt="logo">
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/bc-category-2.png" alt="logo">
 
 
                     </div>
@@ -143,7 +143,7 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../include/images/bc-category-3.png" alt="logo">
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/bc-category-3.png" alt="logo">
 
 
                     </div>
@@ -160,7 +160,7 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../include/images/bc-category-4.png" alt="logo">
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/bc-category-4.png" alt="logo">
 
                     </div>
                     <div class="col-md-5">
@@ -177,7 +177,7 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../include/images/bc-category-5.png" alt="logo">
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/bc-category-5.png" alt="logo">
 
 
                     </div>
@@ -194,7 +194,7 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../include/images/bc-category-6.png" alt="logo">
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/bc-category-6.png" alt="logo">
 
 
                     </div>
