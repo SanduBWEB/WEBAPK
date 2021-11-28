@@ -108,13 +108,13 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/bc-category-1.png" alt="logo">
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/cat-1.png" alt="logo">
 
 
                     </div>
                     <div class="col-md-5">
                         <p>Alege banner categorie #1</p>
-                        <input type="file" class="form-control-file" id="bc-category-1.png">
+                        <input type="file" class="form-control-file" id="cat-1.png">
                     </div>
                 </form>
             </div>
@@ -126,13 +126,13 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/bc-category-2.png" alt="logo">
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/cat-2.png" alt="logo">
 
 
                     </div>
                     <div class="col-md-5">
                         <p>Alege banner categorie #2</p>
-                        <input type="file" class="form-control-file" id="bc-category-2.png">
+                        <input type="file" class="form-control-file" id="cat-2.png">
                     </div>
                 </form>
             </div>
@@ -143,13 +143,13 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/bc-category-3.png" alt="logo">
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/cat-3.png" alt="logo">
 
 
                     </div>
                     <div class="col-md-5">
                         <p>Alege banner categorie #3</p>
-                        <input type="file" class="form-control-file" id="bc-category-3.png">
+                        <input type="file" class="form-control-file" id="cat-3.png">
                     </div>
                 </form>
             </div>
@@ -160,12 +160,12 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/bc-category-4.png" alt="logo">
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/cat-4.png" alt="logo">
 
                     </div>
                     <div class="col-md-5">
                         <p>Alege banner categorie #4</p>
-                        <input type="file" class="form-control-file" id="bc-category-4.png">
+                        <input type="file" class="form-control-file" id="cat-4.png">
                     </div>
                 </form>
             </div>
@@ -177,13 +177,13 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/bc-category-5.png" alt="logo">
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/cat-5.png" alt="logo">
 
 
                     </div>
                     <div class="col-md-5">
                         <p>Alege banner categorie #5</p>
-                        <input type="file" class="form-control-file" id="bc-category-5.png">
+                        <input type="file" class="form-control-file" id="cat-5.png">
                     </div>
                 </form>
             </div>
@@ -194,13 +194,13 @@ session_start();
                 <form class="form-logo">
                     <div class="col-md-7">
 
-                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/bc-category-6.png" alt="logo">
+                        <img class="img-fluid rounded mb-3 mb-md-0"  src="../assets/categories/cat-6.png" alt="logo">
 
 
                     </div>
                     <div class="col-md-5">
                         <p>Alege banner categorie #6</p>
-                        <input type="file" class="form-control-file" id="bc-category-6.png">
+                        <input type="file" class="form-control-file" id="cat-6.png">
                     </div>
                 </form>
             </div>
