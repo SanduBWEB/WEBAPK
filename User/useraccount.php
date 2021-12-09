@@ -61,16 +61,23 @@
                     <div class="container">
                         <h2>Navigare rapida:</h2>
                         <hr />
-                        <a style="text-decoration: none;" href="/">
-                            <h5>1. Pagina principala.</h5>
-                        </a>
-                        <a style="text-decoration: none;" href="../orders.php">
-                            <h5>2. Comenzile mele.</h5>
-                        </a>
-                        <a style="text-decoration: none;" href="/">
-                            <h5>3. Delogheaza-ma.</h5>
-                        </a>
-
+                        <div class="d-grid gap-2 ">
+                            <a style="text-decoration: none;" href="/">
+                                <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark">
+                                    1. Pagina principala.
+                                </button>
+                            </a>
+                            <a style="text-decoration: none;" href="../orders.php">
+                                <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark">
+                                2. Comenzile mele.
+                                </button>
+                            </a>
+                            <a style="text-decoration: none;" href="/">
+                                <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark">
+                                3. Delogheaza-ma.
+                                </button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

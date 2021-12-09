@@ -108,7 +108,7 @@ else {
                         </div>
                         <div class="form-group">
                             <label for="passwordlogin" class="text-info">Parola:</label><br>
-                            <input type="text" name="password" id="passwordlogin" class="form-control">
+                            <input type="password" name="password" id="passwordlogin" class="form-control">
                         </div>
                         <div class="modal-footer">
                             <label for="remember-me" class="text-info"><span>Plaseaza-ma autentificat</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
