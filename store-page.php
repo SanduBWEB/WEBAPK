@@ -40,7 +40,7 @@ if (!$subcategories)
     </head>
     <body>
         <?php  require_once 'include/generaltopnav.php' ?>
-        <section class="store-category-b">
+        <section class="store-category-b" style="margin-top: 3vh;">
             <div class="row">
 
                 <?php if ($rows===0): ?>
@@ -55,7 +55,8 @@ if (!$subcategories)
                         <div class="col">
                             <a href="assortment?mid=<?php echo $mid ?>&sid=<?php echo $category['id'] ?>&cn=<?php echo $category['subcategory_name'] ?>" style="text-decoration: none;">
                             <div class="card shadow-sm" style="max-width: 400px; margin-bottom: 2em; margin-left: 4em">
-                                <img style="max-height: 400px; max-width: 350px; align-self: center;" src="markets/<?php echo $mid ?>/categories/<?php echo $category['id'] ?>.jpg">
+                                <img style="max-height: 400px; max-width: 350px; align-self: center;" src="assets/subcategories/<?php echo $category['id'] ?>.png"> 
+                                <!-- src="markets/<?php //echo $mid ?>/categories/<?php //echo $category['id'] ?>.jpg -->
                                 <div class="card-body">
                                     <p class="text-center"><?php echo $category['subcategory_name'] ?></p>
                                 </div>

@@ -18,7 +18,7 @@
     <div class="container d-flex flex-wrap">
 
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
-            <img class="bi me-2" width="80em" src="../include/goto.png" aria-label="Bootstrap" alt="logo marketplace">
+            <img class="bi me-2" width="80em" src="../assets/goto.png" aria-label="Bootstrap" alt="logo marketplace">
         </a>
 
         <ul class="nav me-auto">

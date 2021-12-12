@@ -42,7 +42,7 @@ if (!$products)
 <body>
 <?php  require_once 'include/generaltopnav.php' ?>
 
-<section class="assortment-list">
+<section class="assortment-list" style="margin-top: 3vh;">
     <div class="container">
 
         <?php if ($rows===0): ?>

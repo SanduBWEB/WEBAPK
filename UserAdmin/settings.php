@@ -5,16 +5,18 @@ require_once  $_SERVER['DOCUMENT_ROOT'] . "/generalConfig.php";
 //echo "".$_GET['cat']."";
 $sql = "SELECT a.*, b.market_name 
                 FROM `subcategories` a 
-                    JOIN `market_data` b ON a.market_id = b.id 
-                    JOIN `market_admins` c ON b.id = c.market_id 
+                    JOIN `market_data` b ON b.market_id = a.id 
+                    JOIN `market_admins` c ON c.id = b.market_id 
                 WHERE c.user_id = ".$_SESSION['user_id']."";
 print_r($sql);
 //print_r($_SESSION['logged']);
-$categories =  mysqli_query($link,$sql);
+
+//$categories =  mysqli_query($link,$sql);
+
 $market = mysqli_query($link, "SELECT a.* FROM `market_data` a  JOIN `market_admins` b ON a.id = b.market_id WHERE b.user_id = ".$_SESSION['user_id']."");
 //$rows = mysqli_num_rows($market); //nr de inscrieri;
 
-if (!$market || !$categories)
+if (!$market)
 {
     die('Error in cautare' . mysqli_error($link));
 } 
@@ -41,7 +43,7 @@ print_r($marketData);
     <div class="container d-flex flex-wrap">
 
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none">
-            <img class="bi me-2" width="80em" src="../include/goto.png" aria-label="Bootstrap" alt="logo marketplace">
+            <img class="bi me-2" width="80em" src="../assets/goto.png" aria-label="Bootstrap" alt="logo marketplace">
         </a>
 
         <ul class="nav me-auto">
@@ -83,7 +85,7 @@ print_r($marketData);
 </section>
 
 <hr>
-
+<!-- 
 <section class="subcategory">
     <div class="container">
         <table class="table">
@@ -126,6 +128,6 @@ print_r($marketData);
             </tbody>
         </table>
     </div>
-</section>
+</section> -->
 </body>
 </html>

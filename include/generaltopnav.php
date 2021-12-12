@@ -164,7 +164,7 @@ else {
         </div>
     </div>
 </section>
-<div class="container sb-category">
+<!-- <div class="container sb-category">
     <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
             <a class="p-2 link-secondary" href="#">Subcategorie 1</a>
@@ -172,7 +172,7 @@ else {
             <a class="p-2 link-secondary" href="#">Subcategorie 3</a>
         </nav>
     </div>
-</div>
+</div> -->
 <script>
 
 

@@ -42,7 +42,7 @@ if (!$markets)
 </head>
 <body>
     <?php require_once 'include/generaltopnav.php'; ?>
-        <section class="markets">
+        <section class="markets" style="margin-top: 3vh;">
             <div class="container px-4 py-5" id="custom-cards">
                 <?php if ($rows===0): ?>
                     <h2 class="pb-2 border-bottom">Nu a fost găsit nici un magazin</h2>
@@ -57,7 +57,7 @@ if (!$markets)
                         ?>
                             <!-- single market -->
                             <div class="col">
-                                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('markets/<?php echo $market['id'] ?>/banner.jpg');">
+                                <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('assets/markets/<?php echo $market['id'] ?>.png'); background-size: cover;">
                                     <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                                         <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><?php echo $market['market_name'] ?></h2>
                                         <ul class="d-flex list-unstyled mt-auto">
