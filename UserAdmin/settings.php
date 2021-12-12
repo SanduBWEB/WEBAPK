@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 require_once  $_SERVER['DOCUMENT_ROOT'] . "/generalConfig.php";
 //echo "".$_GET['cat']."";
 $sql = "SELECT a.*, b.market_name 
