@@ -1,4 +1,25 @@
 <?php
+session_start();
+
+
+function query($queryString) {
+    require $_SERVER['DOCUMENT_ROOT'] . "/generalConfig.php";
+
+    //echo $queryString . "\n";
+    $query = mysqli_query($link,$queryString);
+    if (!$query)
+    {
+        die('Database querry error( tableData.php:8 ): ' . mysqli_error($link));
+    } 
+
+    return $query;
+}
+
+
+$product_data = query("SELECT a.* FROM `market_admins` b JOIN
+`product_data` a ON b.market_id = a.market_id
+WHERE
+b.user_id = ".$_SESSION['user_id']." ");
 
 
 
@@ -48,46 +69,64 @@
 <!-- Modal -->
 <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModal" aria-hidden="true">
     <div class="modal-dialog">
+
         <div class="modal-content">
+
+
             <div class="modal-header">
                 <h5 class="modal-title" id="addProductModal">Completeaza toate spatiile cu informatia despre produs !</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <form>
+
+            <form id="add-product">
+
+                <div class="modal-body">
+
+                    <!-- FIELDS -->
                     <div class="mb-3">
-                        <label for="CodProdus" class="form-label">Cod Produs</label>
-                        <input type="text" class="form-control" id="cod-produs">
+                        <label class="form-label">Cod Produs</label>
+                        <input type="text" class="form-control" id="cod-produs" name="product-code">
                     </div>
+                    
                     <div class="mb-3">
-                        <label for="NumeProdus" class="form-label">Nume Produs</label>
-                        <input type="text" class="form-control" id="name-produs">
+                        <label class="form-label">Nume Produs</label>
+                        <input type="text" class="form-control" id="name-produs" name="product-name">
                     </div>
+
                     <div class="mb-3">
-                        <label for="PretProdus" class="form-label">Pret Produs</label>
-                        <input type="number" class="form-control" id="produc-price">
+                        <label class="form-label">Pret Produs</label>
+                        <input type="number" class="form-control" id="produc-price" name="product-price">
                     </div>
+                    
                     <div class="mb-3">
-                        <label for="prozaprodus1" class="form-label">Poza produs #1</label>
+                        <label class="form-label">Poza produs #1</label>
                         <input class="form-control" type="file" id="pozaprodus1">
-                        <label for="prozaprodus2" class="form-label">Poza produs #2</label>
+                        <label class="form-label">Poza produs #2</label>
                         <input class="form-control" type="file" id="pozaprodus2">
-                        <label for="prozaprodus3" class="form-label">Poza produs #3</label>
+                        <label class="form-label">Poza produs #3</label>
                         <input class="form-control" type="file" id="pozaprodus3">
                     </div>
+
                     <div class="mb-3">
+
                         <div class="mb-3">
                             <label for="DescriereScurta" class="form-label">Descriere scurta:</label>
                             <textarea class="form-control" id="DescriereScurta" rows="3"></textarea>
                         </div>
+
                     </div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Renunta</button>
-                <button type="button" class="btn btn-primary">Salveaza</button>
-            </div>
+                    <!-- FIELDS -->
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Renunta</button>
+                    <button type="submit" class="btn btn-primary">Salveaza</button>
+                </div>
+                    
             </form>
+
         </div>
     </div>
 </div>
@@ -100,23 +139,37 @@
             Adauga produs
         </button>
 
-        <table class="table">
+        <table class="table" id="product-table">
             <thead>
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Cod Produs</th>
                 <th scope="col">Nume Produs</th>
+                <th scope="col">Pret Produs, lei</th>
                 <th scope="col">Sterge</th>
             </tr>
             </thead>
+
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>COD123</td>
-                <td>Produs 1</td>
-                <td><form><button class="btn btn-danger" id="delete-product">Sterge</button> </form></td>
-            </tr>
+                <?php
+
+                    $rows = mysqli_num_rows($product_data);
+                    for ($i=0; $i < $rows; $i++): 
+                    $product = mysqli_fetch_assoc($product_data);?>
+
+
+                    <tr>
+                        <th data-field="row-id" scope="row"> <?php echo $product['id'] ?>  </th>
+                        <td data-field="product-id" > <?php echo $product['product_id'] ?> </td>
+                        <td data-field="product-name"> <?php echo $product['product_name'] ?> </td>
+                        <td data-field="product-price"> <?php echo $product['product_price'] ?>  </td>
+                        <td><button class="delete-product btn btn-danger">Sterge</button> </td>
+                    </tr>
+
+                <?php endfor ?>
+
             </tbody>
+
         </table>
     </div>
 </section>
