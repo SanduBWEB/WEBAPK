@@ -26,6 +26,9 @@ echo $data;
 echo $params;
 // cur-subcat-name=Telefoane fixe selected-cat=2
 
+// ALTER TABLE mytable AUTO_INCREMENT = 39  value= lastid + 1
+// SELECT LAST_INSERT_ID();
+// SELECT id FROM subcategories ORDER BY id DESC LIMIT 1; get last id from table
 
 switch ($type) { // the type request: add / update / delete;
 
@@ -87,10 +90,12 @@ switch ($type) { // the type request: add / update / delete;
     case 'delete':
 
         $entryId = $_POST['entryId'];
-
         query("DELETE FROM `$table` WHERE `$table`.`id` = $entryId;");
-
-        echo "deleted successfuly";
+        $lastIdVal= mysqli_fetch_assoc( query("SELECT id FROM `$table` ORDER BY id DESC LIMIT 1") );
+        $lastIdVal= intval($lastIdVal['id'] + 1);
+        query("ALTER TABLE `$table` AUTO_INCREMENT = $lastIdVal");
+        echo $lastIdVal;
+        echo " deleted successfuly";
 
     break;
 
