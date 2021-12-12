@@ -3,7 +3,7 @@
 function query($queryString) {
     require $_SERVER['DOCUMENT_ROOT'] . "/generalConfig.php";
 
-    //echo $queryString . "\n";
+    echo $queryString . "\n";
     $query = mysqli_query($link,$queryString);
     if (!$query)
     {
@@ -23,7 +23,9 @@ parse_str($data, $params);
 
 echo $table;
 echo $data;
-echo $params;
+//echo $params;
+
+
 // cur-subcat-name=Telefoane fixe selected-cat=2
 
 // ALTER TABLE mytable AUTO_INCREMENT = 39  value= lastid + 1
@@ -49,9 +51,50 @@ switch ($type) { // the type request: add / update / delete;
 
             break;
 
-            case 'tesr':
+            case 'market':
                 # code...
-                
+                echo "add shop request";
+                $shopOwner = $params['email-access'];
+                $shopName = $params['name-shop'];
+                $shopCategory = $params['selected-cat'];
+
+                $foundUser = query("SELECT * FROM `users` WHERE `email` LIKE '$shopOwner'");
+
+                if (mysqli_num_rows($foundUser) == 0) {
+                    echo "Nu exista asa utilizator";
+                }
+                else
+                {
+
+                    $newUser = mysqli_fetch_assoc($foundUser);
+                    $checkIfExistentOwner = query("SELECT * FROM `market_admins` WHERE 
+                    `user_id` = ".$newUser['id']." ");
+
+                    if(mysqli_num_rows($checkIfExistentOwner) > 0) 
+                    {
+                        echo "Utilizatorul dat deja este responsabil de magazinul dat sau de alt magazin";
+                    }
+                    else
+                    {
+                        //require $_SERVER['DOCUMENT_ROOT'] . "/generalConfig.php";
+
+                        query("INSERT INTO `market_data` VALUES (NULL, $shopCategory, '$shopName', NOW())");
+                        //$last_id = mysqli_insert_id($link);
+                        $lastIdVal= mysqli_fetch_assoc( query("SELECT id FROM `market_data` ORDER BY id DESC LIMIT 1") );
+                        $lastIdVal= intval($lastIdVal['id']);
+
+                        query("INSERT INTO `market_admins` VALUES ($lastIdVal, ".$newUser['id']." ) ");
+
+                        //SELECT LAST_INSERT_ID() as ;
+                        //INSERT INTO `market_data` VALUES (NULL, 4, 'test', NOW());
+                        //INSERT INTO `market_admins` VALUES (LAST_INSERT_ID(), 1 )
+                        // DELETE FROM market_admins WHERE market_id = 7 AND user_id = 1
+                        echo 'Magazinul a fost adaugat cu success!!!';
+                    }
+                     
+                }
+
+
             break;
             
         }
@@ -78,9 +121,40 @@ switch ($type) { // the type request: add / update / delete;
 
             break;
 
-            case 'tst':
+            case 'market':
                 # code...
-        
+                //echo "edit shop request\n";
+                $newShopOwner = $params['cur-email'];
+                $entryId = $_POST['entry_id'];
+                //echo $entryId;
+
+                $foundUser = query("SELECT * FROM `users` WHERE `email` LIKE '$newShopOwner'");
+
+                if (mysqli_num_rows($foundUser) == 0) {
+                    echo "Nu exista asa utilizator";
+                }
+                else
+                {
+
+                    $newUser = mysqli_fetch_assoc($foundUser);
+                    $checkIfExistentOwner = query("SELECT * FROM `market_admins` WHERE 
+                    `user_id` = ".$newUser['id']." ");
+
+                    if(mysqli_num_rows($checkIfExistentOwner) > 0) 
+                    {
+                        echo "Utilizatorul dat deja este responsabil de magazinul dat sau de alt magazin";
+                    }
+                    else
+                    {
+                        query("UPDATE `market_admins` SET 
+                        `user_id` = ".$newUser['id']." 
+                        WHERE market_id = $entryId");
+                        echo '<span style="color:green;">Modificările au fost executate cu success!!!</span>';
+                    }
+                     
+                }
+
+
             break;
         }
 
@@ -90,13 +164,14 @@ switch ($type) { // the type request: add / update / delete;
     case 'delete':
 
         $entryId = $_POST['entryId'];
+        if ($table == 'market') { query("DELETE FROM `market_admins` WHERE `market_id` = $entryId;"); }
         query("DELETE FROM `$table` WHERE `$table`.`id` = $entryId;");
         $lastIdVal= mysqli_fetch_assoc( query("SELECT id FROM `$table` ORDER BY id DESC LIMIT 1") );
         $lastIdVal= intval($lastIdVal['id'] + 1);
         query("ALTER TABLE `$table` AUTO_INCREMENT = $lastIdVal");
         echo $lastIdVal;
         echo " deleted successfuly";
-
+     
     break;
 
 
