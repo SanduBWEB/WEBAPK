@@ -39,6 +39,20 @@ switch ($type) { // the type request: add / update / delete;
 
         switch ($table) { // the table name
             
+            case 'products':
+
+                $subcatId = $params['subcat-id'];
+                $marketId = $params['market-id'];
+                $productCode = $params['product-code'];
+                $productName = $params['product-name'];
+                $productDesc = $params['product-desc'];
+                $productPrice = $params['product-price'];
+
+                query("INSERT INTO `product_data` VALUES (NULL, '$subcatId', $marketId, '$productCode', '$productName', '$productDesc', $productPrice, '5', NOW()) ");
+            
+                
+            break;
+
             case 'subcategories':
                 # code...
                 //echo "add subcategory request";

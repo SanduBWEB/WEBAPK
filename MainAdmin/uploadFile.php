@@ -6,6 +6,34 @@
 // Include the database configuration file
 $statusMsg = '';
 
+
+if ( isset($_POST['contentType']) ) {
+
+    // product
+    if ( isset($_POST['productId']) )
+    {
+        $id = $_POST['productId'];
+        $path = $_SERVER['DOCUMENT_ROOT'] . $_POST['filePath'];
+        
+        //products: create folder on addition
+        // substr removes "/" from the initial filepath so that its declared as a directory
+        if (!is_dir( substr( $path, 0, -1) ) ) {  // directory doesnt exist
+
+            // product: create folder and die in case something goes wrong
+            if ( !mkdir( substr( $path, 0, -1) ) ) {
+                die('Couldnt create directory...');
+            }
+                
+
+        }
+        //else rmdir( substr( $path, 0, -1) ); // directory exists already-- DOESNT WORK FOR NOW (should delete all files inside first)
+
+    } 
+
+    
+}
+
+
 // File upload path
 $targetDir = $_SERVER['DOCUMENT_ROOT'] . $_POST['filePath'];
 $fileName = basename($_FILES["file"]["name"]);
