@@ -13,7 +13,7 @@ else {
     $_SESSION['logged'] = 0;
     echo ' <script>console.log("User is not logged in");</script>';
 }
-
+//if($_SESSION['cart']) echo '<script>console.log("Username - '.print_r($_SESSION['cart']).'");</script>';
 
 ?>
 
@@ -40,9 +40,19 @@ else {
                 <li><a href="../category?id=3&cat=Construcții" class="nav-link px-2 text-black">Constructii</a></li>
             </ul>
 
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                <input type="search" class="form-control form-control-dark" placeholder="Cauta" aria-label="Search">
+            <form id="search-form" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                <input type="search" name="search" class="form-control form-control-dark" placeholder="Cauta" aria-label="Search">
             </form>
+            <button id="checkout" class="btn" alt="Finisează comanda" style="margin-right: 1rem;position: relative;">
+                <i class="cart-icon fas fa-shopping-cart" style="font-size: 16px;"></i>
+                <?php if($_SESSION['cart']): ?>
+                    <span id="cart-size" style="font-size: 0.7rem;position: absolute;top: 5px;right: 14px;width: 1.1rem;background: #8BC34A;color: white;clip-path: circle();">
+                    <?php echo count($_SESSION['cart']); ?>
+                    </span>
+                <?php endif ?>
+
+            </button>
+
             <?php if ($_SESSION['logged'] == 1): ?>
                 <div class="text-end">
                     <div class="dropdown">
@@ -56,6 +66,8 @@ else {
                     <?php else: ?>
                         <li><a href="../User/useraccount.php" style="text-decoration:none;">Profil</a></li>
                     <?php endif ?>
+                        <li><a href="../orders" style="text-decoration:none; font-size: 0.9em;">Comenzile mele</a></li>
+                        
                         <li>
                             <hr class="dropdown-divider" />
                         </li>
@@ -175,7 +187,9 @@ else {
 </div> -->
 <script>
 
-
+$("#checkout").click( function() {
+    window.location.href = "../cart";
+})
 
 $("#close-form").click(function(e) {
 
@@ -260,6 +274,38 @@ $("form[data-form='login-form']").submit(function(e) {
     });  
 
 })
+
+$("#search-form").submit(function(e) {
+
+    e.preventDefault();
+    // var form = $(this).serialize();
+    // console.log(form);
+    var query = $(this).find("input").val();
+    window.location.href = `../search?query=${query}` ;         
+
+
+    // $.ajax({
+    //     url: '../login_register.php',   //answ='+str+"q_a.php?an2="+str,
+    //     dataType: 'text',
+    //     type:'POST',
+    //     data: {
+    //         formData: form, 
+    //         type: $(this).attr("data-type")
+    //     },
+    //     success: function (returndata) {  // if the request was done with success
+    //     //
+    //     console.log(returndata);
+
+    //     }
+    // }).done(function(returndata){ // after the request is done
+    //     if ($.trim(returndata) == 'Operatie cu success') 
+    //     {
+    //         window.location.href = `../index?query=${query}` ;         
+    //     }
+
+    // });  
+
+});
 
 </script>
 <!-- Login/ Reg forms -->

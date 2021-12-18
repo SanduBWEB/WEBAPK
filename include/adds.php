@@ -22,3 +22,7 @@
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<!-- number input -->
+<script src="../node_modules/bootstrap-input-spinner/src/bootstrap-input-spinner.js"></script>
+<!-- doc- https://shaack.com/projekte/bootstrap-input-spinner/ ; https://github.com/shaack/bootstrap-input-spinner -->

@@ -1,6 +1,7 @@
 <?php
 
 require_once "generalConfig.php";
+
 //echo "".$_GET['cat']."";
 $pid = $_GET['pid']; // product id
 
@@ -53,15 +54,47 @@ else $productData = mysqli_fetch_assoc($product);
             <div class="col">
                 <div id="product-image" class="carousel carousel-dark slide" data-bs-touch="false" data-bs-interval="false">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://s13emagst.akamaized.net/products/22495/22494116/images/res_2617ed635c7737bf1b9215124dd4dd69.jpg" class="p-image img-thumbnail rounded mx-auto d-block" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://s13emagst.akamaized.net/products/22495/22494116/images/res_2617ed635c7737bf1b9215124dd4dd69.jpg" class="p-image img-thumbnail rounded mx-auto d-block" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://s13emagst.akamaized.net/products/22495/22494116/images/res_2617ed635c7737bf1b9215124dd4dd69.jpg" class="p-image img-thumbnail rounded mx-auto d-block" alt="...">
-                        </div>
+                        <?php 
+                            // Directory
+                            $directory = $_SERVER['DOCUMENT_ROOT'] . "/assets/products/".$_GET['pid']." ";
+
+                            // Returns an array of files
+                            if( is_dir($directory) ):
+
+                                $files = scandir($directory);
+
+                                // Count the number of files and store them inside the variable..
+                                // Removing 2 because we do not count '.' and '..'.
+                                $num_files = count($files) - 2;
+                        ?>
+
+                            <div class="carousel-item active">
+                                <img src="<?php echo "../assets/products/".$_GET['pid']."/1.png"; ?> " class="p-image img-thumbnail rounded mx-auto d-block" alt="...">
+                            </div>
+
+                            <!-- if there more than 1 pic -->
+                            <?php if($num_files > 1):?>
+
+                                <?php for ($i=2; $i <= $num_files; $i++): ?>
+                                    <div class="carousel-item">
+                                        <img src="<?php echo "../assets/products/".$_GET['pid']."/$i.png"; ?> " class="p-image img-thumbnail rounded mx-auto d-block" alt="...">
+                                    </div>
+
+                                <?php endfor ?>
+                            
+                            <?php endif ?>
+                            <!-- if there more than 1 pic -->
+
+                        <?php else: ?>
+
+                            <!-- default product icon -->
+                            <div class="carousel-item active">
+                                <img src="https://s13emagst.akamaized.net/products/22495/22494116/images/res_2617ed635c7737bf1b9215124dd4dd69.jpg" class="p-image img-thumbnail rounded mx-auto d-block" alt="...">
+                            </div>
+                            <!-- default product icon -->
+
+                        <?php endif ?>
+
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#product-image" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -87,7 +120,12 @@ else $productData = mysqli_fetch_assoc($product);
                             <strong>Pret: <?php echo $productData['product_price']?> lei</strong>
                         </div>
                         <div class="col">
-                            <button type="button" class="btn btn-warning">Adauga in cos</button>
+                            <?php if($_SESSION['cart'] && in_array( $productData['id'], $_SESSION['cart']) ): ?>
+                                <button id="request-to-cart" data-type="remove" data-pid="<?php echo $productData['id']; ?>" type="button" class="btn btn-warning">Sterge in cos</button>
+                            <?php else: ?>
+                                <button id="request-to-cart" data-type="add" data-pid="<?php echo $productData['id']; ?>" type="button" class="btn btn-warning">Adauga din cos</button>
+                            <?php endif ?>
+                            <p id="cart-helper" style="width: 100%;"></p>
                         </div>
                     </div>
                 </div>
@@ -95,7 +133,33 @@ else $productData = mysqli_fetch_assoc($product);
         </div>
     </div>
 </section>
+<script>
 
+    $("#request-to-cart").click(function() {
+
+        const ID = $(this).attr('data-pid');
+        const TYPE = $(this).attr('data-type');
+        console.log(`clicked add to cart, pid-${ID}, data-type-${TYPE}`);
+
+        $.ajax({Z
+            url: 'cartRequests.php',   //answ='+str+"q_a.php?an2="+str,
+            dataType: 'text',
+            type:'GET',
+            data: {
+                pid: ID, 
+                type: TYPE
+            },
+            success: function (returndata) 
+            {  // if the request was done with success
+                
+                console.log(returndata);
+                location.reload();
+
+            }
+        });
+
+    });
+</script>
 <?php  require_once 'include/generalfooter.php' ?>
 </body>
 </html>

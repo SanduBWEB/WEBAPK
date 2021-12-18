@@ -170,6 +170,21 @@ switch ($type) { // the type request: add / update / delete;
 
 
             break;
+
+            case 'orders':
+
+                //
+                $orderId = $_POST['orderId'];
+                $state = $_POST['state']; 
+
+                query("UPDATE
+                    `order_data`
+                SET
+                    `state` = $state
+                WHERE
+                    order_id = $orderId");
+
+            break;
         }
 
     break;

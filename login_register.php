@@ -80,10 +80,18 @@ elseif ($type == "login") {
         //$_SESSION['password'] = $pass;
         $_SESSION['data_reg'] = $account['registrare'];
         $_SESSION['role'] = $account['role'];
+        $_SESSION['market_id'] = $account['role'];
+
         if ($account['role'] == 'superadmin') {
             $_SESSION['admin'] = true;
         } else{
             $_SESSION['admin'] = false;
+        }
+
+        if($account['role'] == 'admin')
+        {
+            $marketId = mysqli_fetch_assoc( mysqli_query($link, "SELECT market_id FROM `market_admins` WHERE user_id = ".$_SESSION['user_id']." " ) );
+            $_SESSION['market_id'] = $marketId['market_id'];
         }
     // header('Location: index.html');
     }

@@ -7,6 +7,30 @@
 $statusMsg = '';
 
 
+// count nr of files in dir
+//https://stackoverflow.com/questions/12801370/count-how-many-files-in-directory-php
+// $fi = new FilesystemIterator(__DIR__, FilesystemIterator::SKIP_DOTS);
+// printf("There were %d Files", iterator_count($fi));
+
+// to remove all the files, and delete the directory, for refs:
+// https://stackoverflow.com/questions/3338123/how-do-i-recursively-delete-a-directory-and-its-entire-contents-files-sub-dir
+// function rrmdir($dir) { 
+//     if (is_dir($dir)) { 
+//       $objects = scandir($dir);
+//       foreach ($objects as $object) { 
+//         if ($object != "." && $object != "..") { 
+//           if (is_dir($dir. DIRECTORY_SEPARATOR .$object) && !is_link($dir."/".$object))
+//             rrmdir($dir. DIRECTORY_SEPARATOR .$object);
+//           else
+//             unlink($dir. DIRECTORY_SEPARATOR .$object); 
+//         } 
+//       }
+//       rmdir($dir); 
+//     } 
+// }
+
+
+
 if ( isset($_POST['contentType']) ) {
 
     // product

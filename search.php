@@ -3,11 +3,12 @@
 require_once "generalConfig.php";
 //echo "".$_GET['cat']."";
 
-$mid = $_GET['mid']; // market_id
-$sid = $_GET['sid']; // subcategory_id
-$cn = $_GET['cn']; // categoy name ( the subcategory)
+//$mid = $_GET['mid']; // market_id
+// $sid = $_GET['sid']; // subcategory_id
+// $cn = $_GET['cn']; // categoy name ( the subcategory)
 
-$sql = "SELECT * FROM `product_data` WHERE market_id = $mid AND subcategory_id = $sid";
+$query = $_GET['query']; // search
+$sql = "SELECT * FROM `product_data` WHERE `product_name` LIKE '%$query%' OR product_code LIKE '%$query%'";
 $products = mysqli_query($link,$sql);
 $rows = mysqli_num_rows($products); //nr de inscrieri;
 
@@ -48,7 +49,13 @@ if (!$products)
         <?php if ($rows===0): ?>
             <h2 class="text-center">Nu a fost găsit nici un produs</h2>
         <?php else: ?>
-            <h2 class="text-center"><?php echo $cn?></h2>
+            <?php if ($rows===1): ?>
+                <h2 class="text-center"><?php echo $rows; ?> Rezultat</h2>
+            <?php else: ?>
+                <h2 class="text-center"><?php echo $rows; ?> Rezultate</h2>
+            <?php endif;?>
+
+
         
             <div class="row">
 
