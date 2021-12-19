@@ -22,17 +22,16 @@ function query($queryString) {
 }
 
 
-$orderRequests = query("SELECT b.id, b.request_date, b.total_price, c.surname, c.name
+$orderRequests = query("SELECT a.market_id, a.product_id, b.id, b.request_date, b.total_price, c.surname, c.name
 FROM order_requests b
 JOIN order_data a ON a.order_id = b.id
 JOIN users c ON b.user_id = c.id
 WHERE a.market_id = ".$_SESSION['market_id']."
-GROUP BY b.id
 ORDER BY b.id");
 //$_SESSION['market_id']
 $ordersList = mysqli_fetch_all($orderRequests, MYSQLI_ASSOC);
 //print_r($ordersData);
-
+//GROUP BY b.id
 
 ?>
 <!doctype html>
@@ -93,7 +92,7 @@ $ordersList = mysqli_fetch_all($orderRequests, MYSQLI_ASSOC);
                     FROM order_data a 
                     JOIN order_requests b ON a.order_id = b.id 
                     JOIN product_data c ON a.product_id = c.id
-                    WHERE b.id = ".$order['id']." 
+                    WHERE c.market_id = ".$order['market_id']." 
                     ORDER BY a.id");
                     $rows = mysqli_num_rows($sql); // total orders user requested
                     $orderData = mysqli_fetch_all($sql, MYSQLI_ASSOC);
@@ -140,10 +139,10 @@ $ordersList = mysqli_fetch_all($orderRequests, MYSQLI_ASSOC);
                         </td>
                         <td><?php echo $order['surname'] . " " . $order['name']; ?></td>
                         <td>
-                            <select data-oId="<?php echo $order['id']; ?>" class="stock-select" aria-label="Stock status">
+                            <select data-oId="<?php echo $order['id']; ?>" data-pId="<?php echo $order['product_id']; ?>" class="stock-select" aria-label="Stock status">
                                 <!-- <option >Alege o optiune</option> -->
-                                <option data-oId="<?php echo $order['id']; ?>" value="1">In stock</option>
-                                <option data-oId="<?php echo $order['id']; ?>" value="0" selected>Fara stock</option>
+                                <option data-oId="<?php echo $order['id']; ?>" data-pId="<?php echo $order['product_id']; ?>" value="1">In stock</option>
+                                <option data-oId="<?php echo $order['id']; ?>" data-pId="<?php echo $order['product_id']; ?>" value="0" selected>Fara stock</option>
                             </select>
                         </td>
                     </tr>
@@ -203,6 +202,7 @@ $ordersList = mysqli_fetch_all($orderRequests, MYSQLI_ASSOC);
             var option = this.value;
             console.log(option);
             var oId = $(this).attr('data-oId');
+            var pId = $(this).attr('data-pId');
             $.ajax({   /// request update on the db
                 url: '../MainAdmin/requests.php',
                 dataType: 'text',
@@ -212,6 +212,7 @@ $ordersList = mysqli_fetch_all($orderRequests, MYSQLI_ASSOC);
                     table: "orders",
                     type: "update",
                     orderId: oId,
+                    productId: pId,
                     state: option
                 },
                 success: function (returndata) {  // if the request was done with success

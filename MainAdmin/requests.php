@@ -176,6 +176,7 @@ switch ($type) { // the type request: add / update / delete;
 
                 //
                 $orderId = $_POST['orderId'];
+                $productId = $_POST['productId'];
                 $state = $_POST['state']; 
 
                 query("UPDATE
@@ -183,7 +184,7 @@ switch ($type) { // the type request: add / update / delete;
                 SET
                     `state` = $state
                 WHERE
-                    order_id = $orderId");
+                    order_id = $orderId AND product_id = $productId");
 
             break;
         }
