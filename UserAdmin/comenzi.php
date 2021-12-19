@@ -191,6 +191,10 @@ $ordersList = mysqli_fetch_all($orderRequests, MYSQLI_ASSOC);
                 console.log(returndata);
 
             }
+        });
+        
+    });
+            
 
     $(document).ready(function() {
 

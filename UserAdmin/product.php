@@ -288,6 +288,8 @@ $subCatIdVal = intval($lastId['subcategory_id']) ;
                             console.log(returndata);
 
                         }
+                    });
+                });
                 
                 function fileUpload(file, fileName, filePath, productId) { // filename is the id.extension of the added/updated element (ex: product with id:1 in the db)
 

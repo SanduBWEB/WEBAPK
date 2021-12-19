@@ -152,6 +152,9 @@ print_r($marketData);
                 console.log(returndata);
 
             }
+        });
+    });
+    
 </script>
 </body>
 </html>
