@@ -2,7 +2,6 @@
 
 
 <?php
-
 // Include the database configuration file
 $statusMsg = '';
 

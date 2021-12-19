@@ -1,5 +1,6 @@
 <?php
 
+
 function query($queryString) {
     require $_SERVER['DOCUMENT_ROOT'] . "/generalConfig.php";
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
         <meta charset="UTF-8">
         <meta name="viewport"
@@ -27,8 +27,6 @@
 
     <section class="user-info">
         <div class="container">
-            <div class="row">
-                <div class="col">
                     <div class="container">
                         <h2>Informatii personale:</h2>
                         <hr />
@@ -41,9 +39,10 @@
                         </div>
                         <hr />
                         <div class="user-general-info">
+                            <fieldset disabled>
                             <form>
-                                <label for="name" class="form-label">Nume actual:</label><input class="form-control form-control-sm" type="text" id="name" placeholder="Introduce-ti un nume, va rog !" value="Bantis">
-                                <label for="surname" class="form-label">Prenume actual:</label><input class="form-control form-control-sm" type="text" id="surname" placeholder="Introduce-ti un prenume, va rog !" value="Sandu">
+                                <label for="name" class="form-label">Nume actual:</label><input class="form-control form-control-sm" type="text" id="name" placeholder="Introduce-ti un nume, va rog !" value="<?php echo $_SESSION['username']; ?>">
+                        </div>
                                 <label for="name" class="phone">Numarul actual:</label><input class="form-control form-control-sm" type="text" id="phone" placeholder="Introduce-ti numarul dvs !" value="+37368203045">
                                 <label for="email" class="form-label">Email actual:</label><input class="form-control form-control-sm" type="email" id="email" placeholder="Introduce-ti un email !" value="eu@mail.com">
                             <hr />
@@ -53,33 +52,11 @@
                                 <hr />
                                 <button id="submit" class="btn btn-secondary">Actualizeaza informatie</button>
                             </form>
+                    </fieldset>
                         </div>
                     </div>
                 </div>
-                <div class="vr"  style="padding: 1px;"></div>
-                <div class="col">
-                    <div class="container">
-                        <h2>Navigare rapida:</h2>
-                        <hr />
-                        <div class="d-grid gap-2 ">
-                            <a style="text-decoration: none;" href="/">
-                                <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark">
-                                    1. Pagina principala.
-                                </button>
-                            </a>
-                            <a style="text-decoration: none;" href="../orders.php">
-                                <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark">
-                                2. Comenzile mele.
-                                </button>
-                            </a>
-                            <a style="text-decoration: none;" href="/">
-                                <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark">
-                                3. Delogheaza-ma.
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>

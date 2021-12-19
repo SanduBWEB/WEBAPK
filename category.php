@@ -1,7 +1,6 @@
 <?php
 
 require_once "generalConfig.php";
-echo "".$_GET['cat']."";
 $cat_id = $_GET['id'];
 $sql = "SELECT * FROM `market_data` WHERE category_id = ".$_GET['id']."";
 $markets = mysqli_query($link,$sql);

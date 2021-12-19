@@ -1,6 +1,12 @@
 <?php
 
 session_start();
+if(!isset($_SESSION['user_id'])){ //if login in session is not set$_SESSION['role'] == "superadmin"
+    header("Location: /404.php");
+}
+$role = $_SESSION['role'];
+if($role=="superadmin"){header("location: /404.php");}
+elseif($role=="user"){header("location: /404.php");}
 
 function query($queryString) {
     require $_SERVER['DOCUMENT_ROOT'] . "/generalConfig.php";
@@ -51,13 +57,12 @@ $ordersList = mysqli_fetch_all($orderRequests, MYSQLI_ASSOC);
         </a>
 
         <ul class="nav me-auto">
-            <li class="nav-item"><a href="settings" class="nav-link link-dark px-2 active" aria-current="page">Setari</a></li>
             <li class="nav-item"><a href="comenzi" class="nav-link link-dark px-2">Comenzi</a></li>
             <li class="nav-item"><a href="product" class="nav-link link-dark px-2">Produse</a></li>
         </ul>
         <ul class="nav">
-            <li class="nav-item"><a href="#" class="nav-link link-dark px-2">User</a></li>
-            <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Log-Out</a></li>
+            <li class="nav-item"><a href="#" class="nav-link link-dark px-2"><?php echo $_SESSION['username']; ?></a></li>
+            <li class="nav-item"><a href="/" id="logout-button" class="nav-link link-dark px-2">Ieșire</a></li>
         </ul>
     </div>
 </nav>
@@ -170,6 +175,22 @@ $ordersList = mysqli_fetch_all($orderRequests, MYSQLI_ASSOC);
 </section>
 </body>
 <script>
+    $("#logout-button").click(function(e) {
+
+
+        $.ajax({
+            url: '../login_register.php',   //answ='+str+"q_a.php?an2="+str,
+            dataType: 'text',
+            type:'POST',
+            data: {
+                formData: false,
+                type: "logout"
+            },
+            success: function (returndata) {  // if the request was done with success
+                //
+                console.log(returndata);
+
+            }
 
     $(document).ready(function() {
 

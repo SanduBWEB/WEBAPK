@@ -80,8 +80,8 @@ else {
                 </div>
             <?php else: ?>
                 <div class="text-end">
-                    <button type="button" class="btn btn-outline-dark me-2" id="login-button" data-bs-toggle="modal" data-bs-target="#loginModal">Intra in cont</button>
-                    <button type="button" class="btn btn-warning" data-bs-target="#registerModal" data-bs-toggle="modal" id="register-button">Inregistreaza-te</button>
+                    <button type="button" class="btn btn-outline-success" id="login-button" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fas fa-user-check"></i></button>
+                    <button type="button" class="btn btn-warning" data-bs-target="#registerModal" data-bs-toggle="modal" id="register-button"><i class="fas fa-user-plus"></i></button>
                 </div>
             <?php endif ?>
 

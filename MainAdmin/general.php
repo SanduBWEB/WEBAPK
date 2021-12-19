@@ -1,5 +1,11 @@
 <?php
 session_start();
+if(!isset($_SESSION['user_id'])){ //if login in session is not set$_SESSION['role'] == "superadmin"
+    header("Location: /404.php");
+}
+$role = $_SESSION['role'];
+if($role=="admin"){header("location: /404.php");}
+elseif($role=="user"){header("location: /404.php");}
 
 
 
