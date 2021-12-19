@@ -26,7 +26,7 @@ elseif($role=="user"){header("location: /404.php");}
     <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 
-    <title>Document</title>
+    <title>Categorii / Magazine / Subcategorii</title>
 </head>
 <body>
 <style> 

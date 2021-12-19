@@ -37,6 +37,19 @@ if (!$subcategories)
         <?php  require_once 'include/adds.php' ?>
 
         <title>Shop GO - Marketplace</title>
+        <style>
+            .card {
+                max-width: 400px; height: 300px;  margin-bottom: 2em; margin-left: 1em;
+            }
+            @media (max-width: 584px) {
+                .cat-image {
+                    width: 200px;
+                }
+                .card{
+                    margin-left: 0;
+                }
+            }
+        </style>
     </head>
     <body>
         <?php  require_once 'include/generaltopnav.php' ?>
@@ -54,8 +67,8 @@ if (!$subcategories)
                         <!-- single category -->        
                         <div class="col">
                             <a href="assortment?mid=<?php echo $mid ?>&sid=<?php echo $category['id'] ?>&cn=<?php echo $category['subcategory_name'] ?>" style="text-decoration: none;">
-                            <div class="card shadow-sm" style="max-width: 400px; margin-bottom: 2em; margin-left: 4em">
-                                <img style="max-height: 400px; max-width: 350px; align-self: center;" src="assets/subcategories/<?php echo $category['id'] ?>.png"> 
+                            <div class="card shadow-sm" >
+                                <img class="cat-image" style="max-height: 250px; max-width: 350px; align-self: center;" src="assets/subcategories/<?php echo $category['id'] ?>.png">
                                 <!-- src="markets/<?php //echo $mid ?>/categories/<?php //echo $category['id'] ?>.jpg -->
                                 <div class="card-body">
                                     <p class="text-center"><?php echo $category['subcategory_name'] ?></p>

@@ -546,7 +546,7 @@ switch ($tableId) {
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Esi !</button>
-                            <button id="update-subcategory" type="submit" class="btn btn-primary">Salveaza</button>
+                            <button id="update-subcategory" type="submit" class="btn btn-primary" onClick="window.location.reload();">Salveaza</button>
                         </div>
 
                     </form>
@@ -617,7 +617,7 @@ switch ($tableId) {
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Esi !</button>
-                            <button id="update-subcategory" data-subcat-id="" type="submit" class="btn btn-primary">Salveaza</button>
+                            <button id="update-subcategory" data-subcat-id="" type="submit" class="btn btn-primary" onClick="window.location.reload();">Salveaza</button>
                         </div>
                         
                     </form>
