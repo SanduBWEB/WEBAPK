@@ -28,7 +28,7 @@ $cat = "SELECT * FROM categories";
 $subcat = "SELECT a.category_name, b.* FROM categories a JOIN subcategories b on a.id = b.category_id";
 //SELECT b.* FROM categories a JOIN subcategories b on a.id = b.category_id WHERE a.id = 1 - get all for specific category
 
-$table_id = $_GET['tbl_id'];
+$tableId = $_GET['tblId'];
 
 ?>
 
@@ -121,6 +121,69 @@ $table_id = $_GET['tbl_id'];
        
     }
 
+    
+    $('body').on('keyup','#admin-search', function() {
+        var rows = $("#admin-table tr"); // tr[data-type=active]
+        ////var removeHead = $("#active-table tr[id=table-header]");
+        var input = $(this).val().toUpperCase();
+        //console.log(input);
+        ////rows.splice(0,1);
+        //console.log(rows);
+
+        //if (tableId == 0 || tableId == 2 || tableId == 5 || tableId == 7) {
+            for (var i = 0; i < rows.length; i++) {
+                //console.log("for tbl1,2");
+                var td = rows[i].getElementsByTagName("td")[0];
+                var td2 = rows[i].getElementsByTagName("td")[1];
+                if (td && td2) 
+                {
+                    txtValue = $(td).html();
+                    txtValue2 = $(td2).html();
+                    //console.log(txtValue);
+                    //console.log(txtValue2);
+                    if (txtValue.toUpperCase().indexOf(input) > -1 || txtValue2.toUpperCase().indexOf(input) > -1) {
+                        $(rows[i]).show();
+                    } 
+                    else 
+                    {
+                        $(rows[i]).hide();
+                    }
+                }
+                else if(td) 
+                {
+                    txtValue = $(td).html();
+                    //console.log(txtValue);
+                    if (txtValue.toUpperCase().indexOf(input) > -1) 
+                    {
+                        $(rows[i]).show();
+                    } 
+                    else 
+                    {
+                        $(rows[i]).hide();
+                    }
+                }       
+            }
+        //var field2 = $("td[data-field=email]");
+        //console.log("field1 are: "+ field1);
+        //}
+        // else if (tableId == 1 || tableId == 3 || tableId == 4) {
+        //     for (var i = 0; i < rows.length; i++) {
+        //         var td = rows[i].getElementsByTagName("td")[1];
+        //         if (td) {
+        //           txtValue = $(td).html();
+        //           console.log(txtValue);
+        //           if (txtValue.toUpperCase().indexOf(input) > -1) {
+        //             $(rows[i]).show();
+        //             $(rows_hidden[i]).hide();
+        //           } else {
+        //             $(rows[i]).hide();
+        //             $(rows_hidden[i]).hide();
+        //           }
+        //         }       
+        //     }
+        // }
+    });
+
 
 </script>
 
@@ -148,14 +211,14 @@ $table_id = $_GET['tbl_id'];
 
 
 <?php
-switch ($table_id) {
+switch ($tableId) {
     case '0': // categorii - categories
         # code...
         $categories = query("SELECT * FROM categories ORDER BY id");//id, category_name
         $rows = mysqli_num_rows($categories);
         ?>               
 
-        <table class="table table-hover">
+        <table id="admin-table" class="table table-hover">
             <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -381,7 +444,7 @@ switch ($table_id) {
         <!-- CHANGE FORM ID AND UPDATE PHP VAR FOR ID OF THE CURRENT SUBCAT THAT IS CHANGED -->
 
 
-        <table class="table table-hover">
+        <table id="admin-table" class="table table-hover">
             <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -677,7 +740,7 @@ switch ($table_id) {
         </script>
         <!-- CHANGE FORM ID AND UPDATE PHP VAR FOR ID OF THE CURRENT SUBCAT THAT IS CHANGED -->
         
-        <table class="table table-hover">
+        <table id="admin-table" class="table table-hover">
             <thead>
             <tr>
                 <th scope="col">ID</th>

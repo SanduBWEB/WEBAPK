@@ -57,8 +57,8 @@ option:hover {
                 </ul>
 
                 <form class="form-inline my-2 my-lg-0" style="display: inline-flex;">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Caută" aria-label="Caută" style="margin: auto 5px;">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="button">Căutare</button>
+                    <input id="admin-search" class="form-control mr-sm-2" type="search" placeholder="Caută" aria-label="Caută" style="margin: auto 5px;">
+                    <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="button">Căutare</button> -->
                 </form>
             </nav>
 
@@ -88,8 +88,8 @@ $(LISTA).click( function() {
   this.className = "table-list btn btn-outline-success";
   //var txt= $(this).text();
   //$("#table-name").text(txt);
-  var table_id = $(this).attr("data-tblId"); //get table id name from the sidebar list (from up ->down) first- 0
-  console.log(table_id);
+  var tableId = $(this).attr("data-tblId"); //get table id name from the sidebar list (from up ->down) first- 0
+  console.log(tableId);
 
   
   
@@ -98,7 +98,7 @@ $(LISTA).click( function() {
       dataType: "text",
       type: "GET",
       data: {
-          tbl_id: table_id
+        tblId: tableId
       },
       success: function(returndata) {
         if (!$.trim(returndata)){  
@@ -108,7 +108,7 @@ $(LISTA).click( function() {
             $("#content-container").html(returndata); //display extracted db data into html as table, HERE .table-container
             //display_data(returndata);
             
-            //changeSearchFilter(table_id);
+            //changeSearchFilter(tableId);
         }
       }
   }); //.done(function(returndata) {
@@ -116,7 +116,6 @@ $(LISTA).click( function() {
     //});
 
 });
-
 
 
 

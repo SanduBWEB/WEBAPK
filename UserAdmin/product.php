@@ -16,7 +16,7 @@ function query($queryString) {
 }
 
 
-$product_data = query("SELECT a.* FROM `market_admins` b JOIN
+$productData = query("SELECT a.* FROM `market_admins` b JOIN
 `product_data` a ON b.market_id = a.market_id
 WHERE
 b.user_id = ".$_SESSION['user_id']." ");
@@ -326,7 +326,7 @@ $subCatIdVal = intval($lastId['subcategory_id']) ;
                     '                        <!-- Upload  -->'+
                 '                    </div>';
                 
-                var PRODUCT_FILES = [];
+                var productFiles = [];
 
                 //product-image-upload
                 $('body').on('change','input[type=file][class="product-image-upload"]',function()
@@ -338,22 +338,22 @@ $subCatIdVal = intval($lastId['subcategory_id']) ;
                         var imgElement = $(this).closest("div[class*=carousel-item]").find("img")
                         $(this).closest('div').hide();
                         var reader = new FileReader();
-                        PRODUCT_FILES.push(this.files[0]);
+                        productFiles.push(this.files[0]);
                         reader.onload = function (e) {
                             $(imgElement).attr('src', e.target.result)
                             $(imgElement).show();
                             //$('#imgshow').attr('src', e.target.result);
                         }
                         reader.readAsDataURL(this.files[0]);
-                        if (PRODUCT_FILES.length < 3) 
+                        if (productFiles.length < 3) 
                         {
                             $(this).closest("div[class*=carousel-inner]").append(NEW_UPLOAD_FORM);
                         }
 
                         $(this).closest('div').remove();
 
-                        console.log(PRODUCT_FILES);
-                        console.log("length " + PRODUCT_FILES.length);
+                        console.log(productFiles);
+                        console.log("length " + productFiles.length);
                     }
 
                 });
@@ -363,7 +363,7 @@ $subCatIdVal = intval($lastId['subcategory_id']) ;
                     $('button#cancel-add-product').click(function() {
 
                         console.log("should emty modal-- ");
-                        PRODUCT_FILES = [];
+                        productFiles = [];
                         $("div[class*=carousel-inner]").html(NEW_UPLOAD_FORM);
                         $("div[class*=carousel-item]").attr('class', 'carousel-item active');
 
@@ -377,7 +377,7 @@ $subCatIdVal = intval($lastId['subcategory_id']) ;
                         form = form + `&market-id=<?php echo $marketIdVal;?>&category-id=<?php echo $catIdVal;?>&subcat-id=<?php echo $subCatIdVal;?>`
                         console.log(`add subcat submited, data: \n${form}`);
                         var i = 0;
-                        PRODUCT_FILES.forEach(file => {
+                        productFiles.forEach(file => {
                             
                             i++;
                             //console.log(i);
@@ -557,9 +557,9 @@ $subCatIdVal = intval($lastId['subcategory_id']) ;
             <tbody>
                 <?php
 
-                    $rows = mysqli_num_rows($product_data);
+                    $rows = mysqli_num_rows($productData);
                     for ($i=0; $i < $rows; $i++): 
-                    $product = mysqli_fetch_assoc($product_data);?>
+                    $product = mysqli_fetch_assoc($productData);?>
 
 
                     <tr>

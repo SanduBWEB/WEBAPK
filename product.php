@@ -110,8 +110,8 @@ else $productData = mysqli_fetch_assoc($product);
                 <div class="col p-4 d-flex flex-column position-static">
                     <strong class="d-inline-block mb-2"> Magazin: <?php echo $productData['market_name'] ?></strong>
                     <h3 class="mb-0" id="name-product"> <?php echo $productData['product_name'] ?></h3>
-                    <div class="mb-1 text-muted" id="add-date">Adaugat la data: <?php echo date("m.d.y H:i", strtotime( $productData['add_date'] ) ); //date("m.d.y")?></div>
-                    <strong class="card-text mb-auto text-primary">Descriere scruta:</strong>
+                    <div class="mb-1 text-muted" id="add-date">Adăugat la data: <?php echo date("m.d.y H:i", strtotime( $productData['add_date'] ) ); //date("m.d.y")?></div>
+                    <strong class="card-text mb-auto text-primary">Descriere scrută:</strong>
                     <p class="card-text mb-auto" id="shor-describe"><?php echo $productData['product_desc'] ?></p>
                 </div>
                 <div class="col p-4 d-flex flex-column position-static">
@@ -121,9 +121,9 @@ else $productData = mysqli_fetch_assoc($product);
                         </div>
                         <div class="col">
                             <?php if($_SESSION['cart'] && in_array( $productData['id'], $_SESSION['cart']) ): ?>
-                                <button id="request-to-cart" data-type="remove" data-pid="<?php echo $productData['id']; ?>" type="button" class="btn btn-warning">Sterge in cos</button>
+                                <button id="request-to-cart" data-type="remove" data-pid="<?php echo $productData['id']; ?>" type="button" class="btn btn-warning">Șterge din coș</button>
                             <?php else: ?>
-                                <button id="request-to-cart" data-type="add" data-pid="<?php echo $productData['id']; ?>" type="button" class="btn btn-warning">Adauga din cos</button>
+                                <button id="request-to-cart" data-type="add" data-pid="<?php echo $productData['id']; ?>" type="button" class="btn btn-warning">Adaugă in coș</button>
                             <?php endif ?>
                             <p id="cart-helper" style="width: 100%;"></p>
                         </div>
@@ -141,7 +141,7 @@ else $productData = mysqli_fetch_assoc($product);
         const TYPE = $(this).attr('data-type');
         console.log(`clicked add to cart, pid-${ID}, data-type-${TYPE}`);
 
-        $.ajax({Z
+        $.ajax({
             url: 'cartRequests.php',   //answ='+str+"q_a.php?an2="+str,
             dataType: 'text',
             type:'GET',
