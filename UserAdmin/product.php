@@ -395,7 +395,7 @@ $subCatIdVal = intval($lastId['subcategory_id']) ;
 
                         e.preventDefault();
                         var form = $(this).serialize();
-                        form = form + `&market-id=<?php echo $marketIdVal;?>&category-id=<?php echo $catIdVal;?>&subcat-id=<?php echo $subCatIdVal;?>`
+                        form = form + `&market-id=<?php echo $marketIdVal;?>&category-id=<?php echo $catIdVal;?>`
                         console.log(`add subcat submited, data: \n${form}`);
                         var i = 0;
                         productFiles.forEach(file => {
@@ -443,6 +443,24 @@ $subCatIdVal = intval($lastId['subcategory_id']) ;
                     <div class="mb-3">
                         <label class="form-label">Nume Produs</label>
                         <input type="text" class="form-control" id="name-produs" name="product-name">
+                    </div>
+                    <div class="mb-3">
+                        <select id="subcat-id" name="subcat-id" class="custom-select custom-select-lg mb-3" style="width: 100%; min-height: 50px;"
+                                onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+
+                            <!-- <option selected>Open this select menu</option> -->
+
+                            <?php
+                            $categories = query("SELECT * FROM `subcategories` WHERE category_id = $catIdVal");//id, category_name
+                            $rows = mysqli_num_rows($categories);
+                            for ($i=0; $i < $rows; $i++):
+                                $cat = mysqli_fetch_assoc($categories);
+                                ?>
+
+                                <option value="<?php echo $cat['id'] ?>">  <?php echo $cat['subcategory_name'] ?> </option>
+
+                            <?php endfor ?>
+                        </select>
                     </div>
 
                     <div class="mb-3">
