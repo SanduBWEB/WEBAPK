@@ -95,7 +95,7 @@ $ordersList = mysqli_fetch_all($orderRequests, MYSQLI_ASSOC);
                     FROM order_data a 
                     JOIN order_requests b ON a.order_id = b.id 
                     JOIN product_data c ON a.product_id = c.id
-                    WHERE c.market_id = ".$order['market_id']." AND a.market_id = ".$order['market_id']."
+                    WHERE c.market_id = ".$order['market_id']." AND a.order_id = ".$order['id']."
                     ORDER BY a.id");
                     $rows = mysqli_num_rows($sql); // total orders user requested
                     $orderData = mysqli_fetch_all($sql, MYSQLI_ASSOC);
