@@ -176,15 +176,16 @@ switch ($type) { // the type request: add / update / delete;
 
                 //
                 $orderId = $_POST['orderId'];
-                $productId = $_POST['productId'];
+                //$productId = $_POST['productId'];
                 $state = $_POST['state']; 
-
+                $marketId = $_POST['marketId'];
+                
                 query("UPDATE
                     `order_data`
                 SET
                     `state` = $state
                 WHERE
-                    order_id = $orderId AND product_id = $productId");
+                    order_id = $orderId AND market_id = $marketId");
 
             break;
         }
